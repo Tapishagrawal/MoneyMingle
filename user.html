@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,18 @@
     <script src="https://kit.fontawesome.com/98069f06b4.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             font-family: roboto;
         }
 
         /* navbar */
-        #navbar{
+        #navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,71 +27,79 @@
             background-color: #2bac57;
 
         }
-        #links{
+
+        #links {
             display: flex;
             gap: 15px;
             font-size: 20px;
         }
-        #login-info{
+
+        #login-info {
             display: flex;
             align-items: center;
             justify-content: end;
             gap: 15px;
         }
-         #login-info img{
+
+        #login-info img {
             width: 50px;
             border-radius: 50%;
-         }
-         #login-info h3{
+        }
+
+        #login-info h3 {
             font-size: 26px;
-         }
+        }
 
-         /* main div */
+        /* main div */
 
-         #main{
-            
+        #main {
+
             width: 90%;
             margin: auto;
             margin-top: 50px;
             display: flex;
 
-         }
-         #left{
+        }
+
+        #left {
             width: 35%;
             display: flex;
             flex-direction: column;
             gap: 20px;
-         }
-         #left>div>.text-above-balance{
+        }
+
+        #left>div>.text-above-balance {
             display: flex;
             justify-content: space-between;
-         }
-         
-         #insights>:nth-child(1){
+        }
+
+        #insights>:nth-child(1) {
             display: flex;
             justify-content: space-between;
-         }
-         #insights>:nth-child(2){
-         }
-         #insights>:nth-child(3){
+        }
+
+        #insights>:nth-child(2) {}
+
+        #insights>:nth-child(3) {
             margin-top: 20px;
-         }
+        }
 
-         #right{
+        #right {
             width: 65%;
-         }
-       #right>div:nth-child(1){
-        display: flex;
-        justify-content: space-between;
-       }
-       #transactions{
-        display: flex;
-        justify-content: space-between
-       }
-        
+        }
 
+        #right>div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #transactions {
+            display: flex;
+            justify-content: space-between
+        }
     </style>
 </head>
+
 <body>
     <nav id="navbar">
         <div id="links">
@@ -100,7 +111,7 @@
         </div>
         <div id="login-info">
             <h3>User Name!</h3>
-            <img src="media\blank-profile-picture-973460_640.webp" alt="">
+            <img src="images/user/blank-profile-picture-973460_640.webp" alt="">
             <i class="fa-sharp fa-solid fa-angle-down"></i>
         </div>
     </nav>
@@ -113,7 +124,9 @@
                     <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
                 </div>
                 <div>
-                    <div><h4>$1000.00</h4></div>
+                    <div>
+                        <h4>$1000.00</h4>
+                    </div>
                     <div>Available</div>
                 </div>
                 <div>*This is an estimate based on the most recent conversion rate.</div>
@@ -139,7 +152,7 @@
 
 
         <div id="right">
-            <div >
+            <div>
                 <div>
                     <h4>Convert</h4>
                     <div><input type="number"><select name="" id=""></select></div>
@@ -148,7 +161,7 @@
                 </div>
                 <div id="show-convert">
                     <h3>After Conversion</h3>
-                    <div>$2000.00</div>     
+                    <div>$2000.00</div>
                 </div>
             </div>
             <div>
@@ -160,6 +173,7 @@
         </div>
     </section>
 </body>
+
 </html>
 
 <!-- media\blank-profile-picture-973460_640.webp -->
