@@ -1,0 +1,70 @@
+
+
+
+body{
+  background: rgb(84,84,84);
+  background: linear-gradient(90deg, rgba(84,84,84,1) 21%, rgba(63,63,63,1) 55%, rgba(45,45,45,1) 93%);
+}
+.con_container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: #4CAF50 2px solid;
+border-radius: 10px;
+background-color: 
+#9ddeaf;
+font-size: 20px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .con_container > h1 {
+    text-align: center;
+    font-weight: 600;
+    color: #272727;
+  }
+  
+  .converter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+  }
+  .addha{
+  display:flex;
+  padding: 20px 10px;
+  gap: 20px;
+ }
+  .converter> label{
+    font-weight: bold;
+    
+  }
+  .addha>input{
+    width:400px;
+    margin-right:10px;
+    
+  }
+
+  .converter> button {
+    width: 200px;
+    padding: 10px 10px;
+    background-color: #38bc5d;
+    color: #272727;
+    font-weight:600 ;
+    border:#9ddeaf ;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+  }
+
+  #result2{
+    color: #272727;
+    font-weight:bold ;
+
+  }
+  
+  .flag-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
