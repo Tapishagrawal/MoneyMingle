@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyMingle</title>
+    <link rel="icon" href="imagess/logo.png">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./css/address.css">
+
+</head>
+<body>
+<!-- <img src="images/logo2.png" alt=""> -->
+
+
+
+
+
+
+<nav>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" id="bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg> -->
+    <div style="width: 20%;" class="logo_img">
+        <a href="./index.html"><img src="./imagess/logo.png" alt="err" style="width: 100%;margin: auto; display: block;"></a> 
+    </div>
+    <div class="options" id="option">
+        <ul>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="./Destination.html">click</a></li>
+            <li><a href="#">click</a></li>
+        </ul>
+    </div>
+    <div  class="Resister">
+        <a href="#">Resister</a></li>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="popup1" id="popup1">
+    <img src="imagess/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Some fields are empty <br>
+        please fill all the fields <br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="address.html" onclick="closepopup1()">OK</a>
+</div>
+
+<div class="container" id="seccont">
+
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing details</h3>
+
+                <div class="inputBox" >
+                    <span>full name :</span>
+                    <input id="ibname" type="text" placeholder="Enthusiast MoneyMingler">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input  id="ibemail" type="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox" >
+                    <span>Phone Number :</span>
+                    <input id="ibadd" type="text" maxlength="10" placeholder="1234567890">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox" >
+                        <span>From Currency :</span>
+                        <input id="ibcity" type="text" placeholder="Kolkata">
+                    </div>
+                    <div class="inputBox" >
+                        <span>To Currency:</span>
+                        <input id="ibpeople" type="text" min="0" placeholder="">
+                    </div>
+                    
+                </div>
+
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Date:</span>
+                        <input id="ibdate" type="date" required pattern="\d{4}-\d{2}-\d{2}">
+                    </div>
+                    <div class="inputBox">
+                        <span>Valid ID Number:</span>
+                        <input id="ibage" type="text" min="1" placeholder="XXXXXXXXXXXXXXX">
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+
+
+        <!-- <a href="payment.html">SAVE ADDRESS AND PAY</a> -->
+    </form>
+
+</div>    
+    
+</body>
+
+<script>
+
+let book=JSON.parse(localStorage.getItem("mybookings"))||[]
+let container=document.getElementById("seccont")
+
+let form=document.querySelector("form")
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        if(form.ibname.value===""&&form.ibemail.value===""&&form.ibadd.value===""&&form.ibcity.value===""){
+            console.log("somthing wrong")
+            container.innerHTML=null
+            popup1.classList.add("openpopup1")
+        }
+        else{
+            console.log("done");
+            // openpopup()
+            // container.innerHTML=null
+            let obj={
+                name:form.ibname.value,
+                email:form.ibemail.value,
+                phone:form.ibadd.value,
+                city:form.ibcity.value,
+                people:form.ibpeople.value,
+                date: form.ibdate.value,
+                age:form.ibage.value
+            }
+            console.log(obj)
+            book.push(obj)
+            localStorage.setItem("mybookings",JSON.stringify(book))
+           
+           
+
+           window.location.assign("./payment.html")
+        }
+    })
+
+
+    // function closepopup1(){
+    //     // popup1.classList.remove("openpopup1")
+    //     // window.location.reload()
+    //     // window.location.assign("./payment.html")
+    // }
+
+</script>
+</html>
