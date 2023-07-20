@@ -2,6 +2,10 @@
 let flag1=document.getElementById('flag1');
 let flag2=document.getElementById('flag2');
   
+
+flag1.setAttribute("src","https://flagcdn.com/w320/us.png");
+flag2.setAttribute("src","https://flagcdn.com/w320/tf.png");
+
 async function con(){
   try{
 
@@ -21,8 +25,10 @@ window.addEventListener("load", function () {
  });
 
 let COUNTRY=JSON.parse(localStorage.getItem("COUNTRY"))||[];
+
 let fromCurrencySelect = document.getElementById("fromMoney");
 let toCurrencySelect = document.getElementById("toMoney");
+
 
 function addcont(countries){
 
@@ -30,11 +36,10 @@ function addcont(countries){
     countries.forEach( ({currencies,flags,name}) => {
      
       const option = document.createElement("option");
-     
-      for(let k in currencies){
 
+      for(let k in currencies){
       option.value = currencies[k].code;
-      // option.nodeValue=name
+      option.nodeValue=name
     }
   
     var imag = document.createElement("span");
@@ -67,6 +72,7 @@ function addcont(countries){
     for(let f in el.flags){
       if(f==='png'){
         //console.log(el)
+
         localStorage.setItem("Selected1",JSON.stringify(el));
         flag1.setAttribute('src',el.flags[f]);
       }
@@ -76,12 +82,14 @@ function addcont(countries){
    };
 
 
+
    toCurrencySelect.onchange= function(){
      COUNTRY.filter((el)=>{
       if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
     for(let f in el.flags){
       if(f==='png'){
         //console.log(el)
+
         localStorage.setItem("Selected2",JSON.stringify(el));
         flag2.setAttribute('src',el.flags[f]);
       }
@@ -93,10 +101,12 @@ function addcont(countries){
 
 
 function convertMoney() {
+
     var amount = Number(document.getElementById("amount").value);
     let temp1,temp2,x;
     var fromMoney = document.getElementById("fromMoney").value;
     var toMoney = document.getElementById("toMoney").value;
+
   
     const endpoint = `https://api.exchangerate-api.com/v4/latest/USD`; // USD is base Money
   
@@ -104,6 +114,7 @@ function convertMoney() {
       .then(response => response.json())
       .then(data => {
         //console.log(data);
+
         const rates =(data.rates);
        // console.log(data.rates);
        // console.log(data.rates[fromMoney]);
@@ -135,6 +146,7 @@ function convertMoney() {
 
         document.getElementById("result2").textContent = `1 ${fromMoney} = ${temp1} ${toMoney}  And
         1 ${toMoney} = ${temp2} ${fromMoney}`;
+
 
       })
       .catch(error => {
