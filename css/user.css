@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: roboto;
+}
+
+/* navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #2bac57;
+
+}
+
+#links {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+#login-info {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}
+
+#login-info img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+#login-info h3 {
+    font-size: 26px;
+}
+
+/* main div */
+
+#main {
+
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+
+}
+
+#left {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#left>div>.text-above-balance {
+    display: flex;
+    justify-content: space-between;
+}
+
+#insights>:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* #insights>:nth-child(2) {} */
+
+#insights>:nth-child(3) {
+    margin-top: 20px;
+}
+
+#right {
+    width: 65%;
+}
+
+#right>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+}
+
+#transactions {
+    display: flex;
+    justify-content: space-between
+}
