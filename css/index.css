@@ -1,42 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-*{
+
+* {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-:root{
+
+:root {
     --main-back-color: #272727;
     --main-white-color: #f6f6f6;
-    --sub-back-color: #2D2D2D;
+    --sub-back-color: #3d3d3d;
     --dark-gray: #545454;
-    --white:#fff;
+    --light-gray: #9d9d9d;
+    --green-gray : #3d5a4e;
+    --green-hover-gray : #527768;
+    --light-lighter-gray: #d1d1d1;
+    --white: #fff;
     --para-color: #454545;
     --font-size-para: 20px;
-    --headings-color:#323232;
-    --headings-color-light:#f6f6f6;
-    --container-padding : 60px 0;
+    --headings-color: #323232;
+    --headings-color-light: #f6f6f6;
+    --container-padding: 60px 0;
 }
-.container{
+.swal-modal {
+    background: var(--sub-back-color);
+}
+.swal-text{
+    color: var(--light-lighter-gray);
+    font-weight: 500;
+    font-size: 18px;
+}
+.swal-button-container{
+    display: block;
+    text-align: center;
+}
+.swal-button{
+    background-color: var(--green-gray);
+    width: 110px;
+    padding: 8px;
+}
+.swal-button:hover{
+    background-color: var(--green-hover-gray)!important;
+}
+.container {
     margin: 0 60px;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 10px;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
     background-color: var(--sub-back-color);
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background-color: var(--dark-gray);
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 header {
     display: flex;
     justify-content: space-around;
@@ -49,129 +82,151 @@ header {
     box-shadow: rgba(34, 59, 59, 0.25) 0px 13px 27px -5px, rgba(68, 108, 83, 0.3) 0px 8px 16px -8px;
 }
 
-header a{
+header a {
     color: var(--white);
     padding: 3px 15px;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s;
 }
-header a:hover{
+
+header a:hover {
     background-color: var(--white);
     color: #436c61;
 }
-.navigation-links a.active{
+
+.navigation-links a.active {
     background-color: var(--white);
     color: #436c61;
 
 }
-.logo{
+
+.logo {
     width: 15%;
 }
-.logo img{
+
+.logo img {
     width: 50px;
 }
-.navigation-links{
+
+.navigation-links {
     width: 40%;
     display: flex;
     justify-content: space-between;
 }
-.status-btns{
+
+.status-btns {
     width: 20%;
     text-align: right;
 }
 
-#hero-container{
+#hero-container {
     background-color: var(--main-back-color);
     overflow: hidden;
 }
-.hero-section{
+
+.hero-section {
     position: relative;
     display: flex;
     justify-content: center;
     height: 100vh;
     margin-top: 80px;
 }
-.hero-text{
+
+.hero-text {
     position: absolute;
     margin-top: 50px;
     text-align: center;
 }
-.hero-text h4{
+
+.hero-text h4 {
     color: var(--white);
     margin: 0;
     font-weight: 500;
     margin-bottom: 20px;
     font-size: 20px;
 }
-.hero-text h1{
+
+.hero-text h1 {
     margin: 0;
     font-weight: 500;
     font-size: 30px;
     color: var(--white);
 }
-.hero-icon{
+
+.hero-icon {
     position: relative;
     width: 100%;
 }
-.hero-icon img{
+
+.hero-icon img {
     width: 70px;
 }
-.hero-icon img:nth-child(1){
+
+.hero-icon img:nth-child(1) {
     position: absolute;
     bottom: 120px;
     left: 310px;
     transform: rotate(-40deg);
-    
+
 }
-.hero-icon img:nth-child(2){
+
+.hero-icon img:nth-child(2) {
     position: absolute;
     top: 100px;
     right: 180px;
     transform: rotate(80deg);
-    
+
 }
-.hero-icon img:nth-child(3){
+
+.hero-icon img:nth-child(3) {
     position: absolute;
     bottom: 100px;
     right: 180px;
     transform: rotate(30deg);
 }
-.hero-icon img:nth-child(4){
+
+.hero-icon img:nth-child(4) {
     position: absolute;
     top: 78px;
     right: 345px;
     transform: rotate(-40deg);
     filter: invert(1);
-    
+
 }
-.hero-icon img:nth-child(5){
+
+.hero-icon img:nth-child(5) {
     position: absolute;
     top: 270px;
     left: 400px;
     transform: rotate(-30deg);
     filter: invert(1);
-    
+
 }
-.hero-icon img:nth-child(6){
+
+.hero-icon img:nth-child(6) {
     position: absolute;
     top: 100px;
     left: 300px;
     transform: rotate(30deg);
-    
+
 }
-.hero-mobile-images{
+
+.hero-mobile-images {
     position: absolute;
     bottom: -20%;
 }
-.hero-mobile-images img{
+
+.hero-mobile-images img {
     width: 250px;
 }
-.hero-mobile-images img:nth-child(1){
+
+.hero-mobile-images img:nth-child(1) {
     width: 215px;
     margin-right: -10px;
 }
-.hero-mobile-images img:nth-child(3){
+
+.hero-mobile-images img:nth-child(3) {
     width: 215px;
     margin-left: -12px;
 }
@@ -180,17 +235,19 @@ header a:hover{
 /* ==============About section start============ */
 
 /* sub about section start */
-.desc-containter{
+.desc-containter {
     background-color: var(--main-white-color);
     padding: var(--container-padding);
 }
-.sub-about h1{
+
+.sub-about h1 {
     color: var(--headings-color);
     margin: 0;
     position: relative;
     font-size: 60px;
 }
-.sub-about h1::before{
+
+.sub-about h1::before {
     position: absolute;
     content: "Description";
     opacity: 0.1;
@@ -198,61 +255,68 @@ header a:hover{
     top: -40px;
     left: -10px;
 }
-.sub-about p{
+
+.sub-about p {
     color: var(--para-color);
     font-size: var(--font-size-para);
     margin: 0;
     font-weight: 500;
     line-height: 40px;
 }
+
 /* sub about section End */
 
 
 /* Problem about Start */
-.about-problem-container{
+.about-problem-container {
     background-color: var(--main-back-color);
     padding: var(--container-padding);
 }
-.problem-container h1{
+
+.problem-container h1 {
     margin: 0;
     text-align: center;
     color: var(--headings-color-light);
     position: relative;
     font-size: 50px;
 }
-.problem-container h1::before{
+
+.problem-container h1::before {
     position: absolute;
     content: "Problem Statement";
     opacity: 0.1;
     top: -10px;
     left: 320px;
-    font-size: 65px; 
+    font-size: 65px;
 }
 
-.porblem-cards-section{
+.porblem-cards-section {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     margin-top: 80px;
     row-gap: 80px;
 }
-.problem-card{
+
+.problem-card {
     width: 380px;
     min-height: 250px;
-    background-color: var(--main-white-color);  
+    background-color: var(--main-white-color);
     padding: 20px 20px;
     border-radius: 15px;
     transition: all 0.4s ease-in-out;
     position: relative;
 }
-.problem-card:hover{
-    transform:scale(1.01);
-    box-shadow: 0px 23px 0px -13px rgba(200,200,200,0.4),
-    0px 40px 0px -21px rgba(200,200,200,0.3);
+
+.problem-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 23px 0px -13px rgba(200, 200, 200, 0.4),
+        0px 40px 0px -21px rgba(200, 200, 200, 0.3);
     border-radius: 15px 15px 40px 40px;
     transform: translateY(-25px);
 }
-.problem-card::before{
+
+.problem-card::before {
     position: absolute;
     content: "1";
     top: -50px;
@@ -262,52 +326,62 @@ header a:hover{
     border-radius: 50%;
     padding: 2px 10px;
 }
-.problem-card:nth-child(2)::before{
+
+.problem-card:nth-child(2)::before {
     content: '2';
 }
-.problem-card:nth-child(3)::before{
+
+.problem-card:nth-child(3)::before {
     content: '3';
 }
-.problem-card:nth-child(4)::before{
+
+.problem-card:nth-child(4)::before {
     content: '4';
 }
+
 .problem-card h4,
-.problem-card p{
+.problem-card p {
     margin: 0;
 }
-.problem-card h4{
+
+.problem-card h4 {
     color: var(--headings-color);
 }
-.problem-card p{
+
+.problem-card p {
     margin-top: 10px;
     color: var(--para-color);
 }
+
 /* Problem about End */
 
 /* solution about Start */
-.about-solution-container{
+.about-solution-container {
     position: relative;
     padding: var(--container-padding);
     background-color: var(--main-white-color);
 }
-.puzzle-img{
+
+.puzzle-img {
     position: absolute;
     width: 150px;
     right: 0px;
-    background-color:#9BDDAE ;
+    background-color: #9BDDAE;
     top: -1px;
     padding: 5px;
     border-radius: 10px;
     transform: rotate(180deg);
 
 }
-.solution-cont h1{
+
+.solution-cont h1 {
     color: var(--headings-color);
     margin: 0;
     position: relative;
     font-size: 60px;
 }
-.solution-cont h1::before{
+
+.solution-cont h1::before {
     position: absolute;
     content: "Solution";
     opacity: 0.1;
@@ -315,43 +389,48 @@ header a:hover{
     top: -40px;
     left: -10px;
 }
-.solution-cont > p{
+
+.solution-cont>p {
     font-size: var(--font-size-para);
     line-height: 40px;
     padding: 0 80px;
 }
+
 /* solution about end */
 /* ==============About section start============ */
 
 /* Testimonial Start */
-#testimonial-container{
+#testimonial-container {
     background-color: var(--main-back-color);
     width: 100%;
     min-height: 100vh;
     padding: var(--container-padding);
 }
-#testimonial-container > h1{
+
+#testimonial-container>h1 {
     margin: 0;
     text-align: center;
     color: var(--headings-color-light);
     position: relative;
     font-size: 50px;
 }
-#testimonial-container > h1::before{
+
+#testimonial-container>h1::before {
     position: absolute;
     content: "Testimonial";
     opacity: 0.2;
     top: -40px;
     left: 420px;
-    font-size: 90px; 
+    font-size: 90px;
 }
-.testimonial{
+
+.testimonial {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+
 }
 
 .swiper {
@@ -443,29 +522,33 @@ header a:hover{
 
 
 /* FAQ's section Start */
-#faq-Container{
+#faq-Container {
     background-color: var(--main-white-color);
     padding: var(--container-padding);
 }
-#faq-Container > div{
+
+#faq-Container>div {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-around;
 }
-.faq-section{
+
+.faq-section {
     margin: 0 40px;
     max-width: 600px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.faq-section h1{
+
+.faq-section h1 {
     color: var(--headings-color);
     font-size: 50px;
     position: relative;
 }
-.faq-section h1::before{
+
+.faq-section h1::before {
     position: absolute;
     content: "Questions";
     opacity: 0.1;
@@ -473,26 +556,29 @@ header a:hover{
     top: -40px;
     left: -10px;
 }
-.faq-section .tab{
+
+.faq-section .tab {
     position: relative;
     background-color: #fff;
-    padding: 0 20px 20px ;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     overflow: hidden;
 
 }
 
-.faq-section .tab input{
+.faq-section .tab input {
     appearance: none;
 }
-.faq-section .tab label{
+
+.faq-section .tab label {
     display: flex;
     align-items: center;
     cursor: pointer;
     position: relative;
 }
-.faq-section .tab label::after{
+
+.faq-section .tab label::after {
     content: "+";
     position: absolute;
     right: 20px;
@@ -500,13 +586,16 @@ header a:hover{
     color: rgba(0, 0, 0, 0.1);
     transition: transform 1s;
 }
-.faq-section .tab:hover label::after{
+
+.faq-section .tab:hover label::after {
     color: #333;
 }
-.faq-section .tab input:checked ~ label::after{
+
+.faq-section .tab input:checked~label::after {
     transform: rotate(135deg);
 }
-.faq-section .tab label h2{
+
+.faq-section .tab label h2 {
     width: 40px;
     height: 40px;
     background-color: #333;
@@ -518,106 +607,282 @@ header a:hover{
     border-radius: 5px;
     margin-right: 10px;
 }
-.faq-section .tab label h2{
-    background: linear-gradient(135deg, #333,#6f6f6f);
+
+.faq-section .tab label h2 {
+    background: linear-gradient(135deg, #333, #6f6f6f);
 }
-.faq-section .tab label h3{
+
+.faq-section .tab label h3 {
     position: relative;
     font-weight: 500;
     color: #333;
     z-index: 10;
 }
-.faq-section .tab .content{
+
+.faq-section .tab .content {
     max-height: 0;
     transition: all 1s;
     overflow: hidden;
 }
 
-.faq-section .tab input:checked ~ .content{
+.faq-section .tab input:checked~.content {
     max-height: 100vh;
 }
-.faq-section .tab .content p{
+
+.faq-section .tab .content p {
     position: relative;
     padding: 10px 0;
     color: var(--para-color);
     z-index: 10;
 }
 
-.faq-img img{
+.faq-img img {
     width: 600px;
 }
+
 /* FAQ's section End */
 
 
 /* Footer End */
-footer{
+footer {
     background-color: var(--main-back-color);
 }
-.footer-row{
+
+.footer-row {
     display: flex;
     flex-wrap: wrap;
 }
-.footer-container{
+
+.footer-container {
     width: 90%;
     margin: auto;
     padding-block: 20px;
 }
-.footer-col{
+
+.footer-col {
     width: 25%;
     padding: 0 15px;
 }
-.footer-col img{
+
+.footer-col img {
     width: 100%;
 }
-.footer-col h4{
+
+.footer-col h4 {
     color: #fff;
     font-size: 18px;
-    text-transform:capitalize ;
+    text-transform: capitalize;
     margin-bottom: 30px;
     position: relative;
 }
-ul{
+
+ul {
     list-style: none;
     padding: 0;
 }
-.footer-col ul li:not(:last-child){
+
+.footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
 }
-.footer-col ul li a{
+
+.footer-col ul li a {
     font-size: 14px;
     text-transform: capitalize;
-    text-decoration: none ;
+    text-decoration: none;
     font-weight: 300;
     color: #bbbbbb;
     display: block;
     transition: all 0.3s ease;
 }
-.footer-col ul li a:hover{
+
+.footer-col ul li a:hover {
     color: #fff;
     padding-left: 8px;
 }
-@media(max-width:767px){
-    .footer-col{
+
+@media(max-width:767px) {
+    .footer-col {
         width: 50%;
         margin-bottom: 30px;
     }
+
     .footer-col img {
         width: 60%;
     }
+
     .footer-social-link a i {
         margin: 5px;
     }
 }
-@media(max-width:425px){
-    .footer-col{
+
+@media(max-width:425px) {
+    .footer-col {
         width: 100%;
         margin-bottom: 30px;
     }
+
     .footer-col img {
         width: 60%;
     }
+
     .footer-container {
         margin-left: 27%;
     }
 }
+
 /* Footer End */
+
+/* Feedback form section Start */
+.feedback-form{
+    position: fixed;
+    z-index: 10;
+    bottom: 30px;
+    right: -300px;
+    opacity: 0;
+    transform: translate(50%, 0%) scale(0.5);
+    transition: opacity 0.3s ease-in-out,
+                right 2s ease-in-out,
+                transform 1s ease-in-out;
+}
+.feedback-form.active{
+    opacity: 1;
+    right: 30px;
+    transform: translate(0%, 0%) scale(1);
+    transition: transform 0.5s cubic-bezier(0.18,0.89,0.43,1.19);
+}
+#Feed_container::-webkit-scrollbar {
+    width: 10px;
+}
+
+#Feed_container::-webkit-scrollbar-track {
+    background-color: var(--sub-back-color);
+}
+
+#Feed_container::-webkit-scrollbar-thumb {
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+}
+
+#Feed_container {
+    width: 400px;
+    height: 500px;
+    overflow-y: scroll;
+    border: 1px solid #333;
+    padding: 20px;
+    background-color: var(--main-back-color);
+    position: relative;
+    box-shadow: rgba(51, 51, 51, 0.632) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+#Feed_container>i {
+    color: var(--white);
+    background-color: var(--dark-gray);
+    padding: 12px;
+    border-radius: 40%;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#Feed_container>i:hover {
+    background-color: var(--para-color);
+    color: rgb(101, 142, 101);
+}
+
+#Feed_container>h1 {
+    margin-top: 50px;
+    font-size: 20px;
+    background-color: #3d5a4e;
+    color: var(--headings-color-light);
+    padding: 6px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-group>label {
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    margin-block: 15px;
+    color: var(--light-lighter-gray);
+}
+
+.form-group>select {
+    font-size: 13px;
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    display: block;
+    color: var(--light-gray);
+    border-radius: 5px;
+    background-color: var(--sub-back-color);
+    outline: none;
+    border: none;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 90px;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--sub-back-color);
+    border: none;
+    color: var(--light-lighter-gray);
+    padding: 12px;
+    font-weight: 500;
+}
+.form-group textarea:focus{
+    border: 2px solid var(--dark-gray);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.ans label {
+    color: var(--headings-color-light);
+}
+input[type="radio"] {
+    accent-color: var(--green-gray);
+}
+
+.form-btn {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.form-btn button {
+    background-color: var(--green-gray);
+    color: var(--headings-color-light);
+    padding: 8px 7px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.form-btn button:hover {
+    background-color: var(--green-hover-gray);
+}
+.feedback-form-icon{
+    background: linear-gradient(135deg, #719b85, #527969);
+    padding: 15px;
+    border-radius: 44%;
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 1;
+}
+.feedback-form-icon:hover{
+    background: linear-gradient(135deg, #3d5a4e, #99c8b0);
+}
+.feedback-form-icon i{
+    color: rgb(252, 244, 231);
+    font-size: 20px;
+}
+/* Feedback form section End */

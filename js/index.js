@@ -12,9 +12,9 @@ let mob2 = document.querySelector('.hero-mobile-images img:nth-child(2)');
 let mob3 = document.querySelector('.hero-mobile-images img:nth-child(3)');
 
 
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    if(value<=250){
+    if (value <= 250) {
         mob1.style.marginRight = value + (-10) + 'px';
         mob3.style.marginLeft = value + (-10) + 'px';
     }
@@ -28,7 +28,7 @@ window.addEventListener('scroll', ()=>{
 
     img3.style.bottom = value + 100 + 'px';
     img3.style.right = value + 180 + 'px';
-    
+
     img4.style.top = -value + 78 + 'px';
     img4.style.right = -value + 345 + 'px';
 
@@ -54,10 +54,45 @@ var swiper = new Swiper(".mySwiper", {
         modifier: 1,
         slideShadows: true,
     },
-    loop:true,
+    loop: true,
 });
 // Testimonial End
 
+// feedback form Code start
+let feedback = JSON.parse(localStorage.getItem("COUNTRY")) || [];
+let feedBackFormBtn = document.querySelector('.feedback-form-icon');
+let feedBackForm = document.querySelector('.feedback-form');
+let feedBackFormCloseBtn = document.querySelector('#Feed_container > i');
+let formSubmitCloseBtn = document.querySelector('.form-btn');
+const form = document.getElementById('feedbackForm');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
+    const formData = new FormData(form);
+    const feedback = {};
 
+    for (let [key, value] of formData) {
+        feedback[key] = value;
+    }
+    console.log(feedback);
+    localStorage.setItem("feedback", JSON.stringify(feedback));
+    swal("Thank You For Giving Feedback!")
+});
+
+feedBackFormBtn.addEventListener("click",()=>{
+    feedBackForm.classList.add('active');
+    feedBackFormBtn.style.display = "none";
+
+})
+feedBackFormCloseBtn.addEventListener("click",()=>{
+    feedBackForm.classList.remove('active');
+    feedBackFormBtn.style.display = "initial";
+
+})
+formSubmitCloseBtn.addEventListener("click",()=>{
+    feedBackForm.classList.remove('active');
+    feedBackFormBtn.style.display = "initial";
+
+})
+// feedback form Code End
 

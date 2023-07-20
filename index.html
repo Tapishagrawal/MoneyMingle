@@ -13,6 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- header part start -->
     <header>
@@ -29,6 +30,159 @@
         </nav>
     </header>
     <!-- header part End -->
+
+    <!-- Feedback form start -->
+    <div class="feedback-form-icon">
+        <i class="fa-regular fa-heart fa-bounce"></i>   
+    </div>
+
+    <div class="feedback-form">
+        <div id="Feed_container">
+            <i class="fa-solid fa-x"></i>
+            <h1>MoneyMingle Feedback Form</h1>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="age">How old are you?</label>
+                    <select id="age" name="age" >
+                        <option value="">Select Age Group</option>
+                        <option value="Under 18">Under 18</option>
+                        <option value="18-24">18-24</option>
+                        <option value="25-44">25-44</option>
+                        <option value="45-54">45-54</option>
+                        <option value="Above 55">Above 55</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="gender">What is your gender?</label>
+                    <select id="gender" name="gender" >
+                        <option value="">Select gender</option>
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="convertedCurrency">Have you ever converted your currency using MoneyMingle
+                        website?</label>
+                    <div class="ans">
+                        <input type="radio" id="convertedYes" name="convertedCurrency" value="Yes" >
+                        <label for="convertedYes">Yes</label>
+                        <input type="radio" id="convertedNo" name="convertedCurrency" value="No">
+                        <label for="convertedNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="challenges">If yes, what challenges did you face when performing these
+                        transactions?</label>
+                    <textarea placeholder="Enter your message..." id="challenges" name="challenges"></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="options">Would you like to see different options and competitive rates to choose from on
+                        MoneyMingle
+                        for currency conversion and school fee payments?</label>
+                    <div class="ans">
+                        <input type="radio" id="optionsYes" name="options" value="Yes" >
+                        <label for="optionsYes">Yes</label>
+                        <input type="radio" id="optionsNo" name="options" value="No">
+                        <label for="optionsNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="access">Would you like to have fast and easy access on MoneyMingle for currency
+                        conversion and
+                        school fee payments?</label>
+                    <div class="ans">
+                        <input type="radio" id="accessYes" name="access" value="Yes" >
+                        <label for="accessYes">Yes</label>
+                        <input type="radio" id="accessNo" name="access" value="No">
+                        <label for="accessNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="fees">Have you experienced high fees associated with currency conversion, especially
+                        with
+                        MoneyMingle?</label>
+                    <div class="ans">
+                        <input type="radio" id="feesYes" name="fees" value="Yes" >
+                        <label for="feesYes">Yes</label>
+                        <input type="radio" id="feesNo" name="fees" value="No">
+                        <label for="feesNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="exchangeRates">Have you found it inconvenient to access the best exchange rates?</label>
+                    <div class="ans">
+                        <input type="radio" id="exchangeYes" name="exchangeRates" value="Yes" >
+                        <label for="exchangeYes">Yes</label>
+                        <input type="radio" id="exchangeNo" name="exchangeRates" value="No">
+                        <label for="exchangeNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="paymentOptions">Have you felt limited by the payment options available when paying
+                        school
+                        fees?</label>
+                    <div class="ans">
+                        <input type="radio" id="paymentYes" name="paymentOptions" value="Yes" >
+                        <label for="paymentYes">Yes</label>
+                        <input type="radio" id="paymentNo" name="paymentOptions" value="No">
+                        <label for="paymentNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="limitations">If yes, please explain the limitations you have faced.</label>
+                    <textarea placeholder="Enter your message..." id="limitations" name="limitations"></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="complexity">Have you found the process of converting currency or making payments to be
+                        complex and
+                        confusing?</label>
+                    <div class="ans">
+                        <input type="radio" id="complexityYes" name="complexity" value="Yes" >
+                        <label for="complexityYes">Yes</label>
+                        <input type="radio" id="complexityNo" name="complexity" value="No">
+                        <label for="complexityNo">No</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="recommendation">How likely are you to recommend MoneyMingle to others based on your
+                        experience?</label>
+                    <select id="recommendation" name="recommendation" >
+                        <option value="">Select recommendation</option>
+                        <option value="Very likely">Very likely</option>
+                        <option value="Likely">Likely</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Unlikely">Unlikely</option>
+                        <option value="Very unlikely">Very unlikely</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="comments">Do you have any additional comments or suggestions for improving MoneyMingle's
+                        currency
+                        conversion and payment services?</label>
+                    <textarea placeholder="Enter your message..." id="comments" name="comments"></textarea>
+                </div>
+                <div class="form-btn">
+                    <button type="submit">Submit Feedback</button>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+    <!-- Feedback form start -->
+
 
     <!-- Hero page Start -->
     <section id="hero-container">
@@ -53,7 +207,7 @@
         </div>
     </section>
     <!-- Hero page End -->
-
+    
     <!-- About Section Start -->
     <div id="about">
         <div class="desc-containter">
@@ -73,14 +227,16 @@
                     <div data-aos="fade-up-right" data-aos-duration="1000">
                         <div class="problem-card">
                             <h4>Exchange Rate Fluctuations: </h4>
-                            <p>The exchange rates between currencies are constantly fluctuting, today you are exchanging for
+                            <p>The exchange rates between currencies are constantly fluctuting, today you are exchanging
+                                for
                                 830 tomoroow it's 1000, which can make it difficult to predict the actual value of a
-                                particular currency in another currency. This can result in unexpected gains or losses when
+                                particular currency in another currency. This can result in unexpected gains or losses
+                                when
                                 converting currency.</p>
                         </div>
                     </div>
                     <div data-aos="fade-up-left" data-aos-duration="1000">
-                        <div class="problem-card" >
+                        <div class="problem-card">
                             <h4>Transaction costs: </h4>
                             <p>Converting currency often incurs transaction costs, such as fees chargers by banks or
                                 currency exchange servies. Which can be ridiculouslyhigh. Why do i want to convert to
@@ -90,14 +246,16 @@
                     <div data-aos="fade-up-right" data-aos-duration="1000">
                         <div class="problem-card">
                             <h4>Currency restrictions: </h4>
-                            <p>Some countries have restrictions on using fintech to convert to other currencies. this csn
+                            <p>Some countries have restrictions on using fintech to convert to other currencies. this
+                                csn
                                 make it difficult or expensive to convert currency in certain circumstances.</p>
                         </div>
                     </div>
                     <div data-aos="fade-up-left" data-aos-duration="1000">
                         <div class="problem-card">
                             <h4>Security risks: </h4>
-                            <p>When converting currency there is always a rist of fraud or thef, mainly if the transaction
+                            <p>When converting currency there is always a rist of fraud or thef, mainly if the
+                                transaction
                                 is conducted online or through an unsecured channel.</p>
                         </div>
                     </div>
@@ -407,11 +565,11 @@
         </div>
     </footer>
     <!-- Footer End -->
-    <div style="height: 300px;"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="js/index.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     AOS.init();
 </script>
