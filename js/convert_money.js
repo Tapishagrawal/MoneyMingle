@@ -2,6 +2,7 @@
 let flag1=document.getElementById('flag1');
 let flag2=document.getElementById('flag2');
   
+
 flag1.setAttribute("src","https://flagcdn.com/w320/us.png");
 flag2.setAttribute("src","https://flagcdn.com/w320/tf.png");
 
@@ -25,8 +26,9 @@ window.addEventListener("load", function () {
 
 let COUNTRY=JSON.parse(localStorage.getItem("COUNTRY"))||[];
 
-const fromCurrencySelect = document.getElementById("fromMoney");
-const toCurrencySelect = document.getElementById("toMoney");
+let fromCurrencySelect = document.getElementById("fromMoney");
+let toCurrencySelect = document.getElementById("toMoney");
+
 
 function addcont(countries){
 
@@ -34,6 +36,7 @@ function addcont(countries){
     countries.forEach( ({currencies,flags,name}) => {
      
       const option = document.createElement("option");
+
       for(let k in currencies){
       option.value = currencies[k].code;
       option.nodeValue=name
@@ -52,7 +55,6 @@ function addcont(countries){
     }
     //  option.append(name,option.value);
     option.innerHTML=`${name} ${option.value}`;
-
    fromCurrencySelect.append(option.cloneNode(true));
     toCurrencySelect.append(option);
 
@@ -61,12 +63,16 @@ function addcont(countries){
   }
 
 
-  fromCurrencySelect.onchange=()=>{
+  
+  fromCurrencySelect.onchange= function(){
      COUNTRY.filter((el)=>{
-      if(el.name.toUpperCase().includes(fromCurrencySelect.value.toUpperCase())===true){
+      // console.log(this.innerHTML.);
+      if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
+       // console.log(this.options[this.selectedIndex].text,this.el[this.selectedIndex]);
     for(let f in el.flags){
       if(f==='png'){
-        console.log(el)
+        //console.log(el)
+
         localStorage.setItem("Selected1",JSON.stringify(el));
         flag1.setAttribute('src',el.flags[f]);
       }
@@ -76,12 +82,14 @@ function addcont(countries){
    };
 
 
-   toCurrencySelect.onchange=()=>{
+
+   toCurrencySelect.onchange= function(){
      COUNTRY.filter((el)=>{
-      if(el.name.toUpperCase().includes(fromCurrencySelect.value.toUpperCase())===true){
+      if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
     for(let f in el.flags){
       if(f==='png'){
-        console.log(el)
+        //console.log(el)
+
         localStorage.setItem("Selected2",JSON.stringify(el));
         flag2.setAttribute('src',el.flags[f]);
       }
@@ -93,10 +101,12 @@ function addcont(countries){
 
 
 function convertMoney() {
-    var amount = document.getElementById("amount").value;
-    let temp1,temp2;
-    const fromMoney = document.getElementById("fromMoney").value;
-    const toMoney = document.getElementById("toMoney").value;
+
+    var amount = Number(document.getElementById("amount").value);
+    let temp1,temp2,x;
+    var fromMoney = document.getElementById("fromMoney").value;
+    var toMoney = document.getElementById("toMoney").value;
+
   
     const endpoint = `https://api.exchangerate-api.com/v4/latest/USD`; // USD is base Money
   
@@ -104,28 +114,39 @@ function convertMoney() {
       .then(response => response.json())
       .then(data => {
         //console.log(data);
-        const rates = data.rates;
+
+        const rates =(data.rates);
        // console.log(data.rates);
        // console.log(data.rates[fromMoney]);
-        if (fromMoney !== "USD") {
-            let x=amount / rates[fromMoney];
-          amount = Number.parseFloat(x).toFixed(2)
+       console.log(typeof(amount))
+        if (fromMoney!==toMoney) {
+             x=(amount/rates[fromMoney]);
+          amount = Number.parseFloat(x).toFixed(4)
         }
        // console.log(data.rates[toMoney]);
       
-        let x=(amount * rates[toMoney] * 100)/100;
-        amount = Number.parseFloat(x).toFixed(1)
+        x=(amount*rates[toMoney]*100)/100;
+        amount = Number.parseFloat(x).toFixed(4)
         console.log(amount);
-        document.getElementById("result").value = `${amount}`;
+        document.getElementById("result").value =`${amount}`;
+
+        if (fromMoney===toMoney) {
+      
+          temp1=1,temp2=1;
+        }
+      else{
+        let  y=(1/rates[fromMoney]);
+        temp1= Number.parseFloat(y).toFixed(4);
+
+        let  z=(1/rates[toMoney]);
+        temp2= Number.parseFloat(z).toFixed(4);
+      }
+  
        
-        let  y=(1*rates[toMoney] * 100) / 100;
-        temp1= Number.parseFloat(y).toFixed(3);
 
-        let  z= 1/rates[fromMoney];
-        temp2= Number.parseFloat(z).toFixed(3);
+        document.getElementById("result2").textContent = `1 ${fromMoney} = ${temp1} ${toMoney}  And
+        1 ${toMoney} = ${temp2} ${fromMoney}`;
 
-        document.getElementById("result2").textContent = `1 ${fromMoney} = ${y} ${toMoney}  And
-        1 ${toMoney} = ${z} ${fromMoney}`;
 
       })
       .catch(error => {
