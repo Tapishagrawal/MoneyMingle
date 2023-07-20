@@ -447,6 +447,12 @@ header a:hover{
     background-color: var(--main-white-color);
     padding: var(--container-padding);
 }
+#faq-Container > div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
 .faq-section{
     margin: 0 40px;
     max-width: 600px;
@@ -537,5 +543,81 @@ header a:hover{
     z-index: 10;
 }
 
+.faq-img img{
+    width: 600px;
+}
 /* FAQ's section End */
 
+
+/* Footer End */
+footer{
+    background-color: var(--main-back-color);
+}
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-container{
+    width: 90%;
+    margin: auto;
+    padding-block: 20px;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col img{
+    width: 100%;
+}
+.footer-col h4{
+    color: #fff;
+    font-size: 18px;
+    text-transform:capitalize ;
+    margin-bottom: 30px;
+    position: relative;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+    text-decoration: none ;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #fff;
+    padding-left: 8px;
+}
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .footer-col img {
+        width: 60%;
+    }
+    .footer-social-link a i {
+        margin: 5px;
+    }
+}
+@media(max-width:425px){
+    .footer-col{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-col img {
+        width: 60%;
+    }
+    .footer-container {
+        margin-left: 27%;
+    }
+}
+/* Footer End */
