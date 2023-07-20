@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyMingle</title>
+    <link rel="icon" href="images/logo.png">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./css/payment.css">
+
+</head>
+<body>
+    <!-- <img src="images/logo2.png" alt=""> -->
+
+
+
+    <nav>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" id="bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg> -->
+        <div style="width: 20%;" class="logo_img">
+            <a href="./index.html"><img src="./images/logo.png" alt="err" style="width: 100%;margin: auto; display: block;"></a> 
+        </div>
+        <div class="options" id="option">
+            <ul>
+                <li><a href="#">click</a></li>
+                <li><a href="#">click</a></li>
+                <li><a href="#">click</a></li>
+                <li><a href="#">click</a></li>
+                <li><a href="./Destination.html">click</a></li>
+                <li><a href="#">click</a></li>
+            </ul>
+        </div>
+        <div  class="Resister">
+            <a href="#">Resister</a></li>
+        </div>
+      </nav>
+
+
+
+    <div class="popup" id="popup">
+        <img src="images/404-tick.png" alt="">
+        <h2>Thank You</h2>
+        <p>Payment Successful</p>
+        <!-- <button type="button" id="okbtn" onclick="closepopup()">OK</button> -->
+        <a href="mybookings.html">OK</a>
+    </div>
+
+
+    <div class="popup1" id="popup1">
+        <img src="images/cross.png" alt="">
+        <h2>Sorry</h2>
+        <p>Some fields are empty <br>
+            please fill all the fields <br>
+            and try again</p>
+        <button type="button" id="okbtn" onclick="closepopup1()">OK</button>
+        <!-- <a href="payment.html" onclick="closepopup1()">OK</a> -->
+    </div>
+
+    <div class="popup2" id="popup2">
+        
+        <h2>plese enter otp</h2>
+        <input id="otp" type="text" placeholder="* * * *">
+        <button type="button" id="okbtn2" >OK</button>
+        <!-- <a href="payment.html" onclick="closepopup1()">OK</a> -->
+    </div>
+
+    <div class="popup3" id="popup3">
+      <h4>your otp is</h4>  
+        <h2>1234</h2>
+       <p>use this to authenticate payment <br>
+    do not share this with anyone <br>
+    valid for 2 mins only</p>
+        <!-- <button type="button" id="okbtn2" >OK</button> -->
+        <!-- <a href="payment.html" onclick="closepopup1()">OK</a> -->
+    </div>
+
+    <div class="popup4" id="popup4">
+        
+          <h2>sorry</h2>
+           <h4>otp did not match</h4> 
+         <p>please enter the correct otp <br> and try again</p>
+          <button type="button" id="okbtn4" >OK</button>
+          <!-- <a href="payment.html" onclick="closepopup1()">OK</a> -->
+      </div>
+
+
+<div class="container" id="seccont">
+
+    <div class="card-container">
+
+        <div class="front">
+            <div class="image">
+                <img src="images/chip.png" alt="">
+                <div id="amount"></div>
+                <img src="images/visa.png" alt="">
+            </div>
+            <div class="card-number-box">#### #### #### ####</div>
+            <div class="flexbox">
+                <div class="box">
+                    <span>card holder</span>
+                    <div class="card-holder-name">full name</div>
+                </div>
+                <div class="box">
+                    <span>expires</span>
+                    <div class="expiration">
+                        <span class="exp-month">mm /</span>
+                        <span class="exp-year">yy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back">
+            <div class="stripe"></div>
+            <div class="box">
+                <span>cvv</span>
+                <div class="cvv-box"></div>
+                <img src="images/visa.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+   
+
+
+    <form action="">
+        <div class="inputBox">
+            <span>card number</span>
+            <input id="cninp" type="text" class="card-number-input" maxlength="16">
+        </div>
+        <div class="inputBox">
+            <span>card holder</span>
+            <input id="chinp" type="text"  class="card-holder-input" maxlength="20">
+        </div>
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>expiration mm</span>
+                <select name="" id="" class="month-input">
+                    <option value="month" selected disabled>month</option>
+                    <option value="01">JANUARY</option>
+                    <option value="02">FEBRUARY</option>
+                    <option value="03">MARCH</option>
+                    <option value="04">APRIL</option>
+                    <option value="05">MAY</option>
+                    <option value="06">JUNE</option>
+                    <option value="07">JULY</option>
+                    <option value="08">AUGUST</option>
+                    <option value="09">SEPTEMBER</option>
+                    <option value="10">OCTOBER</option>
+                    <option value="11">NOVEMBER</option>
+                    <option value="12">DECEMBER</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>expiration yy</span>
+                <select name="" id="" class="year-input">
+                    <option value="year" selected disabled>year</option>
+                    <option value="/ 23">2023</option>
+                    <option value="/ 24">2024</option>
+                    <option value="/ 25">2025</option>
+                    <option value="/ 26">2026</option>
+                    <option value="/ 27">2027</option>
+                    <option value="/ 28">2028</option>
+                    <option value="/ 29">2029</option>
+                    <option value="/ 30">2030</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>cvv</span>
+                <input type="text" maxlength="3" class="cvv-input">
+            </div>
+        </div>
+        <input id="pay" type="submit" value="Proceed to Checkout" class="submit-btn">
+        <!-- <button id="pay" class="submit-btn">Proceed to Checkout</button> -->
+    </form>
+</body>
+<script>
+let container=document.getElementById("seccont")
+
+
+document.querySelector('.card-number-input').oninput = () =>{
+    document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+}
+
+document.querySelector('.card-holder-input').oninput = () =>{
+    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+}
+
+document.querySelector('.month-input').oninput = () =>{
+    document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+}
+
+document.querySelector('.year-input').oninput = () =>{
+    document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+}
+
+document.querySelector('.cvv-input').onmouseenter = () =>{
+    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+}
+
+document.querySelector('.cvv-input').onmouseleave = () =>{
+    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+}
+
+document.querySelector('.cvv-input').oninput = () =>{
+    document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+}
+
+let data= JSON.parse(localStorage.getItem("Destination-Book")) || [];
+console.log(data)    
+let amount=document.getElementById("amount")
+let amount1=document.createElement("h3")
+amount1.innerText=`Pay ₹ : ${data[data.length-1].price}`
+amount.append(amount1)
+
+
+    let form=document.querySelector("form")
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        if(form.cninp.value===""&&form.chinp.value===""){
+            console.log("somthing wrong")
+            container.innerHTML=null
+            popup1.classList.add("openpopup1")
+        }
+        // else{
+        //     console.log("done");
+        //     // openpopup()
+        //     container.innerHTML=null
+        //     popup.classList.add("openpopup")
+        // }
+
+            else{
+                container.innerHTML=null
+                popup3.classList.add("openpopup3")
+                popup2.classList.add("openpopup2")
+            }
+
+
+    })
+
+
+    function closepopup1(){
+        popup1.classList.remove("openpopup1")
+        window.location.reload()
+    }
+    // function closepopup2(){
+    //     let otp=document.getElementById("otp")
+    //     let otpval=otp.value
+    //     if(otpval==="1234"){
+    //         // window.location.reload()
+    //         container.innerHTML=null
+    //         popup1.classList.add("openpopup")
+           
+    //     }
+    //     // else if(otpval==1234){
+    //     //     openpopup()
+    //     // }
+    // }
+    let otpbtn=document.getElementById("okbtn2")
+    otpbtn.addEventListener("click",()=>{
+        console.log("ok")
+        let otp=document.getElementById("otp").value
+        // let otpval=otp.value
+        if(otp==="1234"){
+            // window.location.reload()
+            container.innerHTML=null
+            popup2.classList.remove("openpopup2")
+            popup.classList.add("openpopup")
+           
+        }
+        else{
+            popup3.classList.remove("openpopup3")
+            popup4.classList.add("openpopup4")
+        }
+    })
+
+
+
+    let otpbtn4=document.getElementById("okbtn4")
+    otpbtn4.addEventListener("click",()=>{
+        popup4.classList.remove("openpopup4")
+        
+
+    })
+
+
+
+
+    
+
+</script>
+</html>
