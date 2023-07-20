@@ -28,7 +28,7 @@ let COUNTRY=JSON.parse(localStorage.getItem("COUNTRY"))||[];
 
 let fromCurrencySelect = document.getElementById("fromMoney");
 let toCurrencySelect = document.getElementById("toMoney");
-
+let  amount = document.getElementById("amount").value;
 
 function addcont(countries){
 
@@ -65,6 +65,9 @@ function addcont(countries){
 
   
   fromCurrencySelect.onchange= function(){
+    document.getElementById("amount").value=`${0}`;
+    document.getElementById("result").value =`${amount}`;
+
      COUNTRY.filter((el)=>{
       // console.log(this.innerHTML.);
       if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
@@ -102,11 +105,10 @@ function addcont(countries){
 
 function convertMoney() {
 
-    var amount = Number(document.getElementById("amount").value);
-    let temp1,temp2,x;
+    let temp1,temp2;
     var fromMoney = document.getElementById("fromMoney").value;
     var toMoney = document.getElementById("toMoney").value;
-
+    let  res;
   
     const endpoint = `https://api.exchangerate-api.com/v4/latest/USD`; // USD is base Money
   
@@ -120,30 +122,26 @@ function convertMoney() {
        // console.log(data.rates[fromMoney]);
        console.log(typeof(amount))
         if (fromMoney!==toMoney) {
-             x=(amount/rates[fromMoney]);
-          amount = Number.parseFloat(x).toFixed(4)
+           let  x=amount/rates[fromMoney];
+          res = Number.parseFloat(x).toFixed(3)
         }
        // console.log(data.rates[toMoney]);
-      
-        x=(amount*rates[toMoney]*100)/100;
-        amount = Number.parseFloat(x).toFixed(4)
-        console.log(amount);
-        document.getElementById("result").value =`${amount}`;
+  
+        let x=(amount*rates[toMoney]*100)/100;
+       res = Number.parseFloat(x).toFixed(3)
+        console.log(res);
+        document.getElementById("result").value =`${res}`;
 
-        if (fromMoney===toMoney) {
-      
+        if(amount===res){
           temp1=1,temp2=1;
         }
-      else{
+       else{
         let  y=(1/rates[fromMoney]);
         temp1= Number.parseFloat(y).toFixed(4);
 
-        let  z=(1/rates[toMoney]);
+        let  z=(y*rates[fromMoney]);
         temp2= Number.parseFloat(z).toFixed(4);
-      }
-  
-       
-
+       }
         document.getElementById("result2").textContent = `1 ${fromMoney} = ${temp1} ${toMoney}  And
         1 ${toMoney} = ${temp2} ${fromMoney}`;
 
