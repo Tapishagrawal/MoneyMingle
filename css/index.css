@@ -886,3 +886,296 @@ input[type="radio"] {
     font-size: 20px;
 }
 /* Feedback form section End */
+
+
+/* Login page Start */
+.login-page{
+    position: relative;
+}
+.login-page .fa-x{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.login-page .fa-x:hover{
+    color: var(--green-gray);
+}
+.login-page.active{
+    background: rgba(0, 0, 0, 0.537);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.user-img-cont {
+    width: 100%;
+    text-align: center;
+}
+
+.user-img-cont>img {
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid #969696;
+}
+
+.user-img-cont>h1 {
+    font-size: 20px;
+    color: #282828;
+    font-weight: 600;
+    margin: 0;
+}
+
+.form-container {
+    backdrop-filter: blur(25px);
+    background-color: #d6f4f4a5;
+    width: 380px;
+    height: 500px;
+    padding: 30px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 9px;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 0.3s ease-in-out,
+                right 2s ease-in-out,
+                transform 1s ease-in-out;
+}
+.form-container.active{
+    opacity: 1;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.5s cubic-bezier(0.18,0.89,0.43,1.19);
+}
+.input-cont {
+    width: 100%;
+    margin-block: 10px;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.input-cont i {
+    color: var(--para-color);
+    margin-left: 10px;
+}
+
+.input-cont input {
+    border: none;
+    padding: 12px 12px 12px 8px;
+    outline: none;
+    width: 80%;
+    background-color: transparent;
+}
+
+.form-container p {
+    text-align: end;
+    color: #333;
+    font-size: 12px;
+}
+
+.sub-btn {
+    text-align: center;
+}
+
+.button {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #387c5f;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -4px 0px inset;
+
+}
+
+.button:active {
+    transform: scale(0.96);
+    background-color: #449370;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+
+}
+
+.button:before,
+.button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.button.animate::before {
+    top: -70%;
+    background-image: radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #418165 20%, transparent 30%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #418165 15%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.button.animate::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #418165 15%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%),
+        radial-gradient(circle, #418165 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.sub-btn input{
+        width: 100px;
+        padding: 9px 10px;
+        color: whitesmoke;
+        font-size: 15px;
+        font-weight: 500;
+        margin: auto;
+        color: white;
+        background-color: #499071;
+        border: none;
+        border-radius: 10px;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -4px 0px inset;
+    }
+.sub-btn input:hover{
+        cursor: pointer;
+    }
+.sub-btn input:active{
+    background-color: #418165;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+.form-container .sub-btn~p {
+    font-size: 15px;
+    text-align: center;
+    color: var(--headings-color);
+}
+
+.form-container .sub-btn~p a {
+    text-decoration: none;
+    color: rgb(0, 118, 181);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.form-container .sub-btn~p a:hover {
+    color: rgba(0, 135, 207, 0.642);
+    ;
+}
+
+.fa-eye:hover {
+    color: var(--green-hover-gray) !important;
+    cursor: pointer;
+}
+
+.fa-eye-slash:hover {
+    color: var(--green-hover-gray) !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+    #login-page {
+        background-image: url("");
+        width: 100%;
+        height: 100vh;
+        position: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form-container {
+        position: initial;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 20px;
+        width: 370px;
+    }
+
+    #form-container .sub-btn~p {
+        font-size: 13px;
+    }
+
+    #form-container .sub-btn~p a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    #form-container {
+        width: 273px;
+        margin-right: 21px;
+    }
+
+    .input-cont input {
+        border: none;
+        padding: 12px 12px 12px 8px;
+        outline: none;
+        width: 70%;
+    }
+
+    #form-container .sub-btn~p {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    #form-container .sub-btn~p a {
+        font-size: 13px;
+    }
+}
+/* Login page End */
