@@ -1,0 +1,106 @@
+{
+    "user": [
+        {
+            "id": 1, "name": "admin","password":"admin", "mail":"example@gmail.com", "usrName":"admin",
+            "transactions":[
+                {"date": "01-01-2021", "type":"Payment from", "name": "Harshdeep Gill", "gross":250.00, "fee":25.00,"net":225.00,"userCurrency":"INR","convertedCurrency":"USD"},
+                {
+                    "date": "02-01-2021",
+                    "type": "Transfer to",
+                    "name": "John Doe",
+                    "gross": 100.00,
+                    "fee": 10.00,
+                    "net": 90.00,
+                    "userCurrency": "USD",
+                    "convertedCurrency": "EUR"
+                  },
+                  {
+                    "date": "03-01-2021",
+                    "type": "Payment from",
+                    "name": "Alice Smith",
+                    "gross": 500.00,
+                    "fee": 50.00,
+                    "net": 450.00,
+                    "userCurrency": "AUD",
+                    "convertedCurrency": "CAD"
+                  },
+                  {
+                    "date": "04-01-2021",
+                    "type": "Transfer to",
+                    "name": "Bob Johnson",
+                    "gross": 300.00,
+                    "fee": 30.00,
+                    "net": 270.00,
+                    "userCurrency": "CAD",
+                    "convertedCurrency": "EUR"
+                  },
+                  {
+                    "date": "05-01-2021",
+                    "type": "Payment from",
+                    "name": "Sarah Lee",
+                    "gross": 150.00,
+                    "fee": 15.00,
+                    "net": 135.00,
+                    "userCurrency": "USD",
+                    "convertedCurrency": "HKD"
+                  },
+                  {
+                    "date": "06-01-2021",
+                    "type": "Transfer to",
+                    "name": "Emma Chen",
+                    "gross": 200.00,
+                    "fee": 20.00,
+                    "net": 180.00,
+                    "userCurrency": "EUR",
+                    "convertedCurrency": "EGP"
+                  },
+                  {
+                    "date": "07-01-2021",
+                    "type": "Payment from",
+                    "name": "James Brown",
+                    "gross": 400.00,
+                    "fee": 40.00,
+                    "net": 360.00,
+                    "userCurrency": "EGP",
+                    "convertedCurrency": "NZD"
+                  },
+                  {
+                    "date": "08-01-2021",
+                    "type": "Transfer to",
+                    "name": "Linda Wang",
+                    "gross": 250.00,
+                    "fee": 25.00,
+                    "net": 225.00,
+                    "userCurrency": "NZD",
+                    "convertedCurrency": "PHP"
+                  },
+                  {
+                    "date": "09-01-2021",
+                    "type": "Payment from",
+                    "name": "Michael Kim",
+                    "gross": 180.00,
+                    "fee": 18.00,
+                    "net": 162.00,
+                    "userCurrency": "INR",
+                    "convertedCurrency": "CNY"
+                  },
+                  {
+                    "date": "10-01-2021",
+                    "type": "Transfer to",
+                    "name": "Sophia Liu",
+                    "gross": 300.00,
+                    "fee": 30.00,
+                    "net": 270.00,
+                    "userCurrency": "CAD",
+                    "convertedCurrency": "USD"
+                  }
+            ]
+        }
+    ]
+}
+
+
+
+    
+  
+  

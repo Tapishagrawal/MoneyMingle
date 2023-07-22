@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Tapishagrawal/near-steel-1499#readme",
   "dependencies": {
-    "json-server": "^0.17.3"
-  }
+    "json": "^11.0.0",
+    "json-server": "^0.17.3",
+    "server": "^1.0.38"
+  },
+  "keywords": []
 }

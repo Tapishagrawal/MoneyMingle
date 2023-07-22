@@ -1,4 +1,96 @@
 {
+    "users":[
+        {
+            "id":1,
+            "name":"Shivam",
+            "usreId":"shivam123",
+            "email":"shivammaurya011@gmail.com",
+            "password":"Shivam@123",
+            "balance":100,
+            "activity":[
+                {
+                    "date":"28-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":1000
+                },
+                {
+                    "date":"28-may-2023",
+                    "Type":"Dabit",
+                    "source":"Wallet",
+                    "status":"Completed",
+                    "amount":100
+                },
+                {
+                    "date":"29-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":1000
+                },
+                {
+                    "date":"30-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Pending",
+                    "amount":5000
+                },
+                {
+                    "date":"30-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":700
+                }
+            ]
+        },
+        {
+            "id":1,
+            "name":"Tapish",
+            "usreId":"tapish",
+            "email":"tapish123@gmail.com",
+            "password":"Tapish@123",
+            "balance":100,
+            "activity":[
+                {
+                    "date":"28-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":1000
+                },
+                {
+                    "date":"28-may-2023",
+                    "Type":"Dabit",
+                    "source":"Wallet",
+                    "status":"Completed",
+                    "amount":100
+                },
+                {
+                    "date":"29-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":1000
+                },
+                {
+                    "date":"30-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Pending",
+                    "amount":5000
+                },
+                {
+                    "date":"30-may-2023",
+                    "Type":"Cradit",
+                    "source":"Bank Account",
+                    "status":"Completed",
+                    "amount":700
+                }
+            ]
+        }
+    ],
     "country": [
         {
             "image": "https://www.countries-ofthe-world.com/flags-normal/flag-of-Afghanistan.png",
