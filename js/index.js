@@ -115,7 +115,7 @@ feedBackFormCloseBtn.addEventListener("click", () => {
 
 
 
-// Login Pop-On Code Start=========
+// =========================================Login Pop-On Code Start============================
 
 // hide show password function Start
 const pass = document.querySelector("#password")
@@ -138,12 +138,15 @@ hideEye.forEach((i) => {
 })
 // hide show password function End
 
-// form Data start
+
+
+// ==========form Data start============
 let statusBtns = document.querySelector('.status-btns a')
 let formLocalData = JSON.parse(localStorage.getItem("form-data")) || []
 let LogInform = document.querySelector(".form-container")
 let loginPage = document.querySelector('.login-page');
 let loginCloseBtn = document.querySelector('.login-page .fa-x');
+
 
 statusBtns.addEventListener('click', (e) => {
     e.preventDefault();
@@ -154,36 +157,82 @@ loginCloseBtn.addEventListener('click', () => {
     LogInform.classList.remove('active');
     loginPage.classList.remove('active');
 })
-LogInform.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let username = LogInform.userName.value;
-    let password = LogInform.password.value;
-    let isLoggedIn = false;
 
-    for (let i = 0; i < formLocalData.length; i++) {
-        if (username === formLocalData[i].useId) {
-            if (password === formLocalData[i].pass) {
-                isLoggedIn = true;
-                break;
-            } else {
-                swal("Wrong password!", "", "error");
-                return;
-            }
-        }
+
+async function LoginFetchData(){
+    try{
+        let res = await fetch(`https://nearsteeluserdata.onrender.com/user`);
+        let data = await res.json();
+        LogInform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            LoginUser(data)
+        });
     }
+    catch(err){
+        console.log("Login Form Error: " + err);
+    }
+}
+LoginFetchData()
 
+function LoginUser(data){
+    let isLoggedIn = false;
+    data.forEach(user =>{
+        if(user.usrName === LogInform.userName.value){
+            if(user.password ===LogInform.password.value){
+                isLoggedIn = true;
+            }
+            else{
+                swal("Wrong password!", "", "error");
+            }
+        }else{
+            swal("Wrong User Name!", "", "error");
+        }
+    });
     if (isLoggedIn) {
-        swal("Login successful!", "Welcome to TrepTrekker", "success");
+        swal("Login successful!", "Welcome to MonneyMingle ;)");
         setTimeout(() => {
-            window.location.href = "index.html";
-
-        }, 500)
+            window.location.href = "user.html";
+        }, 1000);
         localStorage.setItem("Islogin", "true")
-    } else {
+    } 
+    else {
         swal("Invalid username!", "", "error");
     }
-});
-// form Data End
+    
+}
+
+
+
+
+// LogInform.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     let username = LogInform.userName.value;
+//     let password = LogInform.password.value;
+//     let isLoggedIn = false;
+
+//     for (let i = 0; i < formLocalData.length; i++) {
+//         if (username === formLocalData[i].useId) {
+//             if (password === formLocalData[i].pass) {
+//                 isLoggedIn = true;
+//                 break;
+//             } else {
+//                 swal("Wrong password!", "", "error");
+//                 return;
+//             }
+//         }
+//     }
+
+//     if (isLoggedIn) {
+//         swal("Login successful!", "Welcome to MonneyMingle", "success");
+//         setTimeout(() => {
+//             window.location.href = "user.html";
+//         }, 1000)
+//         localStorage.setItem("Islogin", "true")
+//     } else {
+//         swal("Invalid username!", "", "error");
+//     }
+// });
+// =========form Data End======
 
 const button = document.querySelector(".button");
 button.addEventListener("click", (e) => {
@@ -194,5 +243,5 @@ button.addEventListener("click", (e) => {
     }, 600);
 });
 
-// Login Pop-On Code End=========
+// ==========================================Login Pop-On Code End=========
 

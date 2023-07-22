@@ -28,10 +28,10 @@ form.addEventListener("submit",(e)=>{
     e.preventDefault();
     let formData = {
         name: form['res-name'].value,
-        email: form['res-email'].value,
-        useId: form['res-userID'].value,
-        pass: form['res-pass'].value,
-        comPass: form['res-conFormPass'].value
+        mail: form['res-email'].value,
+        usrName: form['res-userID'].value,
+        password: form['res-pass'].value,
+        comnformPassword: form['res-conFormPass'].value
     }
     if(formData.pass===formData.comPass){
         formLocalData.push(formData);
