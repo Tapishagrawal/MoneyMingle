@@ -200,38 +200,6 @@ function LoginUser(data){
     }
     
 }
-
-
-
-
-// LogInform.addEventListener("submit", function (e) {
-//     e.preventDefault();
-//     let username = LogInform.userName.value;
-//     let password = LogInform.password.value;
-//     let isLoggedIn = false;
-
-//     for (let i = 0; i < formLocalData.length; i++) {
-//         if (username === formLocalData[i].useId) {
-//             if (password === formLocalData[i].pass) {
-//                 isLoggedIn = true;
-//                 break;
-//             } else {
-//                 swal("Wrong password!", "", "error");
-//                 return;
-//             }
-//         }
-//     }
-
-//     if (isLoggedIn) {
-//         swal("Login successful!", "Welcome to MonneyMingle", "success");
-//         setTimeout(() => {
-//             window.location.href = "user.html";
-//         }, 1000)
-//         localStorage.setItem("Islogin", "true")
-//     } else {
-//         swal("Invalid username!", "", "error");
-//     }
-// });
 // =========form Data End======
 
 const button = document.querySelector(".button");
