@@ -25,6 +25,9 @@ function con() {fetch("https://restcountries.com/v2/all")
     console.log("Failed to fetch country data.", error);
   });
 
+
+
+  
 }
 con();
 
