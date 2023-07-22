@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Money</title>
+
+    <link rel="stylesheet" type="text/css" href="css/convert_money.css">
+
+</head>
+<body>
+  <div class="con_container">
+
+    <h1>Convert Money</h1>
+    <div class="converter">
+     <label>Convert From:</label>
+     <div class="addha">
+      <img id="flag1" class="flag-icon" src="https://flagcdn.com/w320/in.png">
+      <select id="fromMoney">
+        <option value="INR " data-image="https://flagcdn.com/w320/in.png">India INR</option>
+        <!-- other Money options -->
+      </select>
+      <input type="number" id="amount" placeholder="Enter Amount">
+     </div>
+
+      <label>Convert To:</label>
+      <div class="addha">
+
+        <img id="flag2" class="flag-icon" src="https://flagcdn.com/w320/us.png">
+        <select id="toMoney">
+          <option value="USD" data-image="https://flagcdn.com/w320/us.png">United States of America USD</option>
+
+          <!-- other Money options  -->
+        </select>
+        <input  id="result" placeholder="Converted Amount">
+      </div>
+    
+      <button onclick="convertMoney()">Convert</button>
+    </div>
+   <div id="result2"> </div> 
+  </div>
+
+
+  <script src="js/convert_money.js"></script>
+
+</body>
+</html>
+   
+
