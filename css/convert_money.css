@@ -70,7 +70,7 @@ html {
 a {
     text-decoration: none;
 }
-
+/* Navbar Start */
 header {
     display: flex;
     justify-content: space-around;
@@ -170,6 +170,9 @@ header {
   color: var(--light-lighter-gray);
   margin-left: 2px;
 }
+/* Navbar End */
+
+
 /* converter section start */
 .con_container{
   border: 1px solid var(--main-white-color);
@@ -239,7 +242,7 @@ header {
   outline: none;
 }
 .entering-section button{
-  background-color: var(--green-hover-gray);
+  background-color: var(--green-gray);
   border: none;
   padding: 12px 0;
   width: 150px;
@@ -248,6 +251,10 @@ header {
   font-size: 16px;
   color: var(--headings-color-light);
   font-weight: 500;
+}
+.entering-section button:hover{
+  background-color: var(--green-hover-gray);
+  cursor: pointer;
 }
 #result2{
   text-align: center;
