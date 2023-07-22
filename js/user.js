@@ -1,37 +1,8 @@
 // console.log("abc")
-
-let data = [
-    {
-        date: "28-07-23",
-        type: "Recieved",
-        gross: 28.78,
-        net: 25.88
-    },
-    {
-        date: "29-07-23",
-        type: "Sent",
-        gross: 45.44,
-        net: 42.55
-    },
-    {
-        date: "02-08-23",
-        type: "Recieved",
-        gross: 96.89,
-        net: 90.33
-    },
-    {
-        date: "28-07-23",
-        type: "Pending",
-        gross: 28.78,
-        net: 25.88
-    }
-]
-
+const url = "https://nearsteeluserdata.onrender.com/user";
 let tableBod = document.getElementById("table");
 
-data.forEach(el =>{
-    tableBod.append(createTrans(el));
-})
+fetcher(url)
 
 function createTrans(data){
     let trow = document.createElement("tr");
@@ -44,9 +15,25 @@ function createTrans(data){
     td1.innerText = data.date;
     td2.innerText = data.type;
     td3.innerText = data.gross;
-    td3.innerText = data.net;
+    td4.innerText = data.net;
 
     trow.append(td1, td2, td3, td4);
 
     return trow;
+}
+
+async function fetcher(url){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+
+        console.log(data);
+        for(let i = data[0].transactions.length-1;i>data[0].transactions.length-6;i--){
+            tableBod.append(createTrans(data[0].transactions[i]));
+        }
+
+    }
+    catch(err){
+        console.log(err);
+    }
 }
