@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#res-form {
+    width: 400px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+}
+
+#res-form>div:not(:nth-child(7)) {
+    margin-block: 20px;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+#res-form>div:nth-child(7) {
+    text-align: center;
+}
+
+#res-form>div i {
+    padding-left: 5px;
+    color: #385148;
+    font-style: normal;
+}
+
+#res-form>div:nth-child(4) i {
+    font-weight: 800;
+}
+
+#res-form>div input {
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+#res-btn {
+    border: none;
+    background-color: #41866d;
+    color: white;
+    font-size: 15px;
+    width: 115px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+#res-btn:hover {
+    background-color: #2b5f4c;
+    cursor: pointer;
+}
+
+#res-form>h1 {
+    text-align: center;
+    color: #232f2a;
+    position: relative;
+}
+
+#res-form>h1::before {
+    position: absolute;
+    content: "";
+    width: 30%;
+    height: 0.5px;
+    background-color: #232f2a;
+    bottom: 0;
+
+}
+
+#res-form>div:nth-child(8) {
+    text-align: center;
+    border: none;
+}
+
+#res-form>div:nth-child(5)~p {
+    font-size: 15px;
+    text-align: center;
+    color: #818181;
+}
+
+#res-form>div:nth-child(5)~p a {
+    text-decoration: none;
+    color: rgb(0, 122, 187);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#res-form>div:nth-child(5)~p a:hover {
+    color: rgba(0, 135, 207, 0.642);
+    ;
+}
+
+.img-logo a {
+    text-align: center;
+    display: block;
+    color: #232f2a;
+    text-decoration: none;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#res-conFormPass,
+#res-Pass {
+    width: 80%;
+}
+
+.fa-eye:hover {
+    color: rgb(162, 190, 181) !important;
+    cursor: pointer;
+}
+
+.fa-eye-slash:hover {
+    color: rgb(162, 190, 181) !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 426px) {
+    #res-form {
+        width: 324px;
+    }
+}
+@media screen and (max-width: 376px) {
+    #res-form {
+        width: 280px;
+    }
+    #res-form>div input {
+        width: 72%;
+    }
+    #res-form>div:nth-child(5)~p {
+        font-size: 11px;
+        font-weight: 500;
+    }
+    #res-form>div:nth-child(5)~p a {
+        text-decoration: none;
+        color: rgb(0, 122, 187);
+        font-weight: 500;
+        font-size: 13px;
+    }
+}

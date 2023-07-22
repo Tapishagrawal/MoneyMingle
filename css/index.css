@@ -24,7 +24,8 @@
 .swal-modal {
     background: var(--sub-back-color);
 }
-.swal-text{
+.swal-text,
+.swal-title:not(:last-child) {
     color: var(--light-lighter-gray);
     font-weight: 500;
     font-size: 18px;
@@ -902,8 +903,8 @@ input[type="radio"] {
     color: var(--green-gray);
 }
 .login-page.active{
-    background: rgba(0, 0, 0, 0.537);
-    backdrop-filter: blur(10px);
+    background: rgba(95, 95, 95, 0.247);
+    backdrop-filter: blur(20px);
     position: fixed;
     top: 0%;
     width: 100%;
@@ -919,6 +920,7 @@ input[type="radio"] {
     width: 150px;
     border-radius: 50%;
     border: 1px solid #969696;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .user-img-cont>h1 {
