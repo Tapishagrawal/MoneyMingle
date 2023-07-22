@@ -33,7 +33,7 @@ let  amount = document.getElementById("amount").value;
 function addcont(countries){
 
 
-    countries.forEach( ({currencies,flags,name}) => {
+    countries.forEach( ({currencies,name}) => {
      
       const option = document.createElement("option");
 
@@ -41,19 +41,7 @@ function addcont(countries){
       option.value = currencies[k].code;
       option.nodeValue=name
     }
-  
-    var imag = document.createElement("span");
-    for(let f in flags){
-      if(f==='png'){
-    
-        imag.innerHTML=(flags[f]);
-        option.setAttribute("data-image",flags[f]);
-       
-        imag.style.width = "40px"; 
-        //console.log(imag.innerHTML);
-      }
-    }
-    //  option.append(name,option.value);
+   
     option.innerHTML=`${name} ${option.value}`;
    fromCurrencySelect.append(option.cloneNode(true));
     toCurrencySelect.append(option);
@@ -70,7 +58,7 @@ function addcont(countries){
 
      COUNTRY.filter((el)=>{
       // console.log(this.innerHTML.);
-      if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
+      if(this.innerText.toUpperCase()===(el.name.toUpperCase())){
        // console.log(this.options[this.selectedIndex].text,this.el[this.selectedIndex]);
     for(let f in el.flags){
       if(f==='png'){
@@ -88,7 +76,7 @@ function addcont(countries){
 
    toCurrencySelect.onchange= function(){
      COUNTRY.filter((el)=>{
-      if(this.innerText.toUpperCase().includes(el.name.toUpperCase())===true){
+      if(this.innerText.toUpperCase()===(el.name.toUpperCase())){
     for(let f in el.flags){
       if(f==='png'){
         //console.log(el)
@@ -118,7 +106,7 @@ function convertMoney() {
         //console.log(data);
 
         const rates =(data.rates);
-       // console.log(data.rates);
+        console.log(data.rates);
        // console.log(data.rates[fromMoney]);
        console.log(typeof(amount))
         if (fromMoney!==toMoney) {
@@ -132,16 +120,12 @@ function convertMoney() {
         console.log(res);
         document.getElementById("result").value =`${res}`;
 
-        if(amount===res){
-          temp1=1,temp2=1;
-        }
-       else{
         let  y=(1/rates[fromMoney]);
         temp1= Number.parseFloat(y).toFixed(4);
 
-        let  z=(y*rates[fromMoney]);
+        let  z=(y*rates[toMoney]);
         temp2= Number.parseFloat(z).toFixed(4);
-       }
+       
         document.getElementById("result2").textContent = `1 ${fromMoney} = ${temp1} ${toMoney}  And
         1 ${toMoney} = ${temp2} ${fromMoney}`;
 
