@@ -58,42 +58,57 @@ var swiper = new Swiper(".mySwiper", {
 });
 // Testimonial End
 
+
 // feedback form Code start
-let feedback = JSON.parse(localStorage.getItem("COUNTRY")) || [];
+let userAuthToken = localStorage.getItem("localAccessToken") || null;
+let feedback_data = JSON.parse(localStorage.getItem("feedback_d")) || [];
+const form = document.getElementById('feedbackForm');
+
+
+let url = 'https://mm-money-mingle.onrender.com/feedback_details/';
+let i=0;
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+
+    i++;
+    const formData = new FormData(form);
+    let feedback = {
+        "cust_id": i,
+    };
+    for(let [key, value] of formData) {
+        feedback[key] = value;
+    }
+    feedback_data.push(feedback);
+    localStorage.setItem("feedback_d", JSON.stringify(feedback_data));
+    form.reset();
+    swal("Thank You For Giving Feedback!")
+});
+
+
+
 let feedBackFormBtn = document.querySelector('.feedback-form-icon');
 let feedBackForm = document.querySelector('.feedback-form');
 let feedBackFormCloseBtn = document.querySelector('#Feed_container > i');
 let formSubmitCloseBtn = document.querySelector('.form-btn');
-const form = document.getElementById('feedbackForm');
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
 
-    const formData = new FormData(form);
-    const feedback = {};
-
-    for (let [key, value] of formData) {
-        feedback[key] = value;
-    }
-    console.log(feedback);
-    localStorage.setItem("feedback", JSON.stringify(feedback));
-    swal("Thank You For Giving Feedback!")
-});
-
-feedBackFormBtn.addEventListener("click",()=>{
+feedBackFormBtn.addEventListener("click", () => {
     feedBackForm.classList.add('active');
     feedBackFormBtn.style.display = "none";
 
 })
-feedBackFormCloseBtn.addEventListener("click",()=>{
+feedBackFormCloseBtn.addEventListener("click", () => {
     feedBackForm.classList.remove('active');
     feedBackFormBtn.style.display = "initial";
 
 })
-formSubmitCloseBtn.addEventListener("click",()=>{
-    feedBackForm.classList.remove('active');
-    feedBackFormBtn.style.display = "initial";
+// formSubmitCloseBtn.addEventListener("click",()=>{
+//     // feedBackForm.classList.remove('active');
+//     // feedBackFormBtn.style.display = "initial";
 
-})
+// })
+
+
 // feedback form Code End
 
 
@@ -130,12 +145,12 @@ let LogInform = document.querySelector(".form-container")
 let loginPage = document.querySelector('.login-page');
 let loginCloseBtn = document.querySelector('.login-page .fa-x');
 
-statusBtns.addEventListener('click',(e)=>{
+statusBtns.addEventListener('click', (e) => {
     e.preventDefault();
     LogInform.classList.add('active');
     loginPage.classList.add('active');
 })
-loginCloseBtn.addEventListener('click',()=>{
+loginCloseBtn.addEventListener('click', () => {
     LogInform.classList.remove('active');
     loginPage.classList.remove('active');
 })
@@ -152,18 +167,18 @@ LogInform.addEventListener("submit", function (e) {
                 break;
             } else {
                 swal("Wrong password!", "", "error");
-                return; 
+                return;
             }
         }
     }
 
     if (isLoggedIn) {
-        swal("Login successful!", "Welcome to TrepTrekker","success");
-        setTimeout(()=>{
+        swal("Login successful!", "Welcome to TrepTrekker", "success");
+        setTimeout(() => {
             window.location.href = "index.html";
 
-        },500)
-        localStorage.setItem("Islogin","true")
+        }, 500)
+        localStorage.setItem("Islogin", "true")
     } else {
         swal("Invalid username!", "", "error");
     }
@@ -171,13 +186,13 @@ LogInform.addEventListener("submit", function (e) {
 // form Data End
 
 const button = document.querySelector(".button");
-    button.addEventListener("click", (e) => {
-        e.preventDefault;
-        button.classList.add("animate");
-        setTimeout(() => {
-            button.classList.remove("animate");
-        }, 600);
-    });
+button.addEventListener("click", (e) => {
+    e.preventDefault;
+    button.classList.add("animate");
+    setTimeout(() => {
+        button.classList.remove("animate");
+    }, 600);
+});
 
 // Login Pop-On Code End=========
 
