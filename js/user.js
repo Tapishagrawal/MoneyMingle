@@ -1,11 +1,22 @@
 // console.log("abc")
 const url = "https://nearsteeluserdata.onrender.com/user";
 let tableBod = document.getElementById("table");
+let transData;
+let currData;
+transPrint(url+ "/1");
 
-fetcher(url)
+setTimeout(()=>{
+    for(let i = transData.transactions.length-1;i>transData.transactions.length-6;i--){
+        tableBod.append(createTrans(transData.transactions[i]));
+    }
+},1000)
+
+
+
 
 function createTrans(data){
     let trow = document.createElement("tr");
+
 
     let td1 = document.createElement("td");
     let td2 = document.createElement("td");
@@ -22,18 +33,44 @@ function createTrans(data){
     return trow;
 }
 
-async function fetcher(url){
+async function transPrint(url){
     try{
         let res = await fetch(url);
         let data = await res.json();
-
         console.log(data);
-        for(let i = data[0].transactions.length-1;i>data[0].transactions.length-6;i--){
-            tableBod.append(createTrans(data[0].transactions[i]));
-        }
-
+        transData = data;
     }
     catch(err){
         console.log(err);
     }
 }
+async function balCal(url){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        let balance = 1000;
+        // data.transactions.forEach(el => {
+        //     if(el.type == "Payment from"){
+                
+        //     }
+        // });
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+async function currConv(url){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        currData = data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+

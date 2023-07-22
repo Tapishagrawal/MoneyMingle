@@ -1,0 +1,74 @@
+{
+    "country_data":[
+        {
+            "id": 240,
+            "name": "United States of America",
+            "image": "https://flagcdn.com/w320/us.png",
+            "currency_code": "USD",
+            "currency_rate": 1
+          },
+          {
+            "id": 105,
+            "name": "India",
+            "image": "https://flagcdn.com/w320/in.png",
+            "currency_code": "INR",
+            "currency_rate": 82.02
+          },
+          {
+            "id": 14,
+            "name": "Australia",
+            "image": "https://flagcdn.com/w320/au.png",
+            "currency_code": "AUD",
+            "currency_rate": 1.48
+          },
+          {
+            "id": 43,
+            "name": "Canada",
+            "image": "https://flagcdn.com/w320/ca.png",
+            "currency_code": "CAD",
+            "currency_rate": 1.32
+          },
+          {
+            "id": 85,
+            "name": "Germany",
+            "image": "https://flagcdn.com/w320/de.png",
+            "currency_code": "EUR",
+            "currency_rate": 0.899
+          },
+          {
+            "id": 49,
+            "name": "China",
+            "image": "https://flagcdn.com/w320/cn.png",
+            "currency_code": "CNY",
+            "currency_rate": 7.18
+          },
+          {
+            "id": 68,
+            "name": "Egypt",
+            "image": "https://flagcdn.com/w320/eg.png",
+            "currency_code": "EGP",
+            "currency_rate": 30.85
+          },
+          {
+            "id": 103,
+            "name": "Hong Kong",
+            "image": "https://flagcdn.com/w320/hk.png",
+            "currency_code": "HKD",
+            "currency_rate": 7.82
+          },
+          {
+            "id": 160,
+            "name": "New Zealand",
+            "image": "https://flagcdn.com/w320/nz.png",
+            "currency_code": "NZD",
+            "currency_rate": 1.62
+          },
+          {
+            "id": 177,
+            "name": "Philippines",
+            "image": "https://flagcdn.com/w320/ph.png",
+            "currency_code": "PHP",
+            "currency_rate": 54.72
+          }
+    ]
+}
