@@ -1,49 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert Money</title>
 
-    <link rel="stylesheet" type="text/css" href="css/convert_money.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Money</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="css/convert_money.css">
 
 </head>
+
 <body>
-  <div class="con_container">
+    <!-- header part start -->
+    <header>
+      <div class="logo"><img src="images/logo.png" alt=""></div>
+      <nav class="navigation-links">
+          <a href="#hero-container" class="active">Home</a>
+          <a href="#about">Currency Convert</a>
+          <a href="#testimonial-container">Activity</a>
+          <a href="#faq-Container">Pay & Get</a>
+      </nav>
+      <nav class="status-btns">
+          <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg" alt="">
+          <div class="user-details">
+            <div>
+              <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg" alt="">
+              <p class="userName">Tapish</p>
+            </div>
+            <a href="#">Update Profile</a>
+            <a href="#">Log out</a>
+          </div>
+      </nav>
+    </header>
+    <!-- header part End -->
 
-    <h1>Convert Money</h1>
-    <div class="converter">
-     <label>Convert From:</label>
-     <div class="addha">
-      <img id="flag1" class="flag-icon" src="https://flagcdn.com/w320/in.png">
-      <select id="fromMoney">
-        <option value="INR " data-image="https://flagcdn.com/w320/in.png">India INR</option>
-        <!-- other Money options -->
-      </select>
-      <input type="number" id="amount" placeholder="Enter Amount">
-     </div>
 
-      <label>Convert To:</label>
-      <div class="addha">
 
-        <img id="flag2" class="flag-icon" src="https://flagcdn.com/w320/us.png">
-        <select id="toMoney">
-          <option value="USD" data-image="https://flagcdn.com/w320/us.png">United States of America USD</option>
-
-          <!-- other Money options  -->
-        </select>
-        <input  id="result" placeholder="Converted Amount">
+    <!-- converter section start -->
+    <div class="con_container">
+      <h1>Convert Money</h1>
+      <div class="converter">
+        <div class="addha">
+          <h3>Convert From:</h3>
+          <div class='convertor-select-section'>
+            <img id="flag1" class="flag-icon" src="https://flagcdn.com/w320/us.png">
+            <select id="fromMoney">
+              <option value="INR " data-image="https://flagcdn.com/w320/us.png">India INR</option>
+              <!-- other Money options -->
+            </select>
+          </div>
+        </div>
+        <div class="icon-awwor">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </div>
+        <div class="addha">
+          <h3>Convert To:</h3>
+          <div class="convertor-select-section">
+            <img id="flag2" class="flag-icon" src="https://flagcdn.com/w320/in.png">
+            <select id="toMoney">
+              <option value="USD" data-image="https://flagcdn.com/w320/in.png">United States of America USD</option>
+              <!-- other Money options  -->
+            </select>
+          </div>
+        </div>
+        <div class="icon-awwor">
+          <i class="fa-solid fa-equals"></i>
+        </div>
+        <div class="convert-money-display">
+          <h3>Converted Amount</h3>
+          <input id="result" placeholder="Converted Amount" disabled>
+        </div>
+        
       </div>
-    
-      <button onclick="convertMoney()">Convert</button>
+      <div class="entering-section">
+        <input type="number" id="amount" placeholder="Enter Amount">
+        <button onclick="convertMoney()">Convert</button>
+      </div>
+      <div id="result2"></div>
     </div>
-   <div id="result2"> </div> 
-  </div>
+    <!-- converter section End -->
 
 
-  <script src="js/convert_money.js"></script>
 
+  <!-- Footer Start -->
+    <footer>
+      <div class="footer-container">
+          <div class="footer-row">
+              <div class="footer-col">
+                  <h4>Transfer Money</h4>
+                  <ul>
+                      <li><a href="#">Register / Login</a></li>
+                      <li><a href="#">US Money Transfer</a></li>
+                      <li><a href="#">UK Money Transfer</a></li>
+                      <li><a href="#">Europe Money Transfer</a></li>
+                      <li><a href="#">Canada Money Transfer</a></li>
+                      <li><a href="#">Australia Money Transfer</a></li>
+                      <li><a href="#">New Zealand Money Transfer</a></li>
+                      <li><a href="#">How does it work?</a></li>
+                      <li><a href="#">Money Transfer Advice</a></li>
+                      <li><a href="#">Fraud Prevention</a></li>
+                      <li><a href="#">Trustpilot Reviews</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Apps</h4>
+                  <ul>
+                      <li><a href="#">Money Transfer & Currency Apps</a></li>
+                      <li><a href="#">Android Money Transfer App</a></li>
+                      <li><a href="#">iOS Money Transfer App</a></li>
+                      <li><a href="#">Salesforce App</a></li>
+                      <li><a href="#">Alexa App</a></li>
+                      <li><a href="#">Slack App</a></li>
+                      <li><a href="#">Google Assistant App</a></li>
+                      <li><a href="#">Facebook App</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Tools & Resources</h4>
+                  <ul>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Currency Converter</a></li>
+                      <li><a href="#">Currency Charts</a></li>
+                      <li><a href="#">Currency Encyclopedia</a></li>
+                      <li><a href="#">Historical Currency Rates</a></li>
+                      <li><a href="#">Travel Expenses Calculator</a></li>
+                      <li><a href="#">IBAN Calculator</a></li>
+                      <li><a href="#">Currency Newsletters</a></li>
+                      <li><a href="#">Glossary</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>XE Business</h4>
+                  <ul>
+                      <li><a href="#">Register / Login</a></li>
+                      <li><a href="#">US Business Money Transfer</a></li>
+                      <li><a href="#">UK Business Money Transfer</a></li>
+                      <li><a href="#">Europe Business Money Transfer</a></li>
+                      <li><a href="#">Canada Business Money Transfer</a></li>
+                      <li><a href="#">Australia Business Money Transfer</a></li>
+                      <li><a href="#">New Zealand Business Money Transfer</a></li>
+                      <li><a href="#">Malaysia Business Money Transfer</a></li>
+                      <li><a href="#">Mass Payments</a></li>
+                      <li><a href="#">Products & Services</a></li>
+                      <li><a href="#">Partnerships</a></li>
+                      <li><a href="#">Why XE?</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </footer>
+<!-- Footer End -->
+  
 </body>
-</html>
-   
+<script src="js/convert_money.js"></script>
 
+</html>
