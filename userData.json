@@ -1,0 +1,10 @@
+{
+    "user": [
+        {
+            "id": 1, "name": "admin","password":"admin", "mail":"example@gmail.com", "usrName":"admin",
+            "transactions":[
+                {"date": "01-01-2021", "type":"Payment from", "name": "Harshdeep Gill", "gross":250.00, "fee":25.00,"net":225.00,"userCurrency":"INR","convertedCurrency":"USD"}
+            ]
+        }
+    ]
+}
