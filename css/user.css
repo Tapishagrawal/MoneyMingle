@@ -83,3 +83,16 @@
     display: flex;
     justify-content: space-between
 }
+
+#right .convert-flag{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#flag-img{
+    width: 30px;
+    /* border: 2px solid yellow; */
+}
+#flag-img img{
+    width: 100%;
+}

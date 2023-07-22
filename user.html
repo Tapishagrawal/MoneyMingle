@@ -55,11 +55,11 @@
                 </div>
                 <div id="money-in">
                     <h3>Money In</h3>
-                    <div>$2000.00</div>
+                    <div id="moneyIn">$2000.00</div>
                 </div>
                 <div id="money-out">
-                    <h3>$1000.00</h3>
-                    <div>$1000.00</div>
+                    <h3>Money Out</h3>
+                    <div id="moneyOut">$1000.00</div>
                 </div>
             </div>
         </div>
@@ -68,14 +68,17 @@
         <div id="right">
             <div>
                 <div>
-                    <h4>Convert</h4>
-                    <div><input type="number"><select name="" id=""></select></div>
-                    <div></div>
-                    <div><input type="number"><select name="" id=""></select></div>
+                    <h4>Convert Balance</h4>
+                    <div class="convert-flag">
+                        <div id="flag-img"><img src="https://flagcdn.com/w320/in.png" alt="not availabe"></div>
+                        <div><select name="" id="converter">
+                            <option value=""><span>Select</span></option>
+                        </select></div>
+                    </div>
                 </div>
                 <div id="show-convert">
                     <h3>After Conversion</h3>
-                    <div>$2000.00</div>
+                    <div id="after-conversion">$2000.00</div>
                 </div>
             </div>
             <div>
@@ -89,10 +92,11 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Date</th>
                                 <th>Action</th>
+                                <th>Name</th>
                                 <th>Gross</th>
                                 <th>Net</th>
+                                <th>Currency</th>
                             </tr>
                         </thead>
                         <tbody id="table">
