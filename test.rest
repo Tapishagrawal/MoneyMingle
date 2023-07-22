@@ -1,0 +1,10 @@
+###
+GET https://nearsteeluserdata.onrender.com/user
+
+###
+PATCH https://nearsteeluserdata.onrender.com/user/1
+Content-Type: application/json
+
+{
+    "balance": 1000
+}
