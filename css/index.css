@@ -111,7 +111,6 @@ header a:hover {
 }
 
 .navigation-links {
-    width: 40%;
     display: flex;
     justify-content: space-between;
 }
@@ -272,6 +271,7 @@ header a:hover {
 .about-problem-container {
     background-color: var(--main-back-color);
     padding: var(--container-padding);
+    overflow: hidden;
 }
 
 .problem-container h1 {
@@ -301,7 +301,7 @@ header a:hover {
 
 .problem-card {
     width: 380px;
-    min-height: 250px;
+    min-height: 270px;
     background-color: var(--main-white-color);
     padding: 20px 20px;
     border-radius: 15px;
@@ -317,7 +317,7 @@ header a:hover {
     transform: translateY(-25px);
 }
 
-.problem-card::before {
+.problem-cards::before {
     position: absolute;
     content: "1";
     top: -50px;
@@ -328,15 +328,15 @@ header a:hover {
     padding: 2px 10px;
 }
 
-.problem-card:nth-child(2)::before {
+.problem-cards:nth-child(2)::before {
     content: '2';
 }
 
-.problem-card:nth-child(3)::before {
+.problem-cards:nth-child(3)::before {
     content: '3';
 }
 
-.problem-card:nth-child(4)::before {
+.problem-cards:nth-child(4)::before {
     content: '4';
 }
 
@@ -384,7 +384,7 @@ header a:hover {
 
 .solution-cont h1::before {
     position: absolute;
-    content: "Solution";
+    content: "The Solution";
     opacity: 0.1;
     font-size: 80px;
     top: -40px;
@@ -1181,3 +1181,204 @@ input[type="radio"] {
     }
 }
 /* Login page End */
+
+
+
+
+
+/* Meadia queary Start============================================== */
+
+/* for 1024 px screen start */
+@media screen and (max-width: 1025px) {
+    .problem-container h1::before {
+        left: 117px;
+        font-size: 61px;
+    }
+    #testimonial-container>h1::before {
+        top: -16px;
+        left: 230px;
+        font-size: 70px;
+    }
+    .faq-img img {
+        width: 300px;
+    }
+    .faq-section .tab label h3 {
+        width: 412px;
+    }
+}
+/* for 1024 px screen End */
+
+
+
+/* for 900 px screen start */
+
+@media screen and (max-width: 901px){
+    .logo {
+        width: 10%;
+    }
+    .status-btns {
+        width: 9%;
+    }
+    .sub-about h1::before {
+        font-size: 70px;
+        top: -10px;
+        left: -10px;
+    }
+    .sub-about h1 {
+        font-size: 53px;
+    }
+    .sub-about p {
+        font-size: 18px;
+    }
+    .problem-container h1::before {
+        left: 100px;
+        font-size: 50px;
+    }
+    .problem-container.container {
+        margin: 0 0px;
+    }
+    .problem-container h1{
+        font-size: 40px;
+    }
+    .problem-card {
+        width: 358px;
+    }
+    .problem-card p {
+        font-size: 14px;
+    }
+    .problem-card{
+        min-height: 223px;
+    }
+    .solution-cont h1 {
+        font-size: 50px;
+    }
+    .solution-cont h1::before {
+        font-size: 62px;
+        top: -11px;
+    }
+    .solution-cont>p {
+        font-size: 18px;
+    }
+    #testimonial-container>h1 {
+        font-size: 44px;
+    }
+    #testimonial-container>h1::before {
+        left: 250px;
+        font-size: 59px;
+    }
+    .faq-section .tab .content p {
+        font-size: 13px;
+    }
+    .faq-img img {
+        width: 350px;
+    }
+    .footer-col {
+        width: 50%;
+    }
+    .faq-section .tab label h2{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .faq-section .tab label h3 {
+        width: 75%;
+        font-size: 15px;
+    }
+}
+/* for 900 px screen End */
+
+
+/* for 768 px screen Start */
+@media screen and (max-width: 769px){
+    .status-btns{
+        display: flex;
+        align-items: center;
+    }
+    .status-btns .fa-bars{
+        color: var(--main-white-color);
+    }
+    .logo {
+        width: 62%;
+    }
+    .navigation-links {
+        display: none;
+    }
+    header a {
+        font-size: 16px;
+    }
+    .sub-about h1 {
+        font-size: 50px;
+    }
+    .sub-about h1::before {
+        font-size: 56px;
+        top: -5px;
+    }
+    .sub-about p {
+        font-size: 17px;
+    }
+    .problem-container h1 {
+        font-size: 35px;
+    }
+    .problem-container h1::before {
+        font-size: 44px;
+        left: 150px;
+    }
+    .problem-card {
+        width: 320px;
+    }
+    .problem-card h4 {
+        font-size: 14px;
+    }
+    .problem-card p {
+        font-size: 13px;
+    }
+    .problem-card {
+        padding: 20px 12px;
+    }
+    .solution-cont h1 {
+        font-size: 45px;
+    }
+    .solution-cont h1::before {
+        font-size: 54px;
+        top: -8px;
+    }
+    .solution-cont>p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    #testimonial-container>h1::before {
+        left: 212px;
+        font-size: 52px;
+        top: -4px;
+    }
+    .faq-section h1 {
+        font-size: 40px;
+    }
+    .faq-section h1::before {
+        font-size: 59px;
+        top: -17px;
+    }
+    .faq-section .tab {
+        padding: 0 8px 8px;
+    }
+    .faq-section .tab label {
+        justify-content: center;
+    }
+    .faq-section .tab label h3 {
+        font-size: 13px;
+        width: 72%;
+    }
+    .faq-img img {
+        width: 270px;
+    }
+    .testimonialBox {
+        padding: 29px;
+        padding-top: 56px;
+    }
+}
+/* for 768 px screen End */
+
+
+/* for 768 px screen End */
+/* for 768 px screen End */
+
+/* Meadia queary End============================================== */
