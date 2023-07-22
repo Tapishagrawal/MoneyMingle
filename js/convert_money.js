@@ -4,12 +4,15 @@ function con() {fetch("https://restcountries.com/v2/all")
   .then(response => response.json())
   .then(data => {
     const countries = data;
+      //console.log(data)
 
-    // Populate the "from" and "to" currency select options with country names and currency codes
+
+let j=1
     const fromCurrencySelect = document.getElementById("fromMoney");
     const toCurrencySelect = document.getElementById("toMoney");
 
     countries.forEach(({currencies,flags,name})=> {
+    
       const option = document.createElement("option");
       for(let k in currencies){
         option.value = currencies[k].code;
@@ -46,19 +49,19 @@ function convertMoney() {
     let fromMoney = document.getElementById("fromMoney").value;
    let toMoney = document.getElementById("toMoney").value;
   
-    const endpoint = `https://api.exchangerate-api.com/v4/latest/USD`; // USD is base Money
+    const endpoint = `https://api.exchangerate-api.com/v4/latest/USD`; 
   
       fetch(endpoint)
       .then(response => response.json())
       .then(data => {
         const rates = data.rates;
+        
        
         if (fromMoney !==toMoney) {
             let x=amount / rates[fromMoney];
           amount = Number.parseFloat(x).toFixed(2)
         }
-       // console.log(data.rates[toMoney]);
-        //amount = Math.round(amount * rates[toMoney] * 100) / 100;
+     
         let x=(amount * rates[toMoney] * 100) / 100;
         amount = Number.parseFloat(x).toFixed(2)
         console.log(amount);
@@ -83,3 +86,5 @@ function convertMoney() {
       });
   }
   
+
+
