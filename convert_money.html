@@ -17,10 +17,10 @@
      <div class="addha">
       <img id="flag1" class="flag-icon" src="https://flagcdn.com/w320/in.png">
       <select id="fromMoney">
-        <option value="INR " data-image="https://flagcdn.com/w320/in.png">India INR</option>
+        <option value="0">Select From ..</option>
         <!-- other Money options -->
       </select>
-      <input type="number" id="amount" placeholder="Enter Amount">
+      <input type="number" id="amount"  placeholder="Enter Amount">
      </div>
 
       <label>Convert To:</label>
@@ -28,11 +28,10 @@
 
         <img id="flag2" class="flag-icon" src="https://flagcdn.com/w320/us.png">
         <select id="toMoney">
-          <option value="USD" data-image="https://flagcdn.com/w320/us.png">United States of America USD</option>
-
+          <option value="0">Select To ..</option>
           <!-- other Money options  -->
         </select>
-        <input  id="result" placeholder="Converted Amount">
+        <input  id="result" type="number" >
       </div>
     
       <button onclick="convertMoney()">Convert</button>
