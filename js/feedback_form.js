@@ -32,7 +32,7 @@ i++;
   feedback_data.push(feedback);
   localStorage.setItem("feedback_d",JSON.stringify(feedback_data));
   form.reset();
- // alert("Thank You For Giving Feedback")
+  alert("Thank You For Giving Feedback")
 
 
 });
