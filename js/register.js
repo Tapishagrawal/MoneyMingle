@@ -32,10 +32,10 @@ async function userFecthData(){
     try{
         let res = await fetch(`https://nearsteeluserdata.onrender.com/user`)
         let data = await res.json();
-        // console.log(data);
+        console.log(data);
         form.addEventListener('submit',(e)=>{
             e.preventDefault();
-            userRegistration(data, data.length)
+            userRegistration(data, data.length,data.transactions)
         })
     }
     catch(e){
@@ -44,14 +44,15 @@ async function userFecthData(){
 }
 userFecthData()
 
-function userRegistration(data,noOfUser){
+function userRegistration(data,noOfUser,dummyTransaction){
     let formData = {
         id : ++noOfUser,
         name: form['res-name'].value,
         mail: form['res-email'].value,
         usrName: form['res-userID'].value,
         password: form['res-pass'].value,
-        comnformPassword: form['res-conFormPass'].value
+        comnformPassword: form['res-conFormPass'].value,
+        transactions:dummyTransaction
     }
     if(formData.password===formData.comnformPassword){
         formLocalData.push(formData);

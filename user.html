@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <div>
-                        <h4 id="balance">$1000.00</h4>
+                        <h4 id="balance">$0.00</h4>
                     </div>
                     <div>Available</div>
                 </div>
@@ -55,9 +55,15 @@
             <div id="insights">
                 <div>
                     <h2>Insights</h2>
-                    <div>
-                        <a href="">Past 7 days</a><i class="fa-sharp fa-solid fa-angle-down"></i>
+                    <div id="recent-transactions" onclick="fun()">
+                        <span id="recent-header">Past 3 days</span><i class="fa-sharp fa-solid fa-angle-down"></i>
                     </div>
+                </div>
+                <div id="floating" class="tog" >
+                    <div>Past 3 days</div>
+                    <div>Past 7 days</div>
+                    <div>Past 10 days</div>
+                    <div>All Transactions</div>
                 </div>
                 <div id="money-in">
                     <h3>Money In</h3>
@@ -67,6 +73,7 @@
                     <h3>Money Out</h3>
                     <div id="moneyOut">$1000.00</div>
                 </div>
+                
             </div>
         </div>
 

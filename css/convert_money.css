@@ -219,4 +219,30 @@ header a:hover{
   font-weight: 600;
   transition: all 0.5s ease-in-out;
 }
+
+
+/* chart in convertor start */
+
+#maintain{
+  display: flex;
+  margin: 30px 100px;
+ justify-content: center;
+  gap: 30px;
+  /* border: 1px solid gray; */
+
+}
+#maintain>div{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color:#272727;
+  font-size: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;  
+}
+
+/* chart in convertor end */
+
 /* converter section End */
