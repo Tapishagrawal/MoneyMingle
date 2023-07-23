@@ -6,5 +6,115 @@ PATCH https://nearsteeluserdata.onrender.com/user/1
 Content-Type: application/json
 
 {
-    "balance": 1000
+    "balance": 0
+}
+
+
+###
+PATCH https://nearsteeluserdata.onrender.com/user/1
+Content-Type: application/json
+
+{
+    "transactions": [
+    {
+      "date": "01-01-2021",
+      "type": "Payment from",
+      "name": "Money Mingle",
+      "gross": 1100,
+      "fee": 100,
+      "net": 1000,
+      "userCurrency": "USD",
+      "convertedCurrency": "USD"
+    },
+    {
+      "date": "02-01-2021",
+      "type": "Transfer to",
+      "name": "John Doe",
+      "gross": 100,
+      "fee": 10,
+      "net": 90,
+      "userCurrency": "USD",
+      "convertedCurrency": "EUR"
+    },
+    {
+      "date": "03-01-2021",
+      "type": "Payment from",
+      "name": "Alice Smith",
+      "gross": 500,
+      "fee": 50,
+      "net": 450,
+      "userCurrency": "AUD",
+      "convertedCurrency": "CAD"
+    },
+    {
+      "date": "04-01-2021",
+      "type": "Transfer to",
+      "name": "Bob Johnson",
+      "gross": 300,
+      "fee": 30,
+      "net": 270,
+      "userCurrency": "CAD",
+      "convertedCurrency": "EUR"
+    },
+    {
+      "date": "05-01-2021",
+      "type": "Payment from",
+      "name": "Sarah Lee",
+      "gross": 150,
+      "fee": 15,
+      "net": 135,
+      "userCurrency": "USD",
+      "convertedCurrency": "HKD"
+    },
+    {
+      "date": "06-01-2021",
+      "type": "Transfer to",
+      "name": "Emma Chen",
+      "gross": 200,
+      "fee": 20,
+      "net": 180,
+      "userCurrency": "EUR",
+      "convertedCurrency": "EGP"
+    },
+    {
+      "date": "07-01-2021",
+      "type": "Payment from",
+      "name": "James Brown",
+      "gross": 400,
+      "fee": 40,
+      "net": 360,
+      "userCurrency": "EGP",
+      "convertedCurrency": "NZD"
+    },
+    {
+      "date": "08-01-2021",
+      "type": "Transfer to",
+      "name": "Linda Wang",
+      "gross": 250,
+      "fee": 25,
+      "net": 225,
+      "userCurrency": "NZD",
+      "convertedCurrency": "PHP"
+    },
+    {
+      "date": "09-01-2021",
+      "type": "Payment from",
+      "name": "Michael Kim",
+      "gross": 180,
+      "fee": 18,
+      "net": 162,
+      "userCurrency": "INR",
+      "convertedCurrency": "CNY"
+    },
+    {
+      "date": "10-01-2021",
+      "type": "Transfer to",
+      "name": "Sophia Liu",
+      "gross": 300,
+      "fee": 30,
+      "net": 270,
+      "userCurrency": "CAD",
+      "convertedCurrency": "USD"
+    }
+  ]
 }

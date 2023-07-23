@@ -70,6 +70,7 @@ html {
 a {
     text-decoration: none;
 }
+/* navbar Start */
 
 header {
     display: flex;
@@ -119,6 +120,17 @@ header a:hover {
     width: 20%;
     text-align: right;
 }
+.status-btns{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.status-btns .fa-bars{
+    color: var(--main-white-color);
+    display: none;
+}
+/* navbar End */
+
 
 #hero-container {
     background-color: var(--main-back-color);
@@ -228,6 +240,33 @@ header a:hover {
 
 .hero-mobile-images img:nth-child(3) {
     width: 215px;
+    margin-left: -12px;
+}
+
+.hero-mobile-images-two {
+    /* display: flex; */
+    position: absolute;
+    bottom: -40%;
+    display: none;
+
+}
+
+.hero-mobile-images-two img {
+    width: 240px;
+}
+
+.hero-mobile-images-two img:nth-child(1) {
+    width: 200px;
+    height: 400px;
+    margin-right: -10px;
+    margin-top: 150px;
+
+}
+
+.hero-mobile-images-two img:nth-child(3) {
+    width: 200px;
+    margin-top: 150px;
+    height: 400px;
     margin-left: -12px;
 }
 
@@ -1190,6 +1229,23 @@ input[type="radio"] {
 
 /* for 1024 px screen start */
 @media screen and (max-width: 1025px) {
+    .hero-text {
+        z-index: 1;
+    }
+    .hero-mobile-images{
+        display: none;
+    }
+    .hero-mobile-images-two{
+        display: flex;
+    }
+    .hero-icon img:nth-child(2) {
+        z-index: -1;
+    }
+    .hero-icon img:nth-child(6),
+    .hero-icon img:nth-child(2),
+    .hero-icon img:nth-child(4)  {
+        position: fixed;
+    }
     .problem-container h1::before {
         left: 117px;
         font-size: 61px;
@@ -1213,6 +1269,14 @@ input[type="radio"] {
 /* for 900 px screen start */
 
 @media screen and (max-width: 901px){
+    .hero-icon img,
+    .hero-icon img:nth-child(6),
+    .hero-icon img:nth-child(2),
+    .hero-icon img:nth-child(3),
+    .hero-icon img:nth-child(5),
+    .hero-icon img:nth-child(4)  {
+        display: none;
+    }
     .logo {
         width: 10%;
     }
@@ -1289,12 +1353,8 @@ input[type="radio"] {
 
 /* for 768 px screen Start */
 @media screen and (max-width: 769px){
-    .status-btns{
-        display: flex;
-        align-items: center;
-    }
-    .status-btns .fa-bars{
-        color: var(--main-white-color);
+    .feedback-form-icon {
+        display: none !important;
     }
     .logo {
         width: 62%;
@@ -1305,6 +1365,14 @@ input[type="radio"] {
     header a {
         font-size: 16px;
     }
+    .hero-mobile-images-two img:nth-child(1) {
+        width: 150px;
+        margin-top: 85px;
+    }
+    .hero-mobile-images-two img {
+        width: 200px;
+        height: 351px;
+    }
     .sub-about h1 {
         font-size: 50px;
     }
@@ -1314,6 +1382,9 @@ input[type="radio"] {
     }
     .sub-about p {
         font-size: 17px;
+    }
+    .status-btns .fa-bars{
+        display: initial;
     }
     .problem-container h1 {
         font-size: 35px;
@@ -1344,6 +1415,7 @@ input[type="radio"] {
     .solution-cont>p {
         font-size: 16px;
         line-height: 30px;
+        padding: 0;
     }
     #testimonial-container>h1::before {
         left: 212px;
@@ -1378,7 +1450,119 @@ input[type="radio"] {
 /* for 768 px screen End */
 
 
-/* for 768 px screen End */
-/* for 768 px screen End */
+/* for 535 px screen End */
+@media screen and (max-width: 536px){
+    .container {
+        margin: 0 20px;
+    }
+    header{
+        justify-content: space-between;
+        padding-inline: 20px;
+    }
+    .sub-about h1 {
+        font-size: 42px;
+    }
+    .sub-about h1::before {
+        font-size: 50px;
+    }
+    .sub-about p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .problem-container h1::before {
+        font-size: 68px;
+        content: 'Problem';
+        left: 113px;
+        top: -32px;
+    }
+    .porblem-cards-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .problem-cards::before {
+        left: 237px;
+    }
+    .problem-card {
+        width: 467px;
+    }
+    .problem-card h4 {
+        font-size: 17px;
+    }
+    .problem-card p {
+        font-size: 16px;
+    }
+    .solution-cont>p {
+        font-size: 15px;
+        line-height: 28px;
+    }
+    .puzzle-img {
+        display: none;
+    }
+    #testimonial-container>h1::before {
+        left: 80px;
+        font-size: 48px;
+    }
+    .faq-img img {
+        width: 100%;
+    }
+    #faq-Container>div {
+        flex-direction: column-reverse;
+    }
+}
+/* for 535 px screen End */
+
+
+/* for 425 px screen Start */
+@media screen and (max-width: 426px){
+    .problem-container h1::before {
+        display: none;
+    }
+    .problem-card {
+        width: 300px;
+    }
+    .problem-cards::before {
+        left: 132px;
+    }
+    .problem-card h4 {
+        font-size: 13px;
+    }
+    .problem-card p {
+        font-size: 13px;
+    }
+    .solution-cont h1::before {
+        display: none;
+    }
+    .solution-cont>p {
+        font-size: 13px;
+        line-height: 25px;
+    }
+    #testimonial-container>h1::before {
+        display: none;
+    }
+    .faq-section h1::before {
+        display: none;
+    }
+    .faq-section .tab label h3 {
+        font-size: 12px;
+        width: 59%;
+    }
+    .faq-section .tab label h2 {
+        font-size: 15px;
+        width: 29px;
+        height: 29px;
+    }
+    .footer-container {
+        margin-left: 0;
+    }
+    .footer-col {
+        width: 100%;
+    }
+    .footer-col h4 {
+        font-size: 16px;
+    }
+    .footer-col ul li a {
+        font-size: 14px;
+    }
+}
+/* for 425 px screen End */
 
 /* Meadia queary End============================================== */
