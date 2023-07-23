@@ -29,11 +29,11 @@ we have used JavaScript code to convert the currency of one country to another c
 ### Netlify link : 
 
 ## Output :
-![MoneyMingle](--------)
-![Screenshot (1)](--------)
-![Screenshot (2)](https://------)
-![Screenshot (3)](https://-----)
-![Screenshot (4)](https://-----)
+![MoneyMingle](screenshot\home_page.png)
+![Screenshot (1)](screenshot\feedbackform.png)
+![Screenshot (2)](screenshot\card.png)
+![Screenshot (3)](screenshot\money_convertor.png)
+![Screenshot (4)](screenshot\activity.png)
 
 ---
 
@@ -43,8 +43,8 @@ we have used JavaScript code to convert the currency of one country to another c
 
 
 * :bust_in_silhouette: [fw27_177-Tapish Agrawal](https://github.com/Tapishagrawal)
-* :bust_in_silhouette: [fw27_081-Harshdeep Gill]()  
-* :bust_in_silhouette: [fw24_649-sankhadip ghosh]()
-* :bust_in_silhouette: [fw27_074-Shivam Maurya]()
+* :bust_in_silhouette: [fw27_081-Harshdeep Gill](https://github.com/harshdeepgill)  
+* :bust_in_silhouette: [fw24_649-sankhadip ghosh](https://github.com/SankhadipGhosh)
+* :bust_in_silhouette: [fw27_074-Shivam Maurya](https://github.com/vibhamaurya011)
 * :bust_in_silhouette: [fw27_265-Gauri Bidwai](https://github.com/gitusergb)
 
