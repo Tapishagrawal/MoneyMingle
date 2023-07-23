@@ -59,6 +59,10 @@
     justify-content: space-between;
 }
 
+#insights{
+    position: relative;
+}
+
 #insights>:nth-child(1) {
     display: flex;
     justify-content: space-between;
@@ -95,4 +99,18 @@
 }
 #flag-img img{
     width: 100%;
+}
+
+#floating{
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+#insights .tog{
+    visibility: hidden;
+}
+
+#recent-transactions, #floating div{
+    cursor: pointer;
 }
