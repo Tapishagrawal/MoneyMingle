@@ -1,14 +1,14 @@
 <h1>MoneyMingle (PayWise-From CaseStudy)</h1>
 MoneyMingle is a financial application that helps users quickly convert their Money to other currencies. 
 
-###The Goal:
+### The Goal:
 The goal of MoneyMingle is to provide a convenient and user-friendly platform for currency conversion .We are working on this project to make these transactions faster, more affordable, and more transparent for users.
 
-###Design Process:
+### Design Process:
 To help us prioritize and understand the user's needs, and challenges, We designed Feedback form which will help us every time to go through user expectations and needs regarding this website.
 
 
-###Outcome: 
+### Outcome: 
 We grow and learnt a lot while working on this product, how to collaborate efficiently as a design team and work within timeline to deliver MoneyMingle.
 We also learnt on designing with users feedback insteaad of assumption and it increased our work progress.
 
@@ -42,8 +42,8 @@ we have used JavaScript code to convert the currency of one country to another c
 
 #### Given name : near-steel-1499
 
-* :bust_in_silhouette: [fw27_177-Tapish Agrawal]()
+* :bust_in_silhouette: [fw27_177-Tapish Agrawal](https://github.com/Tapishagrawal)
 * :bust_in_silhouette: [fw27_081-Harshdeep Gill]()  
 * :bust_in_silhouette: [fw24_649-sankhadip ghosh]()
 * :bust_in_silhouette: [fw27_074-Shivam Maurya]()
-* :bust_in_silhouette: [fw27_265-Gauri Bidwai]()
+* :bust_in_silhouette: [fw27_265-Gauri Bidwai](https://github.com/gitusergb)
