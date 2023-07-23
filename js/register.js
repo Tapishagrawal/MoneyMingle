@@ -27,15 +27,15 @@ const pass = document.querySelector("#res-pass")
 
 const form = document.querySelector("form");
 let formLocalData = JSON.parse(localStorage.getItem("form-data"))|| [];
+let userApiData = `https://nearsteeluserdata.onrender.com/user`;
 
 async function userFecthData(){
     try{
-        let res = await fetch(`https://nearsteeluserdata.onrender.com/user`)
+        let res = await fetch(userApiData)
         let data = await res.json();
-        console.log(data);
         form.addEventListener('submit',(e)=>{
             e.preventDefault();
-            userRegistration(data, data.length,data.transactions)
+            userRegistration(data.length, data[0].transactions);
         })
     }
     catch(e){
@@ -44,9 +44,9 @@ async function userFecthData(){
 }
 userFecthData()
 
-function userRegistration(data,noOfUser,dummyTransaction){
+function userRegistration(noOfUser, dummyTransaction){
     let formData = {
-        id : ++noOfUser,
+        id: ++noOfUser,
         name: form['res-name'].value,
         mail: form['res-email'].value,
         usrName: form['res-userID'].value,
@@ -54,15 +54,40 @@ function userRegistration(data,noOfUser,dummyTransaction){
         comnformPassword: form['res-conFormPass'].value,
         transactions:dummyTransaction
     }
-    if(formData.password===formData.comnformPassword){
-        formLocalData.push(formData);
-        localStorage.setItem("form-data",JSON.stringify(formLocalData))
-        form.reset()
-        // window.location.href = "index.html";
-        console.log(formData);
-    }else{
-        swal("Wrong Password", "Passwords did not match", "warning");
-    }
+    fetch(userApiData)
+    .then(res=>res.json())
+    .then(data=>{
+        let uniqUserName = data.some(existingUserName => existingUserName.usrName === formData.usrName)
+        if(!uniqUserName){
+            if(formData.password===formData.comnformPassword){
+                fetch(userApiData,{
+                    method : 'POST',
+                    headers:{
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(res=>res.json())
+                userFecthData()
+                console.log(formData);
+                swal("Account Created Successfully !", "Welcome to MonneyMingle ;)","success");
+                setTimeout(() => {
+                    window.location.reload();
+                    window.location.href = "index.html";
+                }, 1000);
+                form.reset()
+            }
+            else{
+                swal("Wrong Password", "Passwords did not match", "warning");
+            }
+        }
+        else{
+            swal("This username is already taken", "Use Unique User Name", "warning");
+        }
+    })
+    //     
+
+
 }
 
 // form.addEventListener("submit",(e)=>{
