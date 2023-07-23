@@ -11,11 +11,11 @@
 body{
     /* background: linear-gradient(90deg, rgb(0, 43, 102)60%,rgb(0, 70, 145) 40.1%); */
 
-    background: linear-gradient(-45deg,#272727 60%,#545454, #545454, #272727 );
+    /* background: linear-gradient(-45deg,#272727 60%,#545454, #545454, #272727 );
 	background-size: 400% 400%;
-	animation: gradient 7s ease-in-out infinite;  
+	animation: gradient 7s ease-in-out infinite;   */
 
-   
+    background-color:#272727 ;
    
   }
   /* body img{
@@ -30,31 +30,13 @@ body{
     justify-content: center;
     flex-flow: column;
     padding-bottom: 60px;
-    /* background: linear-gradient(90deg, rgb(0, 43, 102)60%,rgb(0, 70, 145) 40.1%); */
 
-    background: linear-gradient(-45deg,#272727 60%,#545454, #545454, #272727);
-	background-size: 160% 100%;
-	animation: gradient 35s ease-in-out infinite;  
-/* 
-    background-image: url("https://assets.unenvironment.org/decadeonrestoration/2020-03/rough-horn-2146181_1280.jpg"); */
-    background-repeat: no-repeat; /* Do not repeat the image
-    /* background-size: cover;  */
  
-
+    background-color:#272727 ;
     
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+
 .container form{
     background: #fff;
     border-radius: 5px;
@@ -221,406 +203,199 @@ body{
 
 
 
-.popup{
-width: 400px;
-background: #fff;
-border-radius: 6px;
-position: absolute;
-top: 0%;
-left: 50%;
-transform: translate(-50%,-50%) scale(0.1);
-text-align: center;
-/* z-index: 10; */
-padding: 0 30px 30px ;
-color: #333;
-visibility: hidden;
-transition: transform 0.4s,top 0.4s;
+
+
+
+
+             
+:root{
+    --main-back-color: #272727;
+    --main-white-color: #f6f6f6;
+    --sub-back-color: #2D2D2D;
+    --dark-gray: #545454;
+    --white:#fff;
+    --para-color: #454545;
+    --font-size-para: 20px;
+    --headings-color:#323232;
+    --headings-color-light:#f6f6f6;
+    --container-padding : 60px 0;
 }
-.openpopup{
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(1);
+/* .container{
+    margin: 0 60px;
+} */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--sub-back-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--dark-gray);
 }
 
-.popup img{
-width: 100px;
-margin-top: -40px;
-border-radius: 50%;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+html{
+    scroll-behavior: smooth;
 }
-.popup h2{
-    font-size: 38px;
-    font-weight: 500;
-    margin: 30px 10px;
-    
+a{
+    text-decoration: none;
 }
-.popup p{
-    margin-bottom: 10px;
-}
-.popup a{
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-back-color);
+    padding: 12px 0;
     width: 100%;
-    margin-top: 100px;
-    padding: 5px 100px 5px 100px;
-    /* background:rgb(0, 43, 102) ; */
-    color: #fff;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-    background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
-    transition: .2s linear;
+    z-index: 99;
+    /* position: fixed; */
+    /* box-shadow: rgba(34, 59, 59, 0.25) 0px 13px 27px -5px, rgba(68, 108, 83, 0.3) 0px 8px 16px -8px; */
 }
 
-.popup a:hover{
-    /* background: rgb(0, 70, 145); */
-    letter-spacing: 6px;
-    opacity: .8;
-  }
+header a{
+    color: var(--white);
+    padding: 3px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+header a:hover{
+    background-color: var(--white);
+    color: #436c61;
+}
+.navigation-links a.active{
+    background-color: var(--white);
+    color: #436c61;
 
-
-
-  .popup1{
-    width: 400px;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    text-align: center;
-    /* z-index: 10; */
-    padding: 0 30px 30px ;
-    color: #333;
-    visibility: hidden;
-    transition: transform 0.4s,top 0.4s;
-    }
-    .openpopup1{
-        visibility: visible;
-        top: 50%;
-        transform: translate(-50%,-50%) scale(1);
-    }
-    
-    .popup1 img{
+}
+.logo{
+    width: 25%;
+}
+.logo img{
     width: 100px;
-    margin-top: -40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2)
-    }
-    .popup1 h2{
-        font-size: 38px;
-        font-weight: 500;
-        margin: 30px 10px;
-        
-    }
-    .popup1 p{
-        margin-bottom: 10px;
-    }
-    .popup1 a{
-        width: 100%;
-        margin-top: 100px;
-        padding: 5px 100px 5px 100px;
-        /* background:rgb(0, 43, 102) ; */
-        color: #fff;
-        border: 0;
-        outline: none;
-        font-size: 18px;
-        border-radius: 4px;
-        cursor: pointer;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-        background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
-        transition: .2s linear;
-    }
+}
+.navigation-links{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.status-btns{
+    width: 20%;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  nav{
+    width: 100%;
+    height: 7%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+nav img{
+ 
+}
+nav ul{ 
+    list-style: none;
+    display: flex;
+}
+nav ul li{ 
+    padding:  3px 15px;
+}
+.Resister a{     
+    background-color:white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color:black;
+}
+.Resister{ 
+    color: white;
+   
+}
+a{ 
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition:  3s linear;
+} 
+nav a:hover{ 
+    transition: none;
+    color: #3aa858;
+} 
+.bi-list{
+    display: none;
+} 
+
+/*=============================== - Media Queries - ======================================= */
+
+@media only screen and (max-width: 1000px){
     
-    .popup1 a:hover{
-        /* background: rgb(0, 70, 145); */
-        letter-spacing: 6px;
-        opacity: .8;
-      }
-      .popup1 button{
+    nav{
         width: 100%;
-        margin-top: 20px;
-        padding: 5px 130px 5px 130px;
-        /* background:rgb(0, 43, 102) ; */
-        color: #fff;
-        border: 0;
-        outline: none;
-        font-size: 18px;
-        border-radius: 4px;
-        cursor: pointer;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-        background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
-        transition: .2s linear;
+        height: 7%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
     }
-    
-    .popup1 button:hover{
-        /* background: rgb(0, 70, 145); */
-        letter-spacing: 6px;
-        opacity: .8;
-      }
-
-
-
-
-
-
-      .popup2{
-        width: 400px;
-        background: #fff;
-        border-radius: 6px;
+    .bi-list{
+        display: unset;
+        width: 40px;
+        height: 40px;
+        margin-right: 150px;
+        }    
+    nav ul{
         position: absolute;
-        top: 0%;
-        left: 50%;
-        transform: translate(-50%,-50%) scale(0.1);
-        text-align: center;
-        /* z-index: 10; */
-        padding: 0 30px 30px ;
-        color: #333;
-        visibility: hidden;
-        transition: transform 0.4s,top 0.4s;
-        }
-        .openpopup2{
-            visibility: visible;
-            top: 70%;
-            transform: translate(-50%,-50%) scale(1);
-        }
-        .popup2 h2{
-            font-size: 38px;
-            font-weight: 500;
-            margin: 30px 10px;
-            
-        }
-      
-          .popup2 button{
-            width: 100%;
-            margin-top: 20px;
-            padding: 5px 130px 5px 130px;
-            /* background:rgb(0, 43, 102) ; */
-            color: #fff;
-            border: 0;
-            outline: none;
-            font-size: 18px;
-            border-radius: 4px;
-            cursor: pointer;
-            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-            background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
-            transition: .2s linear;
-        }
-        
-        .popup2 button:hover{
-            /* background: rgb(0, 70, 145); */
-            letter-spacing: 6px;
-            opacity: .8;
-          }
-          #otp{
-            border: 1.5px solid;
-            text-align: center;
-            font-size: larger;
-            font-weight: bolder;
-          }
-
-
-
-
-
-          
-      .popup3{
-        width: 400px;
-        background: #fff;
-        border-radius: 6px;
-        position: absolute;
-        top: 0%;
-        left: 50%;
-        transform: translate(-50%,-50%) scale(0.1);
-        text-align: center;
-        /* z-index: 10; */
-        padding: 0 30px 30px ;
-        color: #333;
-        visibility: hidden;
-        transition: transform 0.4s,top 0.4s;
-        }
-        .openpopup3{
-            visibility: visible;
-            top: 20%;
-            transform: translate(-50%,-50%) scale(0.5);
-        }
-        .popup3 h2{
-            font-size: 38px;
-            font-weight: 500;
-            margin: 30px 10px;
-            
-        }
-        .popup3 h4{
-            margin-top: 50px;
-        }
-
-
-
-
-        .popup4{
-            width: 400px;
-            background: #fff;
-            border-radius: 6px;
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            transform: translate(-50%,-50%) scale(0.1);
-            text-align: center;
-            /* z-index: 10; */
-            padding: 0 30px 30px ;
-            color: #333;
-            visibility: hidden;
-            transition: transform 0.4s,top 0.4s;
-            }
-            .openpopup4{
-                visibility: visible;
-                top: 70%;
-                transform: translate(-50%,-50%) scale(1);
-            }
-            .popup4 h2{
-                font-size: 38px;
-                font-weight: 500;
-                margin: 30px 10px;
-                color: red;
-                
-            }
-          
-              .popup4 button{
-                width: 100%;
-                margin-top: 20px;
-                padding: 5px 130px 5px 130px;
-                /* background:rgb(0, 43, 102) ; */
-                color: #fff;
-                border: 0;
-                outline: none;
-                font-size: 18px;
-                border-radius: 4px;
-                cursor: pointer;
-                box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-                background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
-                transition: .2s linear;
-            }
-            
-            .popup4 button:hover{
-                /* background: rgb(0, 70, 145); */
-                letter-spacing: 6px;
-                opacity: .8;
-              }
-
-
-
-
-
-
-              @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-              *{
-                  font-family: "Poppins", sans-serif;
-                  padding: 0;
-                  margin: 0;
-                  box-sizing: border-box;
-              }
-              html{
-                  scroll-behavior: smooth;
-              }
-          
-              /* =========================== - Nav Bar - ================================ */
-              
-              nav{
-                  width: 100%;
-                  height: 7%;
-                  margin: auto;
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  padding: 12px 30px;
-                  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-              }
-              nav ul{ 
-                  list-style: none;
-                  display: flex;
-              }
-              nav ul li{ 
-                  padding:  3px 15px;
-              }
-              .Resister a{     
-                  background-color:white;
-                  border-radius: 20px;
-                  padding: 5px 20px;
-                  color:black;
-              }
-              .Resister{ 
-                  color: white;
-              }
-              a{ 
-                  text-decoration: none;
-                  color: white;
-                  font-size: 15px;
-                  font-weight: 500;
-                  transition:  3s linear;
-              } 
-              nav a:hover{ 
-                  transition: none;
-                  color: #3aa858;
-              } 
-              .bi-list{
-                  display: none;
-              } 
-          
-              /*=============================== - Media Queries - ======================================= */
-          
-              @media only screen and (max-width: 1000px){
-                  
-                  nav{
-                      width: 100%;
-                      height: 7%;
-                      margin: auto;
-                      display: flex;
-                      align-items: center;
-                      justify-content: space-between;
-                      padding: 12px 20px;
-                  }
-                  .bi-list{
-                      display: unset;
-                      width: 40px;
-                      height: 40px;
-                      margin-right: 150px;
-                      }    
-                  nav ul{
-                      position: absolute;
-                      width: 170px;
-                      height: auto;
-                      flex-direction: column;
-                      border-radius: 5px;
-                      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                      justify-content: center;
-                      top: -100%;
-                      left: 5px;
-                      z-index: 20;
-                      margin-top: 70px;
-                      padding: 10px 20px;
-                      backdrop-filter: blur(15px);
-                      transition: 1s linear;
-                  }
-                  nav ul li{
-                      padding:5px 0px;
-                      text-align: left;
-                  }
-                  nav ul li a{
-                      color: black;
-                  }
-                  .active{
-                      position: fixed;
-                      flex-direction: column;
-                      justify-content: center;
-                      top: 0;
-                      left: 5px;
-                      z-index: 20;
-                      backdrop-filter: blur(15px);
-                      transition: 1s linear;
-                      margin: 0px;
-                  }
-              }
-          
-               /* =========================== - Nav End - ================================ */
-              
+        width: 170px;
+        height: auto;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        justify-content: center;
+        top: -100%;
+        left: 5px;
+        z-index: 20;
+        margin-top: 70px;
+        padding: 10px 20px;
+        backdrop-filter: blur(15px);
+        transition: 1s linear;
+    }
+    nav ul li{
+        padding:5px 0px;
+        text-align: left;
+    }
+    nav ul li a{
+        color: black;
+    }
+    .active{
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        left: 5px;
+        z-index: 20;
+        backdrop-filter: blur(15px);
+        transition: 1s linear;
+        margin: 0px;
+    }
+}
