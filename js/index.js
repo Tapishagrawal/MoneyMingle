@@ -204,7 +204,7 @@ function LoginUser(data){
             }, 1000);
             let isDuplicate = userLogInStatus.some(existingItem=>existingItem.id === user.userId)
             if(!isDuplicate){
-                userLogInStatus.push({userId: user.id, status:true});
+                userLogInStatus.push({userId: user.id, status:true, name: user.name});
                 localStorage.setItem('userLogInStatus', JSON.stringify(userLogInStatus))
             }
         } 

@@ -24,6 +24,21 @@
 .swal-modal {
     background: var(--sub-back-color);
 }
+.swal-icon--success:after, .swal-icon--success:before {
+    background: var(--sub-back-color);
+}
+.swal-icon--success__hide-corners {
+    background-color: var(--sub-back-color);
+}
+.swal-icon--success {
+    border-color: var(--green-hover-gray);
+}
+.swal-icon--success__line {
+    background-color: var(--green-hover-gray);
+}
+.swal-icon--success__ring {
+    border: 4px solid hsla(98,55%,69%,.2);
+}
 .swal-text,
 .swal-title:not(:last-child) {
     color: var(--light-lighter-gray);
