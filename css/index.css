@@ -97,12 +97,6 @@ header a:hover {
     color: #436c61;
 }
 
-.navigation-links a.active {
-    background-color: var(--white);
-    color: #436c61;
-
-}
-
 .logo {
     width: 15%;
 }
@@ -115,7 +109,14 @@ header a:hover {
     display: flex;
     justify-content: space-between;
 }
+.navigation-links a.active {
+    background-color: var(--white);
+    color: #436c61;
 
+}
+.navigation-links-mobile{
+    display: none;
+}
 .status-btns {
     width: 20%;
     text-align: right;
@@ -775,7 +776,7 @@ ul {
 /* Feedback form section Start */
 .feedback-form{
     position: fixed;
-    z-index: 10;
+    z-index: 99;
     bottom: 30px;
     right: -300px;
     opacity: 0;
@@ -948,7 +949,7 @@ input[type="radio"] {
     top: 0%;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 99;
 }
 .user-img-cont {
     width: 100%;
@@ -987,7 +988,7 @@ input[type="radio"] {
 }
 .form-container.active{
     opacity: 1;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 0.5s cubic-bezier(0.18,0.89,0.43,1.19);
@@ -1353,9 +1354,6 @@ input[type="radio"] {
 
 /* for 768 px screen Start */
 @media screen and (max-width: 769px){
-    .feedback-form-icon {
-        display: none !important;
-    }
     .logo {
         width: 62%;
     }
@@ -1365,13 +1363,17 @@ input[type="radio"] {
     header a {
         font-size: 16px;
     }
+    .hero-mobile-images-two img {
+        width: 190px;
+        height: 351px;
+    }
     .hero-mobile-images-two img:nth-child(1) {
-        width: 150px;
+        width: 170px;
         margin-top: 85px;
     }
-    .hero-mobile-images-two img {
-        width: 200px;
-        height: 351px;
+    .hero-mobile-images-two img:nth-child(3) {
+        width: 170px;
+        margin-top: 85px;
     }
     .sub-about h1 {
         font-size: 50px;
@@ -1385,6 +1387,42 @@ input[type="radio"] {
     }
     .status-btns .fa-bars{
         display: initial;
+        position: relative;
+    }
+    .navigation-links-mobile{
+        position: absolute;
+        display: flex;
+        flex-direction:column ;
+        align-items: flex-start;
+        right: -10px;
+        opacity: 0.5;
+        visibility: hidden;
+        height: 0vh;
+        overflow: hidden;
+        width: 170px;
+        background-color: var(--sub-back-color);
+        top: 50px;
+        transition: all 0.5s ease-in-out;
+    }
+    .navigation-links-mobile > a{
+        margin-block: 7px;
+        width: 100%;
+        text-align: start;
+        border-radius: 0;
+        padding: 10px;
+        font-weight: 600;
+        transition: all 0.5s ease
+    }
+    .navigation-links-mobile > a:hover{
+        background-color: var(--light-lighter-gray);
+        color: var(--main-back-color);
+    }
+    .navigation-links-mobile.active{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        height: 50vh;
+
     }
     .problem-container h1 {
         font-size: 35px;
@@ -1448,16 +1486,46 @@ input[type="radio"] {
     }
 }
 /* for 768 px screen End */
-
+@media screen and (max-width: 656px){
+    .porblem-cards-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .problem-card {
+        width: 467px;
+    }
+    .problem-card h4 {
+        font-size: 17px;
+    }
+    .problem-card p {
+        font-size: 16px;
+    }
+    .problem-container h1::before {
+        left: 77px;
+    }
+    .problem-cards::before {
+        left: 221px;
+        top: -70px;
+    }
+    #testimonial-container>h1::before {
+        left: 150px;
+    }
+}
 
 /* for 535 px screen End */
 @media screen and (max-width: 536px){
+    .feedback-form.active {
+        opacity: 1;
+        right: 13px;
+    }
     .container {
         margin: 0 20px;
     }
     header{
         justify-content: space-between;
         padding-inline: 20px;
+    }
+    .problem-card {
+        width: 400px;
     }
     .sub-about h1 {
         font-size: 42px;
@@ -1474,21 +1542,6 @@ input[type="radio"] {
         content: 'Problem';
         left: 113px;
         top: -32px;
-    }
-    .porblem-cards-section {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .problem-cards::before {
-        left: 237px;
-    }
-    .problem-card {
-        width: 467px;
-    }
-    .problem-card h4 {
-        font-size: 17px;
-    }
-    .problem-card p {
-        font-size: 16px;
     }
     .solution-cont>p {
         font-size: 15px;
@@ -1513,6 +1566,13 @@ input[type="radio"] {
 
 /* for 425 px screen Start */
 @media screen and (max-width: 426px){
+    .feedback-form.active {
+        right: 25px;
+    }
+    #Feed_container {
+        width: 362px;
+        height: 453px;
+    }
     .problem-container h1::before {
         display: none;
     }
@@ -1561,6 +1621,25 @@ input[type="radio"] {
     }
     .footer-col ul li a {
         font-size: 14px;
+    }
+}
+/* for 425 px screen End */
+
+
+/* for 425 px screen End */
+@media screen and (max-width: 376px){
+    .feedback-form-icon{
+        display: none !important;
+    }
+    .form-container {
+        width: 285px;
+        height: 500px;
+    }
+    .form-container .sub-btn~p {
+        font-size: 12px;
+    }
+    .form-container .sub-btn~p a {
+        font-size: 13px;
     }
 }
 /* for 425 px screen End */
