@@ -74,7 +74,7 @@ function userRegistration(noOfUser, dummyTransaction){
                 setTimeout(() => {
                     window.location.reload();
                     window.location.href = "index.html";
-                }, 1000);
+                }, 1500);
                 form.reset()
             }
             else{

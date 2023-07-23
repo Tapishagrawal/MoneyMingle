@@ -20,24 +20,27 @@
         <div class="logo"><img src="images/logo.png" alt=""></div>
         <nav class="navigation-links">
             <a href="user.html" class="active">Home</a>
-            <a href="convert_money.html">Currency Convert</a>
+            <a href="convert_money.html">Convert</a>
             <a href="activity.html">Activity</a>
             <a href="#faq-Container">Pay & Get</a>
         </nav>
         <nav class="status-btns">
-            <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
-                alt="">
+            <div class="userNameImg">
+                <h4 id="ShowuserName"></h4>
+                <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
+                    alt="">
+            </div>
             <div class="user-details">
                 <div>
                     <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
                         alt="">
-                    <p class="userName">Tapish</p>
+                    <p class="ShowUser"></p>
                 </div>
                 <a href="#">Update Profile</a>
                 <a href="#" id="btn-logout">Log out</a>
             </div>
         </nav>
-    </header>
+    </header>userName
     <!-- header part End -->
 
     <!-- Main section start -->
@@ -52,23 +55,26 @@
                     <div>
                         <h4 id="balance">$0.00</h4>
                     </div>
-                    <div>Available</div>
+                    <div class="availableText">Available</div>
                 </div>
-                <div>*This is an estimate based on the most recent conversion rate.</div>
-                <div><a href="">Send or Request a payment</a></div>
+                <div class="balance-msg">*This is an estimate based on the most recent conversion rate.</div>
+                <div><a href="" class="payment-link">Send or Request a payment</a></div>
             </div>
             <div id="insights">
                 <div>
                     <h2>Insights</h2>
                     <div id="recent-transactions" onclick="fun()">
-                        <span id="recent-header">Past 3 days</span><i class="fa-sharp fa-solid fa-angle-down"></i>
+                        <div id="recent-header">
+                            Past 3 days
+                        </div>
+                        <i class="fa-sharp fa-solid fa-angle-down"></i>
+                        <div id="floating" class="tog">
+                            <div>Past 3 days</div>
+                            <div>Past 7 days</div>
+                            <div>Past 10 days</div>
+                            <div>All Transactions</div>
+                        </div>
                     </div>
-                </div>
-                <div id="floating" class="tog">
-                    <div>Past 3 days</div>
-                    <div>Past 7 days</div>
-                    <div>Past 10 days</div>
-                    <div>All Transactions</div>
                 </div>
                 <div id="money-in">
                     <h3>Money In</h3>
@@ -88,10 +94,14 @@
                 <div>
                     <h4>Convert Balance</h4>
                     <div class="convert-flag">
-                        <div id="flag-img"><img src="https://flagcdn.com/w320/in.png" alt="not availabe"></div>
-                        <div><select name="" id="converter">
+                        <div id="flag-img">
+                            <img src="https://flagcdn.com/w320/in.png" alt="not availabe">
+                        </div>
+                        <div>
+                            <select name="" id="converter">
                                 <option value=""><span>Select</span></option>
-                            </select></div>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div id="show-convert">
