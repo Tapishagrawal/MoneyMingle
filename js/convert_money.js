@@ -1,6 +1,13 @@
 let f1=document.getElementById('flag1');
 let f2=document.getElementById('flag2');
 
+
+let head1=document.querySelector("#fromdiv>h3");
+let head2=document.querySelector("#todiv>h3");
+let table_1=document.getElementById("one");
+let table_2=document.getElementById("two");
+
+
 function con() {fetch("https://mm-money-mingle.onrender.com/country_data")
   .then(response => response.json())
   .then(data => {
@@ -151,10 +158,41 @@ function convertMoney() {
 
         document.getElementById("result2").textContent = `1 ${c1} = ${temp1} ${c2}  And
         1 ${c2} = ${temp2} ${c1}`;
+
+      
+      head1.innerHTML=`Convert ${c1} to ${c2}`
+      table_1.innerHTML=`<ul>
+            <li> 1 ${c1} = ${temp1} ${c2}</li>
+            <li>  5 ${c1} = ${5*temp1} ${c2}</li>
+            <li> 10 ${c1} = ${10*temp1} ${c2}</li>
+            <li> 25 ${c1} = ${25*temp1} ${c2}</li>
+            <li> 50 ${c1} = ${50*temp1} ${c2}</li>
+            <li> 100 ${c1} = ${100*temp1} ${c2}</li>
+            <li>500 ${c1} = ${500*temp1} ${c2}</li>
+       </ul>`
+
+
+      head2.innerHTML=`Convert ${c2} to ${c1}`
+      table_2.innerHTML=`
+      <ul>
+            <li>  1 ${c2} = ${temp2} ${c1}</li>
+            <li>  5 ${c2} = ${5*temp2} ${c1}</li>
+            <li>  10 ${c2} = ${10*temp2} ${c1}</li>
+            <li>  25 ${c2} = ${25*temp2} ${c1}</li>
+            <li> 50 ${c2} = ${50*temp2} ${c1}</li>
+            <li>  100 ${c2} = ${100*temp2} ${c1}</li>
+            <li>500 ${c2} = ${500*temp2} ${c1}</li>
+       </ul>`
+
+
+
       });
+
       })
       .catch(error => {
         console.log("Failed to fetch exchange rates.", error);
       });
   }
-  
+  ///////////////////////////////////////////code for chart////////////////////////////////////////////
+
+ 
