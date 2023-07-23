@@ -1,3 +1,12 @@
+// mobile menu bar functionality start
+let menuBtn = document.querySelector(".status-btns .fa-bars");
+let mobileNavBar = document.querySelector(".navigation-links-mobile")
+menuBtn.addEventListener("click",()=>{
+    mobileNavBar.classList.toggle("active")
+})
+// mobile menu bar functionality End
+
+
 
 // Hero Page Aniumation start
 let text = document.querySelector('.hero-text');
@@ -59,7 +68,7 @@ var swiper = new Swiper(".mySwiper", {
 // Testimonial End
 
 
-// feedback form Code start
+// feedback form Code start====================
 let userAuthToken = localStorage.getItem("localAccessToken") || null;
 let feedback_data = JSON.parse(localStorage.getItem("feedback_d")) || [];
 const form = document.getElementById('feedbackForm');
@@ -86,7 +95,7 @@ form.addEventListener('submit', function (event) {
 });
 
 
-
+// feedBack form open close section start
 let feedBackFormBtn = document.querySelector('.feedback-form-icon');
 let feedBackForm = document.querySelector('.feedback-form');
 let feedBackFormCloseBtn = document.querySelector('#Feed_container > i');
@@ -102,14 +111,11 @@ feedBackFormCloseBtn.addEventListener("click", () => {
     feedBackFormBtn.style.display = "initial";
 
 })
-// formSubmitCloseBtn.addEventListener("click",()=>{
-//     // feedBackForm.classList.remove('active');
-//     // feedBackFormBtn.style.display = "initial";
-
-// })
+// feedBack form open close section end
 
 
-// feedback form Code End
+
+// feedback form Code End=========================
 
 
 
