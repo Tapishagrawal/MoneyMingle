@@ -9,9 +9,13 @@ let moneyOutDiv = document.getElementById("moneyOut");
 let converterDiv = document.getElementById("converter");
 let imageDiv = document.getElementById("flag-img");
 let afterConvDiv = document.getElementById("after-conversion");
+let floatingWindow = document.getElementById("floating");
+let floatingDivs = document.querySelectorAll("#floating div");
+let recentHeader = document.getElementById("recent-header");
 
 let transData;
 let currData;
+
 
 transPrint(url+ "/1");
 currFetch(curUrl);
@@ -22,6 +26,8 @@ setTimeout(()=>{
     }
 
     balCal(url+"/1", currData)
+
+    recentTrans(transData, 3);
 
     converterDiv.addEventListener("change", ()=>{
         for(let i = 0;i<currData.length;i++){
@@ -42,11 +48,22 @@ setTimeout(()=>{
             balance += balStr[i];
         }
         afterConvDiv.innerText = Math.round(currConvRev(converterDiv.value, +balance, currData) * 100) / 100 ;
-
+        
+    })
+    floatingDivs.forEach(el =>{
+        el.addEventListener("click", ()=>{
+            recentHeader.innerText = el.innerText;
+            floatingWindow.classList.toggle("tog");
+    
+            let array = recentHeader.innerText.split(" ");
+            if(array[0] == "All"){
+                recentTrans(transData, transData.transactions.length);
+            }else{
+                recentTrans(transData, +array[1]);
+            }
+        })
     })
 },2000)
-
-
 
 
 
@@ -83,27 +100,35 @@ async function transPrint(url){
         console.log(err);
     }
 }
+function recentTrans(data, days){
+    let moneyIn = 0;
+    let moneyOut = 0;
+    for(let i = data.transactions.length-1;i>=data.transactions.length-days;i--){
+        if(data.transactions[i].type == "Payment from"){
+            moneyIn += currConv(data.transactions[i].userCurrency, data.transactions[i].net, currData);
+        }else if(data.transactions[i].type == "Transfer to"){
+            moneyOut -= currConv(data.transactions[i].userCurrency, data.transactions[i].net, currData);
+        }
+    }
+    moneyInDiv.innerText = "$" + Math.round(moneyIn * 100) / 100;
+    moneyOutDiv.innerText = "$" + Math.round(Math.abs(moneyOut) * 100) / 100;
+}
 async function balCal(url, currData){
     try{
         let res = await fetch(url);
         let data = await res.json();
         console.log(data);
-        let balance = 1000;
-        let moneyIn = 1000;
-        let moneyOut = 0;
+        let balance = 0;
         data.transactions.forEach(el => {
             if(el.type == "Payment from"){
-                balance += currConv(el.userCurrency, el.net, currData);
-                moneyIn += currConv(el.userCurrency, el.net, currData);
+                balance += currConv(el.userCurrency, el.net, currData);  
             }else if(el.type == "Transfer to"){
                 balance -= currConv(el.userCurrency, el.net, currData);
-                moneyOut -= currConv(el.userCurrency, el.net, currData);
             }
         });
 
         mainBalHead.innerText = "$" + Math.round(balance * 100) / 100;
-        moneyInDiv.innerText = "$" + Math.round(moneyIn * 100) / 100;
-        moneyOutDiv.innerText = "$" + Math.round(Math.abs(moneyOut) * 100) / 100;
+
     }
     catch(err){
         console.log(err);
@@ -164,4 +189,7 @@ function addOptions(el){
     return opt;
 }
 
+function fun(){  
+    floatingWindow.classList.toggle("tog");
+}
 
