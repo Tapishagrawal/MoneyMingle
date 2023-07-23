@@ -17,7 +17,6 @@ We also learnt on designing with users feedback insteaad of assumption and it in
  <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
-  <li>BootStrap</li>
   <li>LocalStorage</li>
   <li>Mock Servers</li>
 

@@ -1,3 +1,5 @@
+
+
 // mobile menu bar functionality start
 let menuBtn = document.querySelector(".status-btns .fa-bars");
 let mobileNavBar = document.querySelector(".navigation-links-mobile")
@@ -180,6 +182,7 @@ async function LoginFetchData(){
 }
 LoginFetchData()
 
+let userLogInStatus = JSON.parse(localStorage.getItem("userLogInStatus")) || []
 function LoginUser(data){
     let isLoggedIn = false;
     data.forEach(user =>{
@@ -193,17 +196,22 @@ function LoginUser(data){
         }else{
             swal("Wrong User Name!", "", "error");
         }
+
+        if (isLoggedIn) {
+            swal("Login successful!", "Welcome to MonneyMingle ;)", "success");
+            setTimeout(() => {
+                window.location.href = "user.html";
+            }, 1000);
+            let isDuplicate = userLogInStatus.some(existingItem=>existingItem.id === user.userId)
+            if(!isDuplicate){
+                userLogInStatus.push({userId: user.id, status:true});
+                localStorage.setItem('userLogInStatus', JSON.stringify(userLogInStatus))
+            }
+        } 
+        else {
+            swal("Invalid username!", "", "error");
+        }
     });
-    if (isLoggedIn) {
-        swal("Login successful!", "Welcome to MonneyMingle ;)");
-        setTimeout(() => {
-            window.location.href = "user.html";
-        }, 1000);
-        localStorage.setItem("Islogin", "true")
-    } 
-    else {
-        swal("Invalid username!", "", "error");
-    }
     
 }
 // =========form Data End======

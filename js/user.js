@@ -1,4 +1,19 @@
-// console.log("abc")
+// log Out functionality Start
+let userLogInStatus = localStorage.getItem('userLogInStatus');
+let LogOutBtn = document.getElementById("btn-logout");
+LogOutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    localStorage.removeItem('userLogInStatus');
+    window.location.href='index.html';
+    console.log('hi');
+})
+// log Out functionality End
+
+
+
+
+
+
 const url = "https://nearsteeluserdata.onrender.com/user";
 const curUrl = "https://activitycurrencymoneymingle.onrender.com/country_data";
 
