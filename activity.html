@@ -15,11 +15,21 @@
     <header>
         <div class="logo"><img src="../../images/logo.png" alt=""></div>
         <nav class="navigation-links">
-            <a href="#hero-container" class="active">Home</a>
-            <a href="#about">Activity</a>
+            <a href="./user.html">Home</a>
+            <a href="./activity.html" class="active">Activity</a>
+            <a href="./convert_money.html">Converter</a>
+            <a href="./requestmoney.html">Request Money</a>
         </nav>
         <nav class="status-btns">
-            <a href="#">Logout</a>
+            <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg" alt="">
+            <div class="user-details">
+              <div>
+                <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg" alt="">
+                <p class="userName">Tapish</p>
+              </div>
+              <a href="#">Update Profile</a>
+              <a href="#">Log out</a>
+            </div>
         </nav>
     </header>
     <!-- header part End -->
@@ -27,33 +37,33 @@
     <!-- Search Section -->
     <div id="searchSection">
         <div id="searchSec">
-            <select name="" id="">
-                <option value="">All</option>
-                <option value="">pppp</option>
-                <option value="">llll</option>
-            </select>
-            <input type="text" placeholder="Enter search value">
+            <input id="search" type="text" placeholder="Enter name">
         </div>
         <div id="filterSec">
-            <select name="" id="">
-                <option value="">Active</option>
-                <option value="">pppp</option>
-                <option value="">llll</option>
+            <select name="type" id="type">
+                <option value="">Type</option>
+                <option value="Payment from">Payment from</option>
+                <option value="Transfer to">Transfer to</option>
             </select>
-            <select name="" id="">
-                <option value="">All activity</option>
-                <option value="">pppp</option>
-                <option value="">llll</option>
+            <!-- <select name="sn" id="sn">
+                <option value="">Sort by Name</option>
+                <option value="atz">A to Z</option>
+                <option value="zta">Z to A</option>
+            </select> -->
+            <select name="sa" id="sa">
+                <option value="">Sort by Ammount</option>
+                <option value="lth">Low to High</option>
+                <option value="htl">High to Low</option>
             </select>
-            <select name="" id="">
-                <option value="">Past 90 days</option>
-                <option value="">pppp</option>
-                <option value="">llll</option>
-            </select>
-            <select name="" id="">
-                <option value="">All currencies</option>
-                <option value="">pppp</option>
-                <option value="">llll</option>
+            <select name="Currency" id="Currency">
+                <option value="">Currency</option>
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="EGP">EGP</option>
+                <option value="NZD">NZD</option>
             </select>
         </div>
     </div>
@@ -65,110 +75,17 @@
                     <th>Date</th>
                     <th>Type</th>
                     <th>Name</th>
-                    <th>Payment</th>
+                    <th>Gross</th>
                     <th>Fees</th>
-                    <th>Net</th>
-                    <th>Actions</th>
+                    <th>Amount</th>
+                    <th>Currency</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
-                <tr>
-                    <td>28-may-2023</td>
-                    <td>Tarnsfer to</td>
-                    <td>Bank Account</td>
-                    <td>Completed</td>
-                    <td>00</td>
-                    <td>50000</td>
-                    <td>Archive</td>
-                </tr>
+                
             </tbody>
         </table>
     </div>
-    <!-- Footer Section -->
-    <footer>
-        <h3>footer</h3>
-    </footer>
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
