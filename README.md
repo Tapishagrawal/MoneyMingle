@@ -1,6 +1,6 @@
 # near-steel-1499
 
-### Group of 6	
+### Group of 5
 
 #### fw27_177-Tapish Agrawal	
 #### fw27_081-Harshdeep Gill	
