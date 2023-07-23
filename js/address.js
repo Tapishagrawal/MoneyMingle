@@ -1,0 +1,157 @@
+
+
+
+
+
+const url = "https://nearsteeluserdata.onrender.com/user";
+const curUrl = "https://activitycurrencymoneymingle.onrender.com/country_data";
+let container=document.getElementById("seccont");
+let form=document.querySelector("form");
+let popup1 = document.getElementById("popup1");
+let popup2 = document.getElementById("popup2");
+let converterDiv = document.getElementById("converter");
+let imageDiv = document.getElementById("flag-img");
+let dipInp = document.getElementById("damt");
+let feesHead = document.getElementById("fees");
+let finalHead = document.getElementById("final-amt");
+
+
+
+let transData;
+let currData;
+
+
+currFetch(curUrl);
+transPrint(url+"/1");
+
+setTimeout(()=>{
+    converterDiv.addEventListener("change", ()=>{
+        for(let i = 0;i<currData.length;i++){
+            if(converterDiv.value == currData[i].currency_code){
+                
+                let ima = document.createElement("img");
+                ima.src = currData[i].image;
+        
+                imageDiv.innerHTML = null;
+        
+                imageDiv.append(ima);
+                break;
+            }
+        }
+    })
+
+    dipInp.addEventListener("input", ()=>{
+        feesHead.innerText = "-"+ Math.round((0.1*dipInp.value) * 100) / 100;
+        finalHead.innerText =  Math.round((dipInp.value-(0.1*dipInp.value)) * 100) / 100;
+    })
+
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        if(form.ibname.value===""||form.ibemail.value===""||form.converter.value===""||form.damt.value===""){
+            console.log("somthing wrong")
+            container.innerHTML=null
+            popup1.classList.add("openpopup1")
+        }
+        else{
+            let trueValue = currConv(converterDiv.value,+form.damt.value,currData);
+            console.log(trueValue);
+            if(trueValue > transData.balance){
+                container.innerHTML=null;
+                popup2.classList.add("openpopup2");
+            }else{
+                console.log("done");
+                transData.balance -= (+dipInp.value);
+                let currentDate = +transData.transactions[transData.transactions.length-1].date.split("-")[0];
+                let obj={
+                    name:form.ibname.value,
+                    date: currentDate+1+"-01-2021",
+                    gross: +dipInp.value,
+                    net: +finalHead.innerText,
+                    fees: Math.abs(+feesHead.innerText),
+                    userCurrency: converterDiv.value,
+                    type: "Transfer to"
+                }
+    
+                transData.transactions.push(obj);
+                console.log(obj);
+                fetch(url+"/1", {
+                    method: "PUT",
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body : JSON.stringify(transData)
+                })
+                .then((data)=>{
+                    console.log(data);
+                    window.location.reload();
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
+            }
+        }
+        
+        
+})
+
+
+},2000)
+
+
+async function currFetch(url){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        currData = data;
+
+        data.forEach(el =>{
+            converterDiv.append(addOptions(el));
+        })
+
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+async function transPrint(url){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        transData = data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+
+function addOptions(el){
+    let opt = document.createElement("option");
+    let spn = document.createElement("span");
+
+    opt.value = el.currency_code;
+    spn.innerText = el.currency_code;
+
+    opt.append(spn);
+
+    return opt;
+}
+
+function currConv(curr, amt, currData){
+    let convRate;
+    for(let i = 0;i<currData.length;i++){
+        if(currData[i].currency_code == curr){
+            convRate = currData[i].currency_rate;
+            break;
+        }
+    }
+    // console.log(amt, convRate);
+
+    return amt*(1/convRate);
+}
+
+

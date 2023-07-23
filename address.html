@@ -43,7 +43,7 @@
 </nav>
 
 
-<div class="popup1" id="popup1">
+<div class="popup1 " id="popup1">
     <img src="images/address/cross.png" alt="">
     <h2>Sorry</h2>
     <p>Some fields are empty <br>
@@ -51,6 +51,15 @@
         and try again</p>
     <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
     <a href="address.html" onclick="closepopup1()">OK</a>
+</div>
+<div class="popup2 " id="popup2">
+    <img src="images/address/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Insufficient Balance<br>
+        Add balance<br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="payment.html" onclick="closepopup1()">ADD MONEY</a>
 </div>
 
 <div class="container" id="seccont">
@@ -61,7 +70,7 @@
 
             <div class="col">
 
-                <h3 class="title">billing details</h3>
+                <h3 class="title">Transfer To</h3>
 
                 <div class="inputBox" >
                     <span>full name :</span>
@@ -71,19 +80,20 @@
                     <span>email :</span>
                     <input  id="ibemail" type="email" placeholder="example@example.com">
                 </div>
-                <div class="inputBox" >
+                <!-- <div class="inputBox" >
                     <span>Phone Number :</span>
                     <input id="ibadd" type="text" maxlength="10" placeholder="1234567890">
-                </div>
-
+                </div> -->
+                
                 <div class="flex">
                     <div class="inputBox" >
-                        <span>From Currency :</span>
-                        <input id="ibcity" type="text" placeholder="Kolkata">
+                        <span>Currency :</span>
+                        <select name="" id="converter">
+                            <option value="">Select</option>
+                        </select>
                     </div>
                     <div class="inputBox" >
-                        <span>To Currency:</span>
-                        <input id="ibpeople" type="text" min="0" placeholder="">
+                        <div id="flag-img"><img src="https://flagcdn.com/w320/in.png" alt=""></div>
                     </div>
                     
                 </div>
@@ -91,16 +101,24 @@
                 <div class="flex">
                     <div class="inputBox" >
                         <span>Deposited Amount :</span>
-                        <input id="damt" type="text" placeholder="">
+                        <input id="damt" type="number" placeholder="">
                     </div>
+                    <div>
+                        <span>Fees : <em>(~10%)</em></span>
+                        <h5 id="fees">0.00</h5>
+                    </div>
+                
+                </div>
+                
+                <div class="flex">
                     <div class="inputBox" >
-                        <span>Converted Amount :</span>
-                        <input id="camt" type="text" min="0" placeholder="">
+                        <span>Final Amount :</span>
+                        <h5 id="final-amt">0.00</h5>
                     </div>
                 </div>
 
 
-                <div class="flex">
+                <!-- <div class="flex">
                     <div class="inputBox">
                         <span>Date:</span>
                         <input id="ibdate" type="date" required pattern="\d{4}-\d{2}-\d{2}">
@@ -109,7 +127,7 @@
                         <span>Valid ID Number:</span>
                         <input id="ibage" type="text" min="1" placeholder="XXXXXXXXXXXXXXX">
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
@@ -125,48 +143,6 @@
     
 </body>
 
-<script>
-
-let book=JSON.parse(localStorage.getItem("mybookings"))||[]
-let container=document.getElementById("seccont")
-
-let form=document.querySelector("form")
-    form.addEventListener("submit",(e)=>{
-        e.preventDefault()
-        if(form.ibname.value===""&&form.ibemail.value===""&&form.ibadd.value===""&&form.ibcity.value===""){
-            console.log("somthing wrong")
-            container.innerHTML=null
-            popup1.classList.add("openpopup1")
-        }
-        else{
-            console.log("done");
-            // openpopup()
-            // container.innerHTML=null
-            let obj={
-                name:form.ibname.value,
-                email:form.ibemail.value,
-                phone:form.ibadd.value,
-                city:form.ibcity.value,
-                people:form.ibpeople.value,
-                date: form.ibdate.value,
-                age:form.ibage.value
-            }
-            console.log(obj)
-            book.push(obj)
-            localStorage.setItem("mybookings",JSON.stringify(book))
-           
-           
-
-           window.location.assign("./payment.html")
-        }
-    })
-
-
-    // function closepopup1(){
-    //     // popup1.classList.remove("openpopup1")
-    //     // window.location.reload()
-    //     // window.location.assign("./payment.html")
-    // }
-
-</script>
 </html>
+
+<script src="js\address.js"></script>
