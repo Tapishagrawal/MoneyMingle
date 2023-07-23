@@ -8,11 +8,13 @@ LogOutBtn.addEventListener('click',(e)=>{
 })
 // log Out functionality End
 
+// Show Name on navbar on profile menu section start
 let getUserCredentials = JSON.parse(localStorage.getItem('userLogInStatus'));
 let ShowuserName = document.getElementById("ShowuserName");
 let ShowUser = document.querySelector(".ShowUser");
 ShowuserName.innerText = `Hello, ${getUserCredentials[0].name}`
 ShowUser.innerText = getUserCredentials[0].name;
+// Show Name on navbar on profile menu section End
 
 const url = "https://nearsteeluserdata.onrender.com/user";
 const curUrl = "https://activitycurrencymoneymingle.onrender.com/country_data";
