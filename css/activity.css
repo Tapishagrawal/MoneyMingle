@@ -14,6 +14,7 @@
     --headings-color:#343434;
     --headings-color-light:#f6f6f6;
     --container-padding : 60px 0;
+    --body-background: #545454;
 }
 .container{
     margin: 0 60px;
@@ -30,6 +31,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: var(--body-background);
 }
 html{
     scroll-behavior: smooth;
@@ -71,13 +73,57 @@ header a:hover{
     display: flex;
     justify-content: space-between;
 }
-.status-btns{
-    width: 20%;
-    text-align: right;
-}
+.status-btns img{
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  .status-btns img:hover{
+    transform: scale(1.1);
+  }
+  .user-details{
+    position: absolute;
+    top: 100px;
+    right: -0px;
+    background-color: var(--dark-gray);
+    padding: 20px;
+    text-align: start;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  .user-details > div{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .status-btns:hover .user-details{
+    top: 55px;
+    opacity: 1;
+    visibility: visible;
+    cursor:auto;
+  }
+  .status-btns p{
+    color: var(--headings-color-light);
+    margin: 5px 0;
+  }
+  .status-btns a{
+    color: var(--headings-color-light);
+    display: block;
+    margin: 5px 0;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 5px;
+    transition: color 0.2s ease-in-out,
+                margin-left 0.2s ease-in-out;
+  }
+  .user-details a:hover{
+    color: var(--light-lighter-gray);
+    margin-left: 2px;
+  }
 
 #searchSection{
-    background-color: #545454;
     padding: 25px 15%;
 }
 #searchSec{
@@ -88,7 +134,7 @@ header a:hover{
 }
 #searchSec input{
     padding: 5px 8px;
-    width: 90%;
+    width: 100%;
 }
 #filterSec{
     display: flex;
@@ -104,23 +150,19 @@ table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 25px;
 }
 table td,table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
+table tr:nth-child(odd){background-color: #e6e6e6;}
 table tr:nth-child(even){background-color: #f2f2f2;}
 table tr:hover {background-color: #ddd;}
 table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #57887b;
+  background-color: var(--dark-gray);
   color: white;
-}
-footer{
-    text-align: center;
-    background-color: #57887b;
-    color: #fff;
-    height: 100px;
 }
