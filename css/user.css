@@ -54,7 +54,7 @@ header {
 .navigation-links a {
     color: var(--white);
     padding: 3px 15px;
-    border-radius: 8px;
+    border-radius: 3px;
     font-weight: 500;
     transition: all 0.3s;
 }
@@ -395,11 +395,14 @@ header {
 
 
 table{
-    border: 1px solid #333;
+    border: 1px solid #ebebeb;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
     max-height: 20px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+    border-radius: 3px;
+    overflow: hidden;
 }
 thead{
     background-color: #436c63;
@@ -410,12 +413,12 @@ thead th{
     color: var(--headings-color-light);
 }
 #table tr td{
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ebebeb;
     padding: 10px 0;
     font-weight: 500;
 }
 #table tr:nth-child(even){
-    background-color: #e8bc0e3f;
+    background-color: #ccdabd3f;
 }
 /* Footer Start */
 footer {

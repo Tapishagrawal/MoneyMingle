@@ -19,9 +19,9 @@
     <header>
         <div class="logo"><img src="images/logo.png" alt=""></div>
         <nav class="navigation-links">
-            <a href="#hero-container" class="active">Home</a>
+            <a href="#hero-container">Home</a>
             <a href="#about">About</a>
-            <a href="#">Converter</a>
+            <a href="#con_container">Converter</a>
             <a href="#testimonial-container">Testimonial</a>
             <a href="#faq-Container">FAQ's</a>
         </nav>
@@ -31,7 +31,7 @@
                 <nav class="navigation-links-mobile">
                     <a href="#hero-container" class="active">Home</a>
                     <a href="#about">About</a>
-                    <a href="#">Currency Chart</a>
+                    <a href="#con_container">Currency Chart</a>
                     <a href="#testimonial-container">Testimonial</a>
                     <a href="#faq-Container">FAQ's</a>
                 </nav>
@@ -52,7 +52,7 @@
             <form id="feedbackForm">
                 <div class="form-group">
                     <label for="age">How old are you?</label>
-                    <select id="age" name="age" >
+                    <select id="age" name="age">
                         <option value="">Select Age Group</option>
                         <option value="Under 18">Under 18</option>
                         <option value="18-24">18-24</option>
@@ -64,7 +64,7 @@
 
                 <div class="form-group">
                     <label for="gender">What is your gender?</label>
-                    <select id="gender" name="gender" >
+                    <select id="gender" name="gender">
                         <option value="">Select gender</option>
                         <option value="f">Female</option>
                         <option value="m">Male</option>
@@ -76,7 +76,7 @@
                     <label for="convertedCurrency">Have you ever converted your currency using MoneyMingle
                         website?</label>
                     <div class="ans">
-                        <input type="radio" id="convertedYes" name="convertedCurrency" value="Yes" >
+                        <input type="radio" id="convertedYes" name="convertedCurrency" value="Yes">
                         <label for="convertedYes">Yes</label>
                         <input type="radio" id="convertedNo" name="convertedCurrency" value="No">
                         <label for="convertedNo">No</label>
@@ -93,7 +93,7 @@
                     <label for="options">Would you like to see different options and competitive rates to choose from on
                         MoneyMingle for currency conversion and school fee payments?</label>
                     <div class="ans">
-                        <input type="radio" id="optionsYes" name="options" value="Yes" >
+                        <input type="radio" id="optionsYes" name="options" value="Yes">
                         <label for="optionsYes">Yes</label>
                         <input type="radio" id="optionsNo" name="options" value="No">
                         <label for="optionsNo">No</label>
@@ -104,7 +104,7 @@
                     <label for="access">Would you like to have fast and easy access on MoneyMingle for currency
                         conversion and school fee payments?</label>
                     <div class="ans">
-                        <input type="radio" id="accessYes" name="access" value="Yes" >
+                        <input type="radio" id="accessYes" name="access" value="Yes">
                         <label for="accessYes">Yes</label>
                         <input type="radio" id="accessNo" name="access" value="No">
                         <label for="accessNo">No</label>
@@ -115,7 +115,7 @@
                     <label for="fees">Have you experienced high fees associated with currency conversion, especially
                         with MoneyMingle?</label>
                     <div class="ans">
-                        <input type="radio" id="feesYes" name="fees" value="Yes" >
+                        <input type="radio" id="feesYes" name="fees" value="Yes">
                         <label for="feesYes">Yes</label>
                         <input type="radio" id="feesNo" name="fees" value="No">
                         <label for="feesNo">No</label>
@@ -125,7 +125,7 @@
                 <div class="form-group">
                     <label for="exchangeRates">Have you found it inconvenient to access the best exchange rates?</label>
                     <div class="ans">
-                        <input type="radio" id="exchangeYes" name="exchangeRates" value="Yes" >
+                        <input type="radio" id="exchangeYes" name="exchangeRates" value="Yes">
                         <label for="exchangeYes">Yes</label>
                         <input type="radio" id="exchangeNo" name="exchangeRates" value="No">
                         <label for="exchangeNo">No</label>
@@ -136,7 +136,7 @@
                     <label for="paymentOptions">Have you felt limited by the payment options available when paying
                         school fees?</label>
                     <div class="ans">
-                        <input type="radio" id="paymentYes" name="paymentOptions" value="Yes" >
+                        <input type="radio" id="paymentYes" name="paymentOptions" value="Yes">
                         <label for="paymentYes">Yes</label>
                         <input type="radio" id="paymentNo" name="paymentOptions" value="No">
                         <label for="paymentNo">No</label>
@@ -152,7 +152,7 @@
                     <label for="complexity">Have you found the process of converting currency or making payments to be
                         complex and confusing?</label>
                     <div class="ans">
-                        <input type="radio" id="complexityYes" name="complexity" value="Yes" >
+                        <input type="radio" id="complexityYes" name="complexity" value="Yes">
                         <label for="complexityYes">Yes</label>
                         <input type="radio" id="complexityNo" name="complexity" value="No">
                         <label for="complexityNo">No</label>
@@ -162,7 +162,7 @@
                 <div class="form-group">
                     <label for="recommendation">How likely are you to recommend MoneyMingle to others based on your
                         experience?</label>
-                    <select id="recommendation" name="recommendation" >
+                    <select id="recommendation" name="recommendation">
                         <option value="">Select recommendation</option>
                         <option value="Very likely">Very likely</option>
                         <option value="Likely">Likely</option>
@@ -217,7 +217,7 @@
     <!-- Hero page End -->
 
     <!-- About Section Start -->
-    <div id="about">
+    <section id="about">
         <div class="desc-containter">
             <div class="sub-about container">
                 <h1>About</h1>
@@ -299,13 +299,53 @@
                 </p>
             </div>
         </div>
-    </div>
+    </section>
     <!-- About Section End -->
 
 
     <!-- Currency Chart Start -->
 
-    <!-- work in progress -->
+    <div id="con_container">
+        <h1 style="text-align: center;">Convert Money</h1>
+        <div class="converter">
+            <div class="addha">
+                <h3>Convert From:</h3>
+                <div class="convertor-select-section">
+                    <img id="flag1" class="flag-icon" src="https://flagcdn.com/w320/us.png">
+                    <select id="fromMoney">
+                        <option value="0">Select From ..</option>
+                        <!-- other Money options -->
+                    </select>
+                </div>
+            </div>
+            <div class="icon-awwor">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+            <div class="addha">
+                <h3>Convert To:</h3>
+                <div class="convertor-select-section">
+                    <img id="flag2" class="flag-icon" src="https://flagcdn.com/w320/in.png">
+                    <select id="toMoney">
+                        <option value="0">Select To ..</option>
+                        <!-- other Money options  -->
+                    </select>
+                </div>
+            </div>
+            <div class="icon-awwor">
+                <i class="fa-solid fa-equals"></i>
+            </div>
+            <div class="convert-money-display">
+                <h3>Converted Amount</h3>
+                <input id="result" placeholder="Converted Amount" disabled>
+            </div>
+
+        </div>
+        <div class="entering-section">
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <button onclick="convertMoney()">Convert</button>
+        </div>
+        <div id="result2"></div>
+    </div>
 
     <!-- Currency Chart End -->
 
@@ -446,7 +486,7 @@
 
 
     <!-- FAQ's Start -->
-    <div id="faq-Container">
+    <section id="faq-Container">
         <div>
             <div class="faq-section">
                 <h1>FAQ's?</h1>
@@ -502,7 +542,7 @@
                 <img src="images/faq.png" alt="">
             </div>
         </div>
-    </div>
+    </section>
     <!-- FAQ's End -->
 
     <!-- Footer Start -->
@@ -576,7 +616,7 @@
 
 
     <!-- Login Page Start -->
-    <section class="login-page">
+    <div class="login-page">
         <form class="form-container">
             <i class="fa-solid fa-x"></i>
             <div class="user-img-cont">
@@ -599,7 +639,7 @@
             </div>
             <p>Don't have an account? <a href="register.html">Sign up</a></p>
         </form>
-    </section>
+    </div>
     <!-- Login Page End -->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
