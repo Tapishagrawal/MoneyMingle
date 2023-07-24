@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --main-back-color: #272727;
+    --main-white-color: #f6f6f6;
+    --sub-back-color: #2D2D2D;
+    --dark-gray: #545454;
+    --white:#fff;
+    --para-color: #454545;
+    --font-size-para: 20px;
+    --headings-color:#343434;
+    --headings-color-light:#f6f6f6;
+    --container-padding : 60px 0;
+    --body-background: #545454;
+}
+.container{
+    margin: 0 60px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--sub-back-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--dark-gray);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background);
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--sub-back-color);
+    padding: 12px 0;
+    width: 100%;
+}
+
+header a{
+    color: var(--white);
+    padding: 3px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+header a:hover{
+    background-color: #57887b;
+    color: var(--white);
+}
+.navigation-links a.active{
+    background-color: #57887b;
+}
+.logo{
+    width: 15%;
+}
+.logo img{
+    width: 50px;
+}
+.navigation-links{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.status-btns img{
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  .status-btns img:hover{
+    transform: scale(1.1);
+  }
+  .user-details{
+    position: absolute;
+    top: 100px;
+    right: -0px;
+    background-color: var(--dark-gray);
+    padding: 20px;
+    text-align: start;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  .user-details > div{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .status-btns:hover .user-details{
+    top: 55px;
+    opacity: 1;
+    visibility: visible;
+    cursor:auto;
+  }
+  .status-btns p{
+    color: var(--headings-color-light);
+    margin: 5px 0;
+  }
+  .status-btns a{
+    color: var(--headings-color-light);
+    display: block;
+    margin: 5px 0;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 5px;
+    transition: color 0.2s ease-in-out,
+                margin-left 0.2s ease-in-out;
+  }
+  .user-details a:hover{
+    color: var(--light-lighter-gray);
+    margin-left: 2px;
+  }
