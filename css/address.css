@@ -203,8 +203,9 @@ body{
   visibility: hidden;
   transition: transform 0.4s,top 0.4s;
   }
-  .openpopup1{
+  .openpopup2{
       visibility: visible;
+      z-index: 50;
       top: 50%;
       transform: translate(-50%,-50%) scale(1);
   }
@@ -266,6 +267,85 @@ body{
       letter-spacing: 6px;
       opacity: .8;
     }
+.popup2{
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  /* z-index: 10; */
+  padding: 0 30px 30px ;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s,top 0.4s;
+  }
+  .openpopup2{
+      visibility: visible;
+      z-index: 50;
+      top: 50%;
+      transform: translate(-50%,-50%) scale(1);
+  }
+  
+  .popup2 img{
+  width: 100px;
+  margin-top: -40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+  }
+  .popup2 h2{
+      font-size: 38px;
+      font-weight: 500;
+      margin: 30px 10px;
+      
+  }
+  .popup2 p{
+      margin-bottom: 10px;
+  }
+  .popup2 a{
+      width: 100%;
+      margin-top: 100px;
+      padding: 5px 100px 5px 100px;
+      /* background:rgb(0, 43, 102) ; */
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+      background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
+      transition: .2s linear;
+  }
+  
+  .popup2 a:hover{
+      /* background: rgb(0, 70, 145); */
+      letter-spacing: 6px;
+      opacity: .8;
+    }
+    .popup2 button{
+      width: 100%;
+      margin-top: 20px;
+      padding: 5px 130px 5px 130px;
+      /* background:rgb(0, 43, 102) ; */
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+      background: linear-gradient(45deg,rgb(0, 43, 102),rgb(0, 70, 145));
+      transition: .2s linear;
+  }
+  
+  .popup2 button:hover{
+      /* background: rgb(0, 70, 145); */
+      letter-spacing: 6px;
+      opacity: .8;
+    }
 
 
 
@@ -286,9 +366,6 @@ body{
       justify-content: space-between;
       padding: 12px 30px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  nav img{
-   
   }
   nav ul{ 
       list-style: none;

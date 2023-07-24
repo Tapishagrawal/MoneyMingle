@@ -146,6 +146,14 @@ async function balCal(url, currData){
 
         mainBalHead.innerText = "$" + Math.round(balance * 100) / 100;
 
+        fetch(url, {
+            method: "PATCH",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({balance: balance})
+        })
+
     }
     catch(err){
         console.log(err);

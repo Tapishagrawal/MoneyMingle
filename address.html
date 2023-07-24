@@ -13,38 +13,55 @@
 
 </head>
 <body>
-<!-- <img src="images/logo2.png" alt=""> -->
+
+<!-- <img src="images/address/logo2.png" alt=""> -->
 
 
 
 
 
 
+<nav>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" id="bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg> -->
+    <div style="width: 5%;" class="logo_img">
+        <a href="./index.html"><img src="images/logo.png" alt="err" style="width: 100%;margin: auto; display: block;"></a> 
+    </div>
+    <div class="options" id="option">
+        <ul>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="#">click</a></li>
+            <li><a href="./Destination.html">click</a></li>
+            <li><a href="#">click</a></li>
+        </ul>
+    </div>
+    <div  class="Resister">
+        <a href="#">Resister</a></li>
+    </div>
+</nav>
 
 
-<header>
-    <div class="logo"><img src="images/logo.png" alt=""></div>
-    <nav class="navigation-links">
-        <a href="#hero-container" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Currency Chart</a>
-        <a href="#testimonial-container">Testimonial</a>
-        <a href="#faq-Container">FAQ's</a>
-    </nav>
-    <nav class="status-btns">
-        <a href="#">Login</a>
-    </nav>
-</header>
-
-
-
-
-
-
-
-
-
-
+<div class="popup1 " id="popup1">
+    <img src="images/address/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Some fields are empty <br>
+        please fill all the fields <br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="address.html" onclick="closepopup1()">OK</a>
+</div>
+<div class="popup2 " id="popup2">
+    <img src="images/address/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Insufficient Balance<br>
+        Add balance<br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="payment.html" onclick="closepopup1()">ADD MONEY</a>
+</div>
 
 
 <div class="container" id="seccont">
@@ -55,7 +72,8 @@
 
             <div class="col">
 
-                <h3 class="title">transfer to</h3>
+                <h3 class="title">Transfer To</h3>
+
 
                 <div class="inputBox" >
                     <span>full name :</span>
@@ -69,32 +87,44 @@
                     <span>Phone Number :</span>
                     <input id="ibadd" type="text" maxlength="10" placeholder="1234567890">
                 </div> -->
-                <div class="inputBox" >
-                        <span>To Currency :</span>
-                        <!-- <input id="ibpeople" type="" min="0" placeholder=""> -->
-                        <select name="" id="converter"><option value="">select</option></select>
-                    </div>
+
+                
                 <div class="flex">
-                    <!-- <div class="inputBox" >
-                        <span>From Currency :</span>
-                        <input id="ibcity" type="text" placeholder="Kolkata">
-                    </div> -->
-                  
+                    <div class="inputBox" >
+                        <span>Currency :</span>
+                        <select name="" id="converter">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                    <div class="inputBox" >
+                        <div id="flag-img"><img src="https://flagcdn.com/w320/in.png" alt=""></div>
+                    </div>
+
                     
                 </div>
 
                 <div class="flex">
                     <div class="inputBox" >
                         <span>Deposited Amount :</span>
-                        <input id="damt" type="text" placeholder="">
+                        <input id="damt" type="number" placeholder="">
                     </div>
+                    <div>
+                        <span>Fees : <em>(~10%)</em></span>
+                        <h5 id="fees">0.00</h5>
+                    </div>
+                
+                </div>
+                
+                <div class="flex">
                     <div class="inputBox" >
                         <span>Final Amount :</span>
-                        <input id="camt" type="text" min="0" placeholder="">
+
+                        <h5 id="final-amt">0.00</h5>
                     </div>
                 </div>
 
-                <div class="flex">
+
+
                     <div class="inputBox">
                         <span>Date:</span>
                         <input id="ibdate" type="date" required pattern="\d{4}-\d{2}-\d{2}">
@@ -103,7 +133,7 @@
                         <span>Fees Deducted:</span>
                         <input id="ibage" type="text" min="1" placeholder="XXX">
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
@@ -121,6 +151,7 @@
     
 </body>
 
-
-</script>
 </html>
+
+<script src="js\address.js"></script>
+
