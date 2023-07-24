@@ -5,14 +5,16 @@ LogOutBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     localStorage.removeItem('userLogInStatus');
     window.location.href='index.html';
-    console.log('hi');
 })
 // log Out functionality End
 
-
-
-
-
+// Show Name on navbar on profile menu section start
+let getUserCredentials = JSON.parse(localStorage.getItem('userLogInStatus'));
+let ShowuserName = document.getElementById("ShowuserName");
+let ShowUser = document.querySelector(".ShowUser");
+ShowuserName.innerText = `Hello, ${getUserCredentials[0].name}`
+ShowUser.innerText = getUserCredentials[0].name;
+// Show Name on navbar on profile menu section End
 
 const url = "https://nearsteeluserdata.onrender.com/user";
 const curUrl = "https://activitycurrencymoneymingle.onrender.com/country_data";
@@ -108,7 +110,7 @@ async function transPrint(url){
     try{
         let res = await fetch(url);
         let data = await res.json();
-        console.log(data);
+        // console.log(data);
         transData = data;
     }
     catch(err){
@@ -132,7 +134,7 @@ async function balCal(url, currData){
     try{
         let res = await fetch(url);
         let data = await res.json();
-        console.log(data);
+        // console.log(data);
         let balance = 0;
         data.transactions.forEach(el => {
             if(el.type == "Payment from"){
@@ -162,7 +164,7 @@ async function currFetch(url){
     try{
         let res = await fetch(url);
         let data = await res.json();
-        console.log(data);
+        // console.log(data);
         currData = data;
 
         data.forEach(el =>{

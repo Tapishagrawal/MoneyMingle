@@ -9,7 +9,59 @@ body {
     margin: 0;
     padding: 0;
 }
+:root {
+    --main-back-color: #272727;
+    --main-white-color: #f6f6f6;
+    --sub-back-color: #3d3d3d;
+    --dark-gray: #545454;
+    --light-gray: #9d9d9d;
+    --green-gray : #3d5a4e;
+    --green-hover-gray : #527768;
+    --light-lighter-gray: #d1d1d1;
+    --white: #fff;
+    --para-color: #454545;
+    --font-size-para: 20px;
+    --headings-color: #323232;
+    --headings-color-light: #f6f6f6;
+    --container-padding: 60px 0;
+}
 
+.swal-modal {
+    background: var(--sub-back-color);
+}
+.swal-icon--success:after, .swal-icon--success:before {
+    background: var(--sub-back-color);
+}
+.swal-icon--success__hide-corners {
+    background-color: var(--sub-back-color);
+}
+.swal-icon--success {
+    border-color: var(--green-hover-gray);
+}
+.swal-icon--success__line {
+    background-color: var(--green-hover-gray);
+}
+.swal-icon--success__ring {
+    border: 4px solid hsla(98,55%,69%,.2);
+}
+.swal-text,
+.swal-title:not(:last-child) {
+    color: var(--light-lighter-gray);
+    font-weight: 500;
+    font-size: 18px;
+}
+.swal-button-container{
+    display: block;
+    text-align: center;
+}
+.swal-button{
+    background-color: var(--green-gray);
+    width: 110px;
+    padding: 8px;
+}
+.swal-button:hover{
+    background-color: var(--green-hover-gray)!important;
+}
 #register-page {
     display: flex;
     justify-content: center;

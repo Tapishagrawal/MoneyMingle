@@ -1,13 +1,10 @@
-
-
 // mobile menu bar functionality start
 let menuBtn = document.querySelector(".status-btns .fa-bars");
 let mobileNavBar = document.querySelector(".navigation-links-mobile")
-menuBtn.addEventListener("click",()=>{
+menuBtn.addEventListener("click", () => {
     mobileNavBar.classList.toggle("active")
 })
 // mobile menu bar functionality End
-
 
 
 // Hero Page Aniumation start
@@ -77,7 +74,7 @@ const form = document.getElementById('feedbackForm');
 
 
 let url = 'https://mm-money-mingle.onrender.com/feedback_details/';
-let i=0;
+let i = 0;
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -87,7 +84,7 @@ form.addEventListener('submit', function (event) {
     let feedback = {
         "cust_id": i,
     };
-    for(let [key, value] of formData) {
+    for (let [key, value] of formData) {
         feedback[key] = value;
     }
     feedback_data.push(feedback);
@@ -167,8 +164,8 @@ loginCloseBtn.addEventListener('click', () => {
 })
 
 
-async function LoginFetchData(){
-    try{
+async function LoginFetchData() {
+    try {
         let res = await fetch(`https://nearsteeluserdata.onrender.com/user`);
         let data = await res.json();
         LogInform.addEventListener('submit', (e) => {
@@ -176,24 +173,24 @@ async function LoginFetchData(){
             LoginUser(data)
         });
     }
-    catch(err){
+    catch (err) {
         console.log("Login Form Error: " + err);
     }
 }
 LoginFetchData()
 
 let userLogInStatus = JSON.parse(localStorage.getItem("userLogInStatus")) || []
-function LoginUser(data){
+function LoginUser(data) {
     let isLoggedIn = false;
-    data.forEach(user =>{
-        if(user.usrName === LogInform.userName.value){
-            if(user.password ===LogInform.password.value){
+    data.forEach(user => {
+        if (user.usrName === LogInform.userName.value) {
+            if (user.password === LogInform.password.value) {
                 isLoggedIn = true;
             }
-            else{
+            else {
                 swal("Wrong password!", "", "error");
             }
-        }else{
+        } else {
             swal("Wrong User Name!", "", "error");
         }
 
@@ -202,17 +199,17 @@ function LoginUser(data){
             setTimeout(() => {
                 window.location.href = "user.html";
             }, 1000);
-            let isDuplicate = userLogInStatus.some(existingItem=>existingItem.id === user.userId)
-            if(!isDuplicate){
-                userLogInStatus.push({userId: user.id, status:true});
+            let isDuplicate = userLogInStatus.some(existingItem => existingItem.id === user.userId)
+            if (!isDuplicate) {
+                userLogInStatus.push({ userId: user.id, status: true, name: user.name });
                 localStorage.setItem('userLogInStatus', JSON.stringify(userLogInStatus))
             }
-        } 
+        }
         else {
             swal("Invalid username!", "", "error");
         }
     });
-    
+
 }
 // =========form Data End======
 
@@ -226,4 +223,3 @@ button.addEventListener("click", (e) => {
 });
 
 // ==========================================Login Pop-On Code End=========
-
