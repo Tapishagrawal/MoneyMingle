@@ -26,7 +26,7 @@ we have used JavaScript code to convert the currency of one country to another c
 # More Info :
 
 ### This website is made from CaseStudy of PayWise :  https://www.behance.net/gallery/168890935/PayWise-A-fintech-CaseStudy?tracking_source=search_projects%7Cfintech
-### Netlify link : [adarsha](https://funny-druid-6f2cdc.netlify.app/index.html)
+### Netlify link : [MoneyMingle](https://funny-druid-6f2cdc.netlify.app/index.html)
 
 ## Output :
 ![MoneyMingle](screenshot\home_page.png)
