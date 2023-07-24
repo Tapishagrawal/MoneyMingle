@@ -186,6 +186,11 @@ function LoginUser(data) {
         if (user.usrName === LogInform.userName.value) {
             if (user.password === LogInform.password.value) {
                 isLoggedIn = true;
+                let isDuplicate = userLogInStatus.some(existingItem => existingItem.id === user.userId)
+                if (!isDuplicate) {
+                    userLogInStatus.push({ userId: user.id, status: true, name: user.name });
+                    localStorage.setItem('userLogInStatus', JSON.stringify(userLogInStatus))
+                }
             }
             else {
                 swal("Wrong password!", "", "error");
@@ -195,15 +200,18 @@ function LoginUser(data) {
         }
 
         if (isLoggedIn) {
-            swal("Login successful!", "Welcome to MonneyMingle ;)", "success");
-            setTimeout(() => {
-                window.location.href = "user.html";
-            }, 1000);
-            let isDuplicate = userLogInStatus.some(existingItem => existingItem.id === user.userId)
-            if (!isDuplicate) {
-                userLogInStatus.push({ userId: user.id, status: true, name: user.name });
-                localStorage.setItem('userLogInStatus', JSON.stringify(userLogInStatus))
+            if(LogInform.userName.value =="admin"){
+                swal("Login successful!", "Welcome to MonneyMingle ;)", "success");
+                setTimeout(() => {
+                    window.location.href = "admin.html";
+                }, 1000);
+            }else{
+                swal("Login successful!", "Welcome to MonneyMingle ;)", "success");
+                setTimeout(() => {
+                    window.location.href = "user.html";
+                }, 1000);
             }
+            
         }
         else {
             swal("Invalid username!", "", "error");

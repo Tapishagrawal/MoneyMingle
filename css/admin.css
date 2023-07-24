@@ -19,6 +19,7 @@ body {
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+  margin: 17px 0;
 }
 
 /* custom Styles */
@@ -31,8 +32,7 @@ body {
 }
 
 #lhs {
-  /* border: 1px solid red; */
-  width: 10%;
+  width: 17%;
   border-right: 1px solid #e5e7eb;
   height: 100vh;
   background-color: white;
@@ -41,14 +41,12 @@ body {
 }
 
 #rhs {
-  /* border: 1px solid black; */
-  margin-left: 10%;
-  width: 90%;
-  height: auto;
+  margin: auto;
+  margin-left: 18%;
+  width: 80%;
 }
 
 #navbar {
-  /* border: 1px solid black; */
   width: 100%;
   height: 60px;
   display: flex;
@@ -108,7 +106,6 @@ body {
 
 #admin_logout_div {
   display: flex;
-  /* justify-content: space-around; */
 }
 
 #admin_logout_div:hover {
@@ -141,7 +138,11 @@ body {
 }
 
 #logo {
-  width: 50px;
+  width: 100%;
+  text-align: center;
+  border-radius: 3px;
+  padding: 15px;
+  background-color: rgb(44, 44, 44);
 }
 
 #logo > img {
@@ -180,7 +181,12 @@ body {
 .link_item > i {
   min-width: 20px;
 }
-
+#btn-logout{
+  color: #333;
+  text-decoration: none;
+  margin-left: 17px;
+  font-weight: 500;
+}
 .page {
   display: none;
 }

@@ -1,7 +1,22 @@
-
-
-
+// log Out functionality Start
 let userLogInStatus =  JSON.parse(localStorage.getItem('userLogInStatus'));
+let LogOutBtn = document.getElementById("btn-logout");
+LogOutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    localStorage.removeItem('userLogInStatus');
+    window.location.href='index.html';
+})
+// log Out functionality End
+
+// Show Name on navbar on profile menu section start
+let getUserCredentials = JSON.parse(localStorage.getItem('userLogInStatus'));
+let ShowuserName = document.getElementById("ShowuserName");
+let ShowUser = document.querySelector(".ShowUser");
+ShowuserName.innerText = `Hello, ${getUserCredentials[0].name}`
+ShowUser.innerText = getUserCredentials[0].name;
+// Show Name on navbar on profile menu section End
+
+
 let userid = userLogInStatus[0].userId
 
 

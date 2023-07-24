@@ -1,173 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/24c494a6b6.js"
-      crossorigin="anonymous"
-    ></script>
-   <link rel="shortcut icon" type="x-icon" href="images/logo.png">
-    
-    <link rel="stylesheet" href="./css/admin.css" />
-    <link rel="stylesheet" href="./css/model-pop.css"/>
-    <title>MoneyMingle Admin Dashboard</title>
-    <style>
-    
-       div, button{
-        border-color:  rgba(53, 47, 47, 0.374) !important;
-      }
 
-      #icons_div {
-        font-size: 25px;
-        cursor: pointer;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="x-icon" href="images/logo.png">
 
-     #rhs img{
-     
-        filter: none !important;
-      }  
+  <link rel="stylesheet" href="./css/admin.css" />
+  <link rel="stylesheet" href="./css/model-pop.css" />
+  <title>MoneyMingle Admin Dashboard</title>
+</head>
 
-    </style>
-  </head>
-  <body>
-    <div id="invertDiv"></div>
-    <div id="main_container">
-      <div id="lhs">
-        <div id="title_div">
-          <div id="logo">
-            <img style="width: 100px;" src="./images/MoneyMingle.jpg" alt="" />
-          </div>
-          <!-- <h4>BEcool</h4> -->
+<body>
+  <div id="invertDiv"></div>
+  <div id="main_container">
+    <div id="lhs">
+      <div id="title_div">
+        <div id="logo">
+          <img style="width: 100px;" src="images/logo.png" alt="" />
         </div>
-        <div id="link_div">
-          <div id="products_div" class="link_item link_active">
-            <i class="fa-solid fa-user"></i>
-            <p>User</p>
-          </div>
-          <div id="orders_div" class="link_item">
-            <i class="fa-solid fa-indian-rupee-sign"></i>
-            <p>Convertion Rates</p>
-          </div>
-          <div id="customers_div" class="link_item">
-            <i class="fa-solid fa-tags"></i>
-            <p>Change Password</p>
-          </div>
+        <!-- <h4>BEcool</h4> -->
+      </div>
+      <div id="link_div">
+        <div id="products_div" class="link_item link_active">
+          <i class="fa-solid fa-user"></i>
+          <p>User</p>
+        </div>
+        <div id="orders_div" class="link_item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <p>Convertion Rates</p>
+        </div>
+        <div id="customers_div" class="link_item">
+          <i class="fa-solid fa-tags"></i>
+          <p>Change Password</p>
+        </div>
+        <div id="customers_div" class="link_item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="#" id="btn-logout">Log out</a>
         </div>
       </div>
-      <div id="rhs">
-        <div id="rhs_body">
-          <div id="products_page" class="page active">
-            <div class="header">
-              <button class="btn add_product">New User</button>
-              <div class="modal myModal">
-             
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-               
-                  <input
-                    type="text"
-                    id="new_prod_name"
-                    placeholder="Add User Name"
-                    required
-                  />
-                  <input
-                  type="mail"
-                  id="new_prod_mail"
-                  placeholder="Add Mail"
-                  required
-                />
-                  <input
-                    type="password"
-                    id="new_prod_pass"
-                    placeholder="Add password"
-                    required
-                  />
-                  <input
-                    type="text"
-                    id="new_prod_balance"
-                    placeholder="Add balance"
-                    required
-                  />
-               <input type="text" id="new_t_Name"  placeholder="Add  Transaction Name" required>
-               <input type="date" id="new_prod_date"  placeholder="Add  date" required>
-               <input type="text" id="new_prod_type"  placeholder="Add  type" required>
-               <input type="text" id="new_prod_gross"  placeholder="Add  gross" required>
-               <input type="number" id="new_prod_fee"  placeholder="Add fee" required>
-               <input type="number" id="new_prod_net"  placeholder="Add net" required>
-               <input type="text" id="new_prod_userCurrency"  placeholder="Add  userCurrency" required>
-               <input type="text" id="new_prod_convertedCurrency"  placeholder="Add  convertedCurrency" required>
+    </div>
+    <div id="rhs">
+      <div id="rhs_body">
+        <div id="products_page" class="page active">
+          <div class="header">
+            <button class="btn add_product">New User</button>
+            <div class="modal myModal">
 
-                
-                  <button id="add_new_user">Add user</button>
-                </div>
+              <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <input type="text" id="new_prod_name" placeholder="Add User Name" required />
+                <input type="mail" id="new_prod_mail" placeholder="Add Mail" required />
+                <input type="password" id="new_prod_pass" placeholder="Add password" required />
+                <input type="text" id="new_prod_balance" placeholder="Add balance" required />
+                <input type="text" id="new_t_Name" placeholder="Add  Transaction Name" required>
+                <input type="date" id="new_prod_date" placeholder="Add  date" required>
+                <input type="text" id="new_prod_type" placeholder="Add  type" required>
+                <input type="text" id="new_prod_gross" placeholder="Add  gross" required>
+                <input type="number" id="new_prod_fee" placeholder="Add fee" required>
+                <input type="number" id="new_prod_net" placeholder="Add net" required>
+                <input type="text" id="new_prod_userCurrency" placeholder="Add  userCurrency" required>
+                <input type="text" id="new_prod_convertedCurrency" placeholder="Add  convertedCurrency" required>
+
+
+                <button id="add_new_user">Add user</button>
               </div>
-               <select id="sort_Prod" class="btn">
-                        <option value="">Sort By</option>
-                        <option value="asc">Low To High</option>
-                        <option value="desc">High To Low</option>
-                      </select>
+            </div>
+            <select id="sort_Prod" class="btn">
+              <option value="">Sort By</option>
+              <option value="asc">Low To High</option>
+              <option value="desc">High To Low</option>
+            </select>
+          </div>
+
+
+
+          
+
+
+          <div id="User_page" class="btn">
+            <h4>Search User Details</h4>
+
+            <div class="action_div">
+              <div>
+                <input type="text" id="search_user" class="btn" placeholder="Search User" />
+                <button id="search_user_btn" class="btn">search</button>
               </div>
 
+            </div>
+            <table>
+              <thead>
+                <tr>
 
+                  <th>ID</th>
+                  <th>Full Name</th>
+                  <th>User Name</th>
+                  <th>Password</th>
+                  <th>Email</th>
+                  <th>Balance</th>
+                  <th>Transactions</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody id="user_tbody">
+                <!-- items row comes here -->
+              </tbody>
+            </table>
 
-              <hr>
+          </div>
 
-            
-              <div id="User_page" class="btn">
-                <h4>Search User Details</h4>
-              
-                <div class="action_div">
-                  <div>
-                    <input
-                      type="text"
-                      id="search_user"
-                      class="btn"
-                      placeholder="Search User"
-                    />
-                    <button id="search_user_btn" class="btn">search</button>
-                  </div>
-                
-                </div>
-                <table>
-                  <thead>
-                    <tr>
-                     
-                      <th>ID</th>
-                      <th>Full Name</th>
-                      <th>User Name</th>
-                      <th>Password</th>
-                      <th>Email</th>
-                      <th>Balance</th>
-                      <th>Transactions</th>
-                      <th>Remove</th>
-                    </tr>
-                  </thead>
-                  <tbody id="user_tbody">
-                    <!-- items row comes here -->
-                  </tbody>
-                </table>
-             
-              </div>
-  
-           <hr>
-           <div></div>
-           <hr>
-           <div class="action_div">
+          
+          <div></div>
+          
+          <div class="action_div">
             <div>
               <button class="btn cat_btn " id="user_btn"> Users</button>
-              <button class="btn cat_btn" id="trans_btn" >Transactions</button>
-            
+              <button class="btn cat_btn" id="trans_btn">Transactions</button>
+
             </div>
           </div>
-          <hr>
+          
           <div></div>
-          <hr>
+          
 
-              <div>
-                <h4>All Users</h4>
-             
+          <div>
+            <h4>All Users</h4>
+
             <table class="tab1">
               <thead>
                 <tr>
@@ -187,51 +148,52 @@
               </tbody>
             </table>
           </div>
-          <hr>
-            <div id="transactions_page" class="btn">
-            
-              <h4>Transactions</h4>
-              <div class="action_div">
-                <div></div>
-              
-              </div>
-              <table id="tab2">
-                <thead>
-                  <tr>
-                    <!-- usrid_td, usrName_td ,mail_td ,pri, inventory , del -->
-                    <th>ID</th>
-                    <th> Name</th>
-                    <th>Mail</th>
-                    <th>Balance</th>
-                    <th> Transactions:
-                      <thead>
-                        <tr>
-                          <!-- t_date,t_type,t_name,t_gross,t_fee,t_net,t_userCurrency,t_convertedCurrency -->
-                    <th>date</th>
-                    <th>type</th>
-                    <th>name</th>
-                    <th>gross</th>
-                    <th>fee</th>
-                    <th>net</th>
-                    <th>userCurrency</th>
-                    <th>convertedCurrency</th> 
-                  </tr>
-                  </thead>
+          
+          <div id="transactions_page" class="btn">
+
+            <h4>Transactions</h4>
+            <div class="action_div">
+              <div></div>
+
+            </div>
+            <table id="tab2">
+              <thead>
+                <tr>
+                  <!-- usrid_td, usrName_td ,mail_td ,pri, inventory , del -->
+                  <th>ID</th>
+                  <th> Name</th>
+                  <th>Mail</th>
+                  <th>Balance</th>
+                  <th> Transactions:
+                    <thead>
+                      <tr>
+                        <!-- t_date,t_type,t_name,t_gross,t_fee,t_net,t_userCurrency,t_convertedCurrency -->
+                        <th>date</th>
+                        <th>type</th>
+                        <th>name</th>
+                        <th>gross</th>
+                        <th>fee</th>
+                        <th>net</th>
+                        <th>userCurrency</th>
+                        <th>convertedCurrency</th>
+                      </tr>
+                    </thead>
                   </th>
                   <th>delete</th>
-                  </tr>
-                </thead>
-                <tbody id="transactions_tbody">
-                  <!-- items row comes here -->
-               
-                </tbody>
-              </table>
-            </div>
+                </tr>
+              </thead>
+              <tbody id="transactions_tbody">
+                <!-- items row comes here -->
+
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 <script type="module" src="./js/model-pop.js"></script>
 <script type="module" src="./js/admin_dashbord.js"></script>

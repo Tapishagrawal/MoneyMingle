@@ -1,9 +1,17 @@
 
 // let url = https://nearsteeluserdata.onrender.com/user;
-
+// log Out functionality Start
+let userLogInStatus =  JSON.parse(localStorage.getItem('userLogInStatus'));
+let LogOutBtn = document.getElementById("btn-logout");
+LogOutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    localStorage.removeItem('userLogInStatus');
+    window.location.href='index.html';
+})
+// log Out functionality End
 
 const getCustomerData = async () => {
-    let res = await fetch(`https://mm-money-mingle.onrender.com/user`);
+    let res = await fetch(`https://nearsteeluserdata.onrender.com/user`);
     let data = await res.json();
     console.log(data);
     appendCustomerData(data);
@@ -103,7 +111,7 @@ const getCustomerData = async () => {
   
   const search_user_data = async (d) => {
     // d = /d/i;
-    let res = await fetch(`https://mm-money-mingle.onrender.com/user`);
+    let res = await fetch(`https://nearsteeluserdata.onrender.com/user`);
     let data = await res.json();
     data = data.filter(({ name }) => {
       return name.includes(d);
@@ -114,7 +122,7 @@ const getCustomerData = async () => {
   //delete User Details
   
   const delete_user_data = async (id) => {
-    let res = await fetch(`https://mm-money-mingle.onrender.com/user/${id}`, {
+    let res = await fetch(`https://nearsteeluserdata.onrender.com/user/${id}`, {
       method: "DELETE",
     });
   };
