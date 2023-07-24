@@ -21,27 +21,34 @@
 
 
 
-<nav>
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" id="bi-list" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-    </svg> -->
-    <div style="width: 5%;" class="logo_img">
-        <a href="./index.html"><img src="images/logo.png" alt="err" style="width: 100%;margin: auto; display: block;"></a> 
-    </div>
-    <div class="options" id="option">
-        <ul>
-            <li><a href="#">click</a></li>
-            <li><a href="#">click</a></li>
-            <li><a href="#">click</a></li>
-            <li><a href="#">click</a></li>
-            <li><a href="./Destination.html">click</a></li>
-            <li><a href="#">click</a></li>
-        </ul>
-    </div>
-    <div  class="Resister">
-        <a href="#">Resister</a></li>
-    </div>
-</nav>
+    <!-- header part End -->
+    <header>
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <nav class="navigation-links">
+            <a href="user.html" class="active">Home</a>
+            <a href="convert_money.html">Convert</a>
+            <a href="activity.html">Activity</a>
+            <a href="address.html">Pay</a>
+            <a href="requestmoney.html">Get-Paid</a>
+        </nav>
+        <nav class="status-btns">
+            <div class="userNameImg">
+                <h4 id="ShowuserName"></h4>
+                <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
+                    alt="">
+            </div>
+            <div class="user-details">
+                <div>
+                    <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
+                        alt="">
+                    <p class="ShowUser"></p>
+                </div>
+                <a href="#">Update Profile</a>
+                <a href="#" id="btn-logout">Log out</a>
+            </div>
+        </nav>
+    </header>
+    <!-- header part End -->
 
 
 <div class="popup1 " id="popup1">
@@ -123,25 +130,26 @@
                     </div>
                 </div>
 
-
-
-                    <div class="inputBox">
+                    <!-- <div class="inputBox">
                         <span>Date:</span>
                         <input id="ibdate" type="date" required pattern="\d{4}-\d{2}-\d{2}">
                     </div>
                     <div class="inputBox">
                         <span>Fees Deducted:</span>
                         <input id="ibage" type="text" min="1" placeholder="XXX">
-                    </div>
-                </div> -->
+                    </div> -->
+                </div> 
 
             </div>
 
-        
+            
+            <div class="sub-btn">
+                <input type="submit" value="proceed to checkout" class="submit-btn">
+            </div>
     
         </div> 
 
-        <input type="submit" value="proceed to checkout" class="submit-btn">
+        
 
 
         <!-- <a href="payment.html">SAVE ADDRESS AND PAY</a> -->

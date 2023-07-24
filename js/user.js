@@ -1,5 +1,5 @@
 // log Out functionality Start
-let userLogInStatus = localStorage.getItem('userLogInStatus');
+let userLogInStatus =  JSON.parse(localStorage.getItem('userLogInStatus'));
 let LogOutBtn = document.getElementById("btn-logout");
 LogOutBtn.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -33,8 +33,8 @@ let recentHeader = document.getElementById("recent-header");
 let transData;
 let currData;
 
-
-transPrint(url+ "/1");
+let userid = userLogInStatus[0].userId
+transPrint(`${url}/${userid}`);
 currFetch(curUrl);
 
 setTimeout(()=>{
@@ -42,7 +42,7 @@ setTimeout(()=>{
         tableBod.append(createTrans(transData.transactions[i]));
     }
 
-    balCal(url+"/1", currData)
+    balCal(`${url}/${userid}`, currData)
 
     recentTrans(transData, 3);
 
