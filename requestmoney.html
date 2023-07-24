@@ -9,42 +9,66 @@
     <link rel="icon" href="images/logo.png">
     
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="./css/requestmoney.css">
+    <link rel="stylesheet" href="./css/address.css">
 
 </head>
 <body>
-<!-- <img src="images/logo2.png" alt=""> -->
+
+<!-- <img src="images/address/logo2.png" alt=""> -->
 
 
 
 
 
 
+    <!-- header part End -->
+    <header>
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <nav class="navigation-links">
+            <a href="user.html" class="active">Home</a>
+            <a href="convert_money.html">Convert</a>
+            <a href="activity.html">Activity</a>
+            <a href="address.html">Pay</a>
+            <a href="requestmoney.html">Get-Paid</a>
+        </nav>
+        <nav class="status-btns">
+            <div class="userNameImg">
+                <h4 id="ShowuserName"></h4>
+                <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
+                    alt="">
+            </div>
+            <div class="user-details">
+                <div>
+                    <img src="https://img.freepik.com/premium-vector/happy-smiling-young-man-avatar-3d-portrait-man-cartoon-character-people-vector-illustration_653240-187.jpg"
+                        alt="">
+                    <p class="ShowUser"></p>
+                </div>
+                <a href="#">Update Profile</a>
+                <a href="#" id="btn-logout">Log out</a>
+            </div>
+        </nav>
+    </header>
+    <!-- header part End -->
 
 
-<header>
-    <div class="logo"><img src="images/logo.png" alt=""></div>
-    <nav class="navigation-links">
-        <a href="#hero-container" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Currency Chart</a>
-        <a href="#testimonial-container">Testimonial</a>
-        <a href="#faq-Container">FAQ's</a>
-    </nav>
-    <nav class="status-btns">
-        <a href="#">Login</a>
-    </nav>
-</header>
-
-
-
-
-
-
-
-
-
-
+<div class="popup1 " id="popup1">
+    <img src="images/address/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Some fields are empty <br>
+        please fill all the fields <br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="address.html" onclick="closepopup1()">OK</a>
+</div>
+<div class="popup2 " id="popup2">
+    <img src="images/address/cross.png" alt="">
+    <h2>Sorry</h2>
+    <p>Insufficient Balance<br>
+        Add balance<br>
+        and try again</p>
+    <!-- <button type="button" id="okbtn" onclick="closepopup1()">OK</button> -->
+    <a href="payment.html" onclick="closepopup1()">ADD MONEY</a>
+</div>
 
 
 <div class="container" id="seccont">
@@ -55,7 +79,8 @@
 
             <div class="col">
 
-                <h3 class="title">Request Money From</h3>
+                <h3 class="title">Request From</h3>
+
 
                 <div class="inputBox" >
                     <span>full name :</span>
@@ -69,49 +94,62 @@
                     <span>Phone Number :</span>
                     <input id="ibadd" type="text" maxlength="10" placeholder="1234567890">
                 </div> -->
-                <div class="inputBox" >
-                        <span>add:</span>
-                        <input id="ibpeople" type="" min="0" placeholder="">
-                       
-                    </div>
+
+                
                 <div class="flex">
-                    <!-- <div class="inputBox" >
-                        <span>From Currency :</span>
-                        <input id="ibcity" type="text" placeholder="Kolkata">
-                    </div> -->
-                  
+                    <div class="inputBox" >
+                        <span>Currency :</span>
+                        <select name="" id="converter">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                    <div class="inputBox" >
+                        <div id="flag-img"><img src="https://flagcdn.com/w320/in.png" alt=""></div>
+                    </div>
+
                     
                 </div>
 
                 <div class="flex">
                     <div class="inputBox" >
-                        <span>add :</span>
-                        <input id="damt" type="text" placeholder="">
+                        <span>Deposited Amount :</span>
+                        <input id="damt" type="number" placeholder="">
                     </div>
+                    <div>
+                        <span>Fees : <em>(~10%)</em></span>
+                        <h5 id="fees">0.00</h5>
+                    </div>
+                
+                </div>
+                
+                <div class="flex">
                     <div class="inputBox" >
-                        <span>add:</span>
-                        <input id="camt" type="text" min="0" placeholder="">
+                        <span>Final Amount :</span>
+
+                        <h5 id="final-amt">0.00</h5>
                     </div>
                 </div>
 
-                <div class="flex">
-                    <div class="inputBox">
+
+
+                    <!-- <div class="inputBox">
                         <span>Date:</span>
                         <input id="ibdate" type="date" required pattern="\d{4}-\d{2}-\d{2}">
                     </div>
                     <div class="inputBox">
-                        <span>add:</span>
+                        <span>Fees Deducted:</span>
                         <input id="ibage" type="text" min="1" placeholder="XXX">
-                    </div>
-                </div>
+                    </div> -->
+                </div> 
 
             </div>
 
+            <div class="sub-btn">
+                <input type="submit" value="Request" class="submit-btn">
+            </div>
         
     
         </div> 
-
-        <input type="submit" value="add" class="submit-btn">
 
 
         <!-- <a href="payment.html">SAVE ADDRESS AND PAY</a> -->
@@ -121,6 +159,7 @@
     
 </body>
 
-
-</script>
 </html>
+
+<script src="js/requestmoney.js"></script>
+

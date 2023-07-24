@@ -1,22 +1,8 @@
-// log Out functionality Start
+
+
+
 let userLogInStatus =  JSON.parse(localStorage.getItem('userLogInStatus'));
-let LogOutBtn = document.getElementById("btn-logout");
-LogOutBtn.addEventListener('click',(e)=>{
-    e.preventDefault();
-    localStorage.removeItem('userLogInStatus');
-    window.location.href='index.html';
-})
-// log Out functionality End
-
-// Show Name on navbar on profile menu section start
-let getUserCredentials = JSON.parse(localStorage.getItem('userLogInStatus'));
-let ShowuserName = document.getElementById("ShowuserName");
-let ShowUser = document.querySelector(".ShowUser");
-ShowuserName.innerText = `Hello, ${getUserCredentials[0].name}`
-ShowUser.innerText = getUserCredentials[0].name;
-// Show Name on navbar on profile menu section End
-
-
+let userid = userLogInStatus[0].userId
 
 
 const url = "https://nearsteeluserdata.onrender.com/user";
@@ -70,42 +56,37 @@ setTimeout(()=>{
             popup1.classList.add("openpopup1")
         }
         else{
-            let trueValue = currConv(converterDiv.value,+form.damt.value,currData);
+            let trueValue = currConvRev(converterDiv.value,+form.damt.value,currData);
             console.log(trueValue);
-            if(trueValue > transData.balance){
-                container.innerHTML=null;
-                popup2.classList.add("openpopup2");
-            }else{
-                console.log("done");
-                transData.balance -= (0.9 * trueValue);
-                let currentDate = +transData.transactions[transData.transactions.length-1].date.split("-")[0];
-                let obj={
-                    name:form.ibname.value,
-                    date: currentDate+1+"-01-2021",
-                    gross: +dipInp.value,
-                    net: +finalHead.innerText,
-                    fees: Math.abs(+feesHead.innerText),
-                    userCurrency: converterDiv.value,
-                    type: "Transfer to"
-                }
-    
-                transData.transactions.push(obj);
-                console.log(obj);
-                fetch(url+"/1", {
-                    method: "PUT",
-                    headers:{
-                        'Content-Type': 'application/json'
-                    },
-                    body : JSON.stringify(transData)
-                })
-                .then((data)=>{
-                    console.log(data);
-                    window.location.reload();
-                })
-                .catch((err)=>{
-                    console.log(err);
-                })
+            console.log("done");
+            transData.balance += (0.9 * trueValue);
+            let currentDate = +transData.transactions[transData.transactions.length-1].date.split("-")[0];
+            let obj={
+                name:form.ibname.value,
+                date: currentDate+1+"-01-2021",
+                gross: +dipInp.value,
+                net: +finalHead.innerText,
+                fees: Math.abs(+feesHead.innerText),
+                userCurrency: converterDiv.value,
+                type: "Transfer from"
             }
+
+            transData.transactions.push(obj);
+            console.log(obj);
+            fetch(`${url}/${userid}`, {
+                method: "PUT",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body : JSON.stringify(transData)
+            })
+            .then((data)=>{
+                console.log(data);
+                window.location.reload();
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
         }
         
         
@@ -157,7 +138,7 @@ function addOptions(el){
     return opt;
 }
 
-function currConv(curr, amt, currData){
+function currConvRev(curr, amt, currData){
     let convRate;
     for(let i = 0;i<currData.length;i++){
         if(currData[i].currency_code == curr){
@@ -167,7 +148,7 @@ function currConv(curr, amt, currData){
     }
     // console.log(amt, convRate);
 
-    return amt*(1/convRate);
+    return amt*(convRate);
 }
 
 
